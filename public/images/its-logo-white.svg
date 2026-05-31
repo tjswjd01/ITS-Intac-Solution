@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" fill="none" role="img" aria-labelledby="title">
+  <title id="title">ITS logo placeholder light</title>
+  <rect width="220" height="64" rx="18" fill="rgba(255,255,255,.08)"/>
+  <rect x="1" y="1" width="218" height="62" rx="17" stroke="rgba(255,255,255,.18)"/>
+  <rect x="18" y="14" width="36" height="36" rx="12" fill="#FFFFFF"/>
+  <path d="M29 24h14M36 24v16M29 40h14" stroke="#062A56" stroke-width="3.2" stroke-linecap="round"/>
+  <text x="68" y="40" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="2">ITS</text>
+  <text x="126" y="40" fill="rgba(255,255,255,.72)" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">INTAC</text>
+</svg>
