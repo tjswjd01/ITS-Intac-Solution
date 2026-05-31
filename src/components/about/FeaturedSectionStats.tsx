@@ -42,7 +42,7 @@ export default function FeaturedSectionStats() {
   return (
     <section className="section-shell bg-[#FAFAF8] pt-0">
       <div className="layout-container">
-        <div className="mx-auto max-w-6xl text-left">
+        <div className="mx-auto max-w-6xl text-left min-[1440px]:max-w-none">
           <div className="px-4">
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-500">
               <span

@@ -1,16 +1,20 @@
+import type { Metadata } from "next";
+
 import Header from "@/components/Header";
-import CategoryPlaceholder from "@/components/services/detail/CategoryPlaceholder";
+import GlobalBusinessSupportHero from "@/components/services/global-business-support/GlobalBusinessSupportHero";
+
+export const metadata: Metadata = {
+  title: "Global Business Support | ITS Intac Solution",
+  description:
+    "Helping businesses expand between Korea and the United States through sourcing, compliance, logistics, and operational execution.",
+};
 
 export default function GlobalBusinessSupportPage() {
   return (
-    <main className="page-shell">
+    <main className="page-shell bg-white">
       <Header />
 
-      <CategoryPlaceholder
-        eyebrow="Global Business Support"
-        title="Global Business Support"
-        description="Business setup, workforce support, and operational assistance for companies entering and growing in the U.S."
-      />
+      <GlobalBusinessSupportHero />
     </main>
   );
 }

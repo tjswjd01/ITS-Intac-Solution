@@ -31,7 +31,7 @@ export default function Header({
   );
 
   return (
-    <header className="fixed left-1/2 top-4 z-50 w-[94%] max-w-[1380px] -translate-x-1/2 md:top-6">
+    <header className="fixed left-1/2 top-4 z-50 w-[94%] max-w-[1380px] -translate-x-1/2 min-[1440px]:max-w-[1520px] md:top-6">
       <div
         className={cn(
           "mx-auto flex items-center justify-between rounded-full border px-4 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.06)] backdrop-blur md:px-6 lg:px-8",

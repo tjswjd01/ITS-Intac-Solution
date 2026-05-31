@@ -26,6 +26,7 @@ const config: Config = {
       },
       maxWidth: {
         shell: "1380px",
+        "shell-desktop": "1520px",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "Helvetica Neue", "Arial", "sans-serif"],

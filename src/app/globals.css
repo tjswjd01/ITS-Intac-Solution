@@ -68,8 +68,9 @@ a {
     color: var(--foreground);
   }
 
+  /* ≤1439px: 1380px shell; ≥1440px desktop: 1520px (~10% wider shell, ~18% vs 1280px) */
   .layout-container {
-    @apply mx-auto w-full max-w-[1380px] px-5 sm:px-6 lg:px-8 xl:px-10;
+    @apply mx-auto w-full max-w-[1380px] px-5 sm:px-6 lg:px-8 xl:px-10 min-[1440px]:max-w-[1520px];
   }
 
   .section-shell {
@@ -116,6 +117,35 @@ a {
     background-clip: text;
     color: transparent;
     animation: heading-metallic-shine 7s ease-in-out infinite;
+  }
+
+  /* Performance Impact — Real-time label shine */
+  @keyframes realtime-text-shine {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .realtime-shiny-text {
+    background-image: linear-gradient(
+      105deg,
+      #062a56 0%,
+      #0a3a86 32%,
+      #3b82f6 46%,
+      #93c5fd 50%,
+      #3b82f6 54%,
+      #0a3a86 68%,
+      #062a56 100%
+    );
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: realtime-text-shine 5s ease-in-out infinite;
   }
 
   .section-copy {

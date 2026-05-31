@@ -1,10 +1,12 @@
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
 type EyebrowTone = "navy" | "black";
 
 type OperationsSectionHeaderProps = {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   description: string;
   className?: string;
   descriptionClassName?: string;

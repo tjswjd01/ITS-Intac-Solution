@@ -132,7 +132,7 @@ function FeatureCard({
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
-              className="flex w-full max-w-[600px] flex-col gap-2"
+              className="flex w-full max-w-[600px] flex-col gap-2 min-[1440px]:max-w-[720px]"
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -144,7 +144,7 @@ function FeatureCard({
               <h3 className="text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1] tracking-[-0.035em] text-[#111111]">
                 {current.title}
               </h3>
-              <p className="max-w-[560px] text-[15px] leading-[1.65] text-[#4B5563]">
+              <p className="max-w-[560px] text-[15px] leading-[1.65] text-[#4B5563] min-[1440px]:max-w-[680px]">
                 {current.description}
               </p>
             </motion.div>
@@ -420,7 +420,7 @@ function OperationsDashboard() {
 
 /** Unified visual stage height for steps 1–4 */
 const VISUAL_STAGE =
-  "relative mx-auto h-[272px] min-h-[272px] w-full max-w-[860px] md:h-[300px] md:min-h-[300px]";
+  "relative mx-auto h-[272px] min-h-[272px] w-full max-w-[860px] md:h-[300px] md:min-h-[300px] min-[1440px]:h-[340px] min-[1440px]:min-h-[340px] min-[1440px]:max-w-[1020px]";
 
 function DualImageLayout({
   back,
@@ -432,7 +432,7 @@ function DualImageLayout({
   return (
     <div className={VISUAL_STAGE}>
       <motion.div
-        className="absolute left-0 top-[2%] z-10 w-[50%] max-w-[400px]"
+        className="absolute left-0 top-[2%] z-10 w-[50%] max-w-[400px] min-[1440px]:max-w-[470px]"
         initial={{ opacity: 0, x: -28, scale: 0.96 }}
         animate={{ opacity: 1, x: 0, scale: 1 }}
         transition={{ type: "spring", stiffness: 240, damping: 26 }}
@@ -440,7 +440,7 @@ function DualImageLayout({
         {back}
       </motion.div>
       <motion.div
-        className="absolute left-[38%] top-[16%] z-20 w-[58%] max-w-[460px]"
+        className="absolute left-[38%] top-[16%] z-20 w-[58%] max-w-[460px] min-[1440px]:max-w-[540px]"
         initial={{ opacity: 0, x: 28, scale: 0.96 }}
         animate={{ opacity: 1, x: 0, scale: 1 }}
         transition={{ type: "spring", stiffness: 240, damping: 26, delay: 0.08 }}
@@ -517,7 +517,7 @@ export function FeatureCarousel({
   return (
     <div
       className={cn(
-        "grid w-full items-start gap-8 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-10 xl:gap-12",
+        "grid w-full items-start gap-8 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-10 xl:gap-12 min-[1440px]:lg:grid-cols-[minmax(0,280px)_minmax(0,1fr)] min-[1440px]:xl:gap-14",
         className,
       )}
     >

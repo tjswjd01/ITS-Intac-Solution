@@ -297,7 +297,7 @@ export default function RadialOrbitalTimeline({
                 ) : null}
 
                 {isExpanded ? (
-                  <Card className="absolute left-1/2 top-[3.25rem] z-[300] w-72 -translate-x-1/2 overflow-visible rounded-xl border-white/20 bg-[#0B1220]/95 shadow-xl shadow-black/40 backdrop-blur-lg">
+                  <Card className="absolute left-1/2 top-[3.25rem] z-[300] w-72 -translate-x-1/2 overflow-visible rounded-xl border-white/20 bg-[#0B1220] text-white shadow-xl shadow-black/40 backdrop-blur-lg">
                     <div
                       className="absolute -top-3 left-1/2 h-3 w-px -translate-x-1/2 bg-white/40"
                       aria-hidden

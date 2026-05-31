@@ -101,7 +101,7 @@ export default function AutomationCoreTechnologies() {
       className="relative scroll-mt-24 border-t border-white/[0.06] bg-[#05080f]"
     >
       <div className="layout-container py-16 md:py-20 lg:py-24">
-        <div className="flex flex-col gap-12 lg:grid lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:gap-x-12 xl:gap-x-16">
+        <div className="flex flex-col gap-12 lg:grid lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:gap-x-12 xl:gap-x-16 min-[1440px]:grid-cols-[minmax(0,0.4fr)_minmax(0,0.6fr)] min-[1440px]:gap-x-20">
           {/* Left — copy + technology list */}
           <div className="flex flex-col lg:max-w-[520px]">
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/55">
@@ -162,15 +162,17 @@ export default function AutomationCoreTechnologies() {
           </div>
 
           {/* Right — orbital diagram */}
-          <div className="relative flex min-h-[min(560px,70vh)] w-full items-center justify-center overflow-visible lg:min-h-[740px]">
-            <RadialOrbitalTimeline
-              timelineData={coreTechnologyNodes}
-              scale={ORBITAL_SCALE}
-              selectedNodeId={selectedNodeId}
-              onSelectedNodeChange={setSelectedNodeId}
-              hideNodeLabels
-              className="w-full max-w-none"
-            />
+          <div className="relative flex min-h-[min(560px,70vh)] w-full items-center justify-center overflow-visible lg:min-h-[740px] min-[1440px]:min-h-[820px]">
+            <div className="w-full min-[1440px]:origin-center min-[1440px]:scale-[1.14]">
+              <RadialOrbitalTimeline
+                timelineData={coreTechnologyNodes}
+                scale={ORBITAL_SCALE}
+                selectedNodeId={selectedNodeId}
+                onSelectedNodeChange={setSelectedNodeId}
+                hideNodeLabels
+                className="w-full max-w-none"
+              />
+            </div>
           </div>
         </div>
       </div>
