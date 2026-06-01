@@ -32,7 +32,7 @@ export default function WorkforceSolutionsHero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden border-b border-black/[0.06] bg-white pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-36 lg:pb-24"
+      className="relative overflow-hidden border-b border-black/[0.06] bg-white pt-28 pb-14 sm:pt-32 sm:pb-16 md:pb-20 lg:pt-36 lg:pb-24"
     >
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
         <GridPattern
@@ -42,26 +42,26 @@ export default function WorkforceSolutionsHero() {
         />
       </div>
 
-      <div className="layout-container relative z-10">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-center text-center lg:max-w-6xl">
+      <div className="layout-container relative z-10 w-full min-w-0">
+        <div className="mx-auto flex w-full min-w-0 max-w-5xl flex-col items-center justify-center text-center lg:max-w-6xl">
           <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
             <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
             Beyond staffing. Managed workforce operations.
           </p>
 
           <h1 className="mt-6 w-full">
-            <span className="block text-[clamp(1.75rem,3.6vw,2.75rem)] font-medium leading-[1.15] tracking-[-0.04em] text-[#0B0F14] lg:whitespace-nowrap">
+            <span className="block text-[clamp(1.5rem,5.5vw,2.75rem)] font-medium leading-[1.2] tracking-[-0.04em] text-[#0B0F14] lg:whitespace-nowrap">
               Scalable workforce solutions for modern operational industries.
             </span>
 
             <span
-              className="relative mx-auto mt-5 flex h-[1.1em] w-full max-w-xl items-center justify-center overflow-hidden text-[clamp(2.75rem,6.5vw,4.75rem)] font-bold leading-none tracking-[-0.04em] text-[#021f45] md:mt-6"
+              className="relative mx-auto mt-5 flex h-[1.1em] w-full max-w-xl items-center justify-center overflow-hidden px-2 text-[clamp(2rem,10vw,4.75rem)] font-bold leading-none tracking-[-0.04em] text-[#021f45] md:mt-6"
               aria-live="polite"
             >
               {words.map((word, index) => (
                 <motion.span
                   key={word}
-                  className="absolute whitespace-nowrap"
+                  className="absolute max-w-full truncate px-1 sm:max-w-none sm:whitespace-nowrap sm:px-0"
                   initial={{ opacity: 0, y: "-100%" }}
                   transition={{ type: "spring", stiffness: 50 }}
                   animate={
@@ -86,11 +86,11 @@ export default function WorkforceSolutionsHero() {
             structured workforce operation.
           </p>
 
-          <div className="mt-8 flex justify-center md:mt-10">
-            <Button
-              href="/contact"
-              className="h-12 gap-2 rounded-full bg-[#062A56] px-7 text-[15px] text-white hover:bg-[#021f45]"
-            >
+            <div className="mt-8 flex justify-center px-2 sm:mt-10">
+              <Button
+                href="/contact"
+                className="h-12 w-full max-w-sm gap-2 rounded-full bg-[#062A56] px-7 text-[15px] text-white hover:bg-[#021f45] sm:w-auto"
+              >
               Request Workforce Support
               <MoveRight className="h-4 w-4" aria-hidden />
             </Button>

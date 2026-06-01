@@ -94,13 +94,13 @@ export default function IssuePreventionVisibility() {
       className="section-shell border-t border-black/[0.06] bg-white"
     >
       <div className="layout-container">
-        <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-start lg:gap-12 xl:gap-16">
+        <div className="grid w-full min-w-0 gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-start lg:gap-12 xl:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.45 }}
-            className="lg:sticky lg:top-28"
+            className="w-full min-w-0 lg:sticky lg:top-28"
           >
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#111111]">
               <span className="h-2 w-2 rounded-full bg-[#111111]" aria-hidden />
@@ -147,6 +147,7 @@ export default function IssuePreventionVisibility() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.45, delay: 0.08 }}
+            className="w-full min-w-0"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2">
               {nemoShowcaseFeatures.map((feature, index) => (

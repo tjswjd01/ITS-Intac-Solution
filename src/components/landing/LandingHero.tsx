@@ -32,18 +32,18 @@ export default function LandingHero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(6,42,86,0.035),transparent_40%)]" />
 
       <div className="layout-container relative">
-        <div className="grid items-center gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:gap-4">
-          <div className="relative z-10 max-w-[640px] pb-2 lg:pb-16">
+        <div className="grid min-w-0 items-center gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:gap-4">
+          <div className="relative z-10 w-full min-w-0 max-w-[640px] pb-2 lg:pb-16">
             <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8B93A1]">
               <span>About ITS</span>
               <span className="h-1.5 w-1.5 rounded-full bg-[#D4D8DE]" />
             </div>
 
-            <h1 className="mt-5 max-w-none text-[2.85rem] font-[500] leading-[1.01] tracking-[-0.042em] text-[#0B0F14] md:text-[3.2rem] lg:text-[3.58rem]">
-              <span className="block md:whitespace-nowrap">
+            <h1 className="mt-5 max-w-none text-[clamp(2rem,8vw,3.58rem)] font-[500] leading-[1.05] tracking-[-0.042em] text-[#0B0F14]">
+              <span className="block lg:whitespace-nowrap">
                 Operational Workforce
               </span>
-              <span className="block md:whitespace-nowrap">
+              <span className="block lg:whitespace-nowrap">
                 Solutions Built on
               </span>
               <span className="block text-[#7F8691]">Experience.</span>
@@ -55,7 +55,7 @@ export default function LandingHero() {
               technical operations, and workforce management.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <a
                 href="/services"
                 className={`${premiumPrimaryCtaClassName} shadow-none hover:shadow-none`}
@@ -73,14 +73,15 @@ export default function LandingHero() {
             </div>
           </div>
 
-          <div className="relative min-h-[320px] lg:-mr-10 lg:min-h-[560px]">
-            <div className="relative h-full overflow-hidden lg:absolute lg:inset-0">
+          <div className="relative w-full min-w-0 lg:-mr-10">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#EEF1F4] sm:aspect-[16/10] lg:absolute lg:inset-0 lg:aspect-auto lg:min-h-[560px] lg:rounded-none lg:border-0">
               <img
                 src="/images/its-hero-bg.png"
                 alt="ITS headquarters building"
                 className="h-full w-full object-cover object-center"
               />
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-[54%] bg-[linear-gradient(90deg,#FCFCFB_0%,rgba(252,252,251,0.98)_18%,rgba(252,252,251,0.88)_38%,rgba(252,252,251,0.44)_62%,rgba(252,252,251,0)_100%)]" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#FCFCFB] to-transparent lg:hidden" />
+              <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[54%] bg-[linear-gradient(90deg,#FCFCFB_0%,rgba(252,252,251,0.98)_18%,rgba(252,252,251,0.88)_38%,rgba(252,252,251,0.44)_62%,rgba(252,252,251,0)_100%)] lg:block" />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.24),transparent_40%)]" />
             </div>
           </div>
@@ -112,7 +113,7 @@ export default function LandingHero() {
           </div>
         </div>
 
-        <div className="mt-12 bg-[#FAF9F6] px-3 py-6 md:px-5 md:py-7 lg:-mr-10">
+        <div className="mt-12 w-full min-w-0 bg-[#FAF9F6] px-3 py-6 md:px-5 md:py-7 lg:-mr-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-center">
             <div className="shrink-0 pl-3 pt-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8B93A1] md:w-[176px] md:pl-6 md:pt-3">
               <span className="block">TRUSTED BY</span>

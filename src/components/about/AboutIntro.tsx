@@ -161,7 +161,7 @@ export default function AboutIntro() {
           </p>
         </motion.div>
 
-        <div className="relative mt-14 grid grid-cols-1 items-stretch gap-10 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_390px_minmax(0,1fr)] lg:gap-8 xl:gap-12">
+        <div className="relative mt-14 grid w-full min-w-0 grid-cols-1 items-stretch gap-10 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_390px_minmax(0,1fr)] lg:gap-8 xl:gap-12">
           <div className="flex flex-col justify-between gap-12 lg:gap-0 lg:py-1">
             {services
               .filter((service) => service.position === "left")
@@ -251,7 +251,7 @@ function VideoMediaCard({ isInView }: { isInView: boolean }) {
 
   return (
     <motion.div
-      className="relative h-[520px] w-full max-w-[390px] overflow-hidden rounded-[28px] border border-black/10 bg-neutral-100 shadow-sm"
+      className="relative aspect-[3/4] w-full max-w-[390px] overflow-hidden rounded-[28px] border border-black/10 bg-neutral-100 shadow-sm sm:aspect-[4/5] sm:h-auto sm:max-h-[520px] lg:h-[520px] lg:aspect-auto"
       initial={{ opacity: 0, y: 12 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
       transition={{ duration: 0.55, ease: "easeOut" }}

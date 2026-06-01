@@ -109,8 +109,22 @@ export default function IndustrySupportAreas() {
         />
 
         <div className="mt-12 flex flex-col gap-10 lg:mt-14 lg:flex-row lg:items-start lg:gap-8 xl:gap-10">
-          {/* Left: masonry photos (~70%) */}
-          <div className="flex min-w-0 flex-[7] justify-center gap-2.5 sm:gap-3 md:gap-4 lg:justify-start">
+          <div className="grid min-w-0 flex-[7] grid-cols-1 gap-4 sm:grid-cols-2 lg:hidden">
+            {industryPhotos.map((photo) => (
+              <div
+                key={photo.title}
+                className="overflow-hidden rounded-2xl border border-black/[0.06] bg-[#F4F6F8] aspect-[4/5]"
+              >
+                <img
+                  src={photo.image}
+                  alt={photo.imageAlt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden min-w-0 flex-[7] justify-center gap-2.5 sm:gap-3 md:gap-4 lg:flex lg:justify-start">
             <div className="flex flex-col gap-2.5 sm:gap-3 md:gap-4">
               {col1.map((photo) => (
                 <div

@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import { cn } from "@/lib/utils";
+
 type AccordionItemData = {
   id: number;
   title: string;
@@ -68,16 +70,21 @@ const DEFAULT_ACTIVE_INDEX = 0;
 type AccordionItemProps = {
   item: AccordionItemData;
   isActive: boolean;
-  onMouseEnter: () => void;
+  onActivate: () => void;
 };
 
-function AccordionItem({ item, isActive, onMouseEnter }: AccordionItemProps) {
+function AccordionItem({ item, isActive, onActivate }: AccordionItemProps) {
   return (
-    <div
-      className={`relative h-[320px] shrink-0 cursor-pointer overflow-hidden rounded-2xl bg-black transition-all duration-700 ease-in-out sm:h-[400px] md:h-[460px] ${
-        isActive ? "w-[280px] md:w-[380px]" : "w-16"
-      }`}
-      onMouseEnter={onMouseEnter}
+    <button
+      type="button"
+      aria-expanded={isActive}
+      className={cn(
+        "relative h-[320px] shrink-0 cursor-pointer overflow-hidden rounded-2xl bg-black text-left transition-all duration-700 ease-in-out sm:h-[400px] md:h-[460px]",
+        isActive ? "w-[280px] md:w-[380px]" : "w-16 max-md:hidden",
+      )}
+      onMouseEnter={onActivate}
+      onFocus={onActivate}
+      onClick={onActivate}
     >
       <img
         src={item.imageUrl}
@@ -106,11 +113,66 @@ function AccordionItem({ item, isActive, onMouseEnter }: AccordionItemProps) {
           </p>
         </div>
       ) : (
-        <span className="absolute bottom-24 left-1/2 w-auto -translate-x-1/2 rotate-90 whitespace-nowrap text-left text-base font-semibold text-white transition-all duration-300 ease-in-out md:text-lg">
+        <span className="absolute bottom-24 left-1/2 hidden w-auto -translate-x-1/2 rotate-90 whitespace-nowrap text-left text-base font-semibold text-white transition-all duration-300 ease-in-out md:block md:text-lg">
           {item.title}
         </span>
       )}
-    </div>
+    </button>
+  );
+}
+
+function MobileServiceCard({
+  item,
+  isActive,
+  onActivate,
+}: AccordionItemProps) {
+  return (
+    <button
+      type="button"
+      aria-expanded={isActive}
+      onClick={onActivate}
+      className={cn(
+        "w-full overflow-hidden rounded-2xl border text-left transition-all",
+        isActive
+          ? "border-[#0A3A86]/25 shadow-[0_12px_32px_rgba(10,58,134,0.12)]"
+          : "border-[#E5E7EB] bg-white",
+      )}
+    >
+      {isActive ? (
+        <div className="relative min-h-[220px]">
+          <img
+            src={item.imageUrl}
+            alt={item.title}
+            className="absolute inset-0 h-full w-full object-cover brightness-75"
+            onError={(event) => {
+              const target = event.currentTarget;
+              if (target.src.endsWith(FALLBACK_IMAGE)) return;
+              target.onerror = null;
+              target.src = FALLBACK_IMAGE;
+            }}
+          />
+          <div className="absolute inset-0 bg-black/65" />
+          <div className="relative p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70">
+              Featured Service
+            </p>
+            <h3 className="mt-2 text-lg font-semibold tracking-[-0.03em] text-white">
+              {item.title}
+            </h3>
+            <p className="mt-2 text-[13px] leading-[1.6] text-white/78">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div className="flex items-center justify-between px-4 py-4">
+          <span className="text-[15px] font-semibold text-[#0B0F14]">
+            {item.title}
+          </span>
+          <span className="text-[#0A3A86]">+</span>
+        </div>
+      )}
+    </button>
   );
 }
 
@@ -118,17 +180,17 @@ export default function ServicesHero2() {
   const [activeIndex, setActiveIndex] = useState(DEFAULT_ACTIVE_INDEX);
 
   return (
-    <section className="section-shell pt-32 md:pt-40">
+    <section className="section-shell pt-28 sm:pt-32 md:pt-40">
       <div className="layout-container">
-        <div className="premium-card overflow-hidden rounded-[32px] bg-white px-6 py-10 md:px-8 md:py-12 lg:px-10">
-          <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between">
+        <div className="premium-card overflow-hidden rounded-[32px] bg-white px-5 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-10">
+          <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
             <div className="w-full text-center lg:w-[42%] lg:text-left">
               <p className="eyebrow justify-center lg:justify-start">
                 <span className="h-2 w-2 rounded-full bg-[#0B3D91]" aria-hidden />
                 Our Services
               </p>
 
-              <h1 className="section-title mx-auto mt-5 max-w-[16ch] lg:mx-0">
+              <h1 className="section-title mx-auto mt-5 max-w-none lg:mx-0 lg:max-w-[16ch]">
                 Operational services built for real-world execution.
               </h1>
 
@@ -139,20 +201,31 @@ export default function ServicesHero2() {
               </p>
 
               <div className="mt-8">
-                <Link href="/contact" className="btn-primary">
+                <Link href="/contact" className="btn-primary w-full sm:w-auto">
                   Get In Touch
                 </Link>
               </div>
             </div>
 
             <div className="w-full lg:w-[58%]">
-              <div className="flex flex-row items-center justify-start gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:justify-center md:gap-4 md:pb-0 [&::-webkit-scrollbar]:hidden">
+              <div className="flex flex-col gap-3 md:hidden">
+                {accordionItems.map((item, index) => (
+                  <MobileServiceCard
+                    key={item.id}
+                    item={item}
+                    isActive={index === activeIndex}
+                    onActivate={() => setActiveIndex(index)}
+                  />
+                ))}
+              </div>
+
+              <div className="hidden flex-row items-center justify-start gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:flex md:justify-center md:gap-4 md:pb-0 [&::-webkit-scrollbar]:hidden">
                 {accordionItems.map((item, index) => (
                   <AccordionItem
                     key={item.id}
                     item={item}
                     isActive={index === activeIndex}
-                    onMouseEnter={() => setActiveIndex(index)}
+                    onActivate={() => setActiveIndex(index)}
                   />
                 ))}
               </div>

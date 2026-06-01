@@ -35,7 +35,7 @@ export default function LandingWhatWeDo() {
   ];
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white section-shell">
       <div className="layout-container">
         {/* TOP */}
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -66,14 +66,14 @@ export default function LandingWhatWeDo() {
           {services.map((service, index) => (
             <div
               key={service.number}
-              className={`grid gap-5 px-7 py-6 md:grid-cols-[0.22fr_0.78fr] lg:px-10 lg:py-7 ${service.bg} ${
+              className={`grid gap-5 px-5 py-6 sm:px-7 md:grid-cols-[0.22fr_0.78fr] lg:px-10 lg:py-7 ${service.bg} ${
                 index !== services.length - 1
                   ? "border-b border-[#EDF1F5]"
                   : ""
               }`}
             >
               {/* LEFT SIDE */}
-              <div className="border-r border-[#E6EBF1] pr-5">
+              <div className="border-b border-[#E6EBF1] pb-4 md:border-b-0 md:border-r md:pb-0 md:pr-5">
                 <p className="text-[18px] font-semibold tracking-[-0.03em] text-[#123D8F]">
                   {service.number}
                 </p>

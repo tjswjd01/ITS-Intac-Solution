@@ -165,13 +165,13 @@ export default function FieldOperationsGallery() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-4 xl:auto-rows-[190px]">
+        <div className="mt-12 grid w-full min-w-0 grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-4 xl:auto-rows-[190px]">
           {mediaItems.map((item) => (
             <GalleryMedia key={item.src} item={item} />
           ))}
         </div>
 
-        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 xl:mt-5 xl:grid-cols-4 xl:auto-rows-[190px]">
+        <div className="mt-4 grid w-full min-w-0 grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 xl:mt-5 xl:grid-cols-4 xl:auto-rows-[190px]">
           {bottomRowMedia.map((item) => (
             <GalleryMedia key={item.src} item={item} />
           ))}

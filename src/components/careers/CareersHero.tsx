@@ -86,12 +86,12 @@ export default function CareersHero() {
   }, [search, department]);
 
   return (
-    <section className="section-shell overflow-hidden bg-[#FAFAF8] pt-32 md:pt-40">
+    <section className="section-shell overflow-hidden bg-[#FAFAF8] pt-28 sm:pt-32 md:pt-40">
       <div className="layout-container">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="eyebrow">Careers at ITS</p>
-            <h1 className="section-title mt-5 max-w-[11ch]">
+            <h1 className="section-title mt-5 max-w-none lg:max-w-[11ch]">
               Build systems. Support teams. Grow with purpose.
             </h1>
             <p className="section-copy mt-6 max-w-[580px]">
@@ -117,7 +117,7 @@ export default function CareersHero() {
             <ImageSurface
               src="/images/placeholder-photo.svg"
               alt="ITS team collaboration"
-              className="premium-card min-h-[420px] rounded-[32px]"
+              className="premium-card min-h-[280px] rounded-[32px] sm:min-h-[420px]"
               overlayClassName="bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(2,31,69,0.24))]"
             />
 
@@ -202,7 +202,7 @@ export default function CareersHero() {
                 filteredJobs.map((job, index) => (
                   <div
                     key={job.id}
-                    className={`flex items-center justify-between gap-4 px-6 py-5 ${
+                    className={`flex flex-col gap-3 px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6 ${
                       index !== filteredJobs.length - 1 ? "border-b border-[#E5E7EB]" : ""
                     }`}
                   >

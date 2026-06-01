@@ -134,9 +134,9 @@ export default function LandingWhyChoose() {
   const active = benefits[activeIndex];
 
   return (
-    <section className="bg-white py-24">
-      <div className="layout-container">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <section className="bg-white py-16 md:py-24">
+      <div className="layout-container w-full min-w-0">
+        <div className="grid w-full min-w-0 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#5F6B7A]">
               <span className="h-2 w-2 rounded-full bg-[#062A56]" />
@@ -168,7 +168,7 @@ export default function LandingWhyChoose() {
                     key={item.number}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`group grid w-full grid-cols-[64px_1fr_40px] items-center gap-5 border-b border-[#E5E7EB] px-7 py-7 text-left transition active:scale-[0.99] last:border-b-0 ${
+                    className={`group grid w-full grid-cols-[48px_1fr_36px] items-center gap-3 border-b border-[#E5E7EB] px-4 py-5 text-left transition active:scale-[0.99] last:border-b-0 sm:grid-cols-[64px_1fr_40px] sm:gap-5 sm:px-7 sm:py-7 ${
                       isActive
                         ? "bg-[#F6F9FF] shadow-[inset_-18px_0_28px_rgba(10,58,134,0.06)]"
                         : "bg-white hover:bg-[#FAFBFC]"
@@ -220,7 +220,7 @@ export default function LandingWhyChoose() {
               })}
             </div>
 
-            <div className="relative flex items-start justify-center overflow-hidden px-8 py-14 md:px-12 lg:px-16">
+            <div className="relative flex items-start justify-center overflow-hidden px-5 py-10 sm:px-8 md:px-12 lg:px-16 lg:py-14">
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#F6F9FF] via-[#F8FBFF] to-white opacity-90" />
               <div className="pointer-events-none absolute left-0 top-0 h-full w-[1px] bg-[#DCE7F8]" />
               <div className="pointer-events-none absolute left-0 top-1/2 h-[65%] w-[120px] -translate-y-1/2 bg-[#EAF2FF] blur-3xl opacity-70" />
@@ -233,11 +233,11 @@ export default function LandingWhyChoose() {
                   {active.description}
                 </p>
 
-                <div className="mt-9 grid gap-4 md:grid-cols-4">
+                <div className="mt-9 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
                   {active.points.map((point) => (
                     <div
                       key={point.title}
-                      className="flex min-h-[270px] flex-col items-center border-l border-[#E5E7EB] px-4 first:border-l-0"
+                      className="flex min-h-[220px] flex-col items-center border-l border-[#E5E7EB] px-3 first:border-l-0 sm:min-h-[270px] sm:px-4"
                     >
                       <div className="mx-auto flex h-6 w-6 items-center justify-center">
                         {"icon" in point && point.icon ? (

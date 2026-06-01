@@ -6,7 +6,7 @@ export default function ContactSection() {
   const [type, setType] = useState<"job" | "service">("service");
 
   return (
-    <section className="section-shell overflow-hidden bg-[#FAFAF8] pt-32 md:pt-40">
+    <section className="section-shell overflow-hidden bg-[#FAFAF8] pt-28 sm:pt-32 md:pt-40">
       <div className="layout-container">
         <div className="mx-auto mb-12 max-w-[760px] text-center">
           <p className="eyebrow justify-center">Contact Us</p>
@@ -19,7 +19,7 @@ export default function ContactSection() {
 
         <div className="premium-card overflow-hidden">
           <div className="grid lg:grid-cols-[0.34fr_0.66fr]">
-            <div className="featured-card border-0 rounded-none px-6 py-8 text-white md:px-8 md:py-10">
+            <div className="featured-card order-2 border-0 rounded-none px-6 py-8 text-white md:px-8 md:py-10 lg:order-1">
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/70">
                 Reach the right team
               </p>
@@ -42,7 +42,7 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="bg-white p-6 md:p-8 lg:p-10">
+            <div className="order-1 bg-white p-6 md:p-8 lg:order-2 lg:p-10">
               <div className="mb-8 grid gap-4 md:grid-cols-2">
                 <ToggleCard
                   title="Looking for a Service"
@@ -141,7 +141,7 @@ export default function ContactSection() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary ml-auto">
+                <button type="submit" className="btn-primary w-full sm:ml-auto sm:w-auto">
                   Send Message
                 </button>
               </form>

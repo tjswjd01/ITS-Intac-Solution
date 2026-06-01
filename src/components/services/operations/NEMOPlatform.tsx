@@ -46,7 +46,7 @@ export default function NEMOPlatform() {
           </p>
         </div>
 
-        <div className="relative mt-14 rounded-[32px] border border-black/[0.06] bg-[#F6F8FA] p-3 shadow-[0_20px_70px_rgba(15,23,42,0.08)] md:-mx-4 lg:-mx-8">
+        <div className="relative mt-14 overflow-hidden rounded-[32px] border border-black/[0.06] bg-[#F6F8FA] p-3 shadow-[0_20px_70px_rgba(15,23,42,0.08)] lg:-mx-4 lg:p-3 xl:-mx-8">
           <div className="relative aspect-[88/36] overflow-hidden rounded-[24px] bg-[#EDEFF3]">
             <div className="absolute inset-x-0 bottom-0 z-20 h-1/3 bg-gradient-to-t from-[#F6F8FA] to-transparent" />
 

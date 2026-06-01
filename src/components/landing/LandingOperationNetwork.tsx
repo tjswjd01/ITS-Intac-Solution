@@ -13,7 +13,7 @@ export default function LandingOperationNetwork() {
               Nationwide Service Coverage
             </p>
 
-            <h2 className="section-title mt-5 max-w-[11ch]">
+            <h2 className="section-title mt-5 max-w-none lg:max-w-[11ch]">
               Based in Dallas. Built to support teams across the U.S.
             </h2>
 
@@ -28,9 +28,9 @@ export default function LandingOperationNetwork() {
             </a>
           </div>
 
-          <div className="relative flex min-h-[380px] items-center justify-center lg:min-h-[460px]">
+          <div className="relative flex min-h-[280px] items-center justify-center sm:min-h-[340px] lg:min-h-[460px]">
             <div className="pointer-events-none absolute aspect-square w-full max-w-[580px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.98)_0%,rgba(250,250,248,0.55)_48%,transparent_74%)]" />
-            <Globe className="relative z-10 mx-auto aspect-square w-full max-w-[580px]" />
+            <Globe className="relative z-10 mx-auto aspect-square w-full max-w-[min(100%,580px)]" />
           </div>
         </div>
       </div>

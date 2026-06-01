@@ -1,4 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import ServicesNavDropdown from "./ServicesNavDropdown";
 import { ShinyButton } from "./ui/ShinyButton";
@@ -11,16 +16,177 @@ const navItems = [
   { href: "/contact", label: "Contact Us" },
 ];
 
+const mobileServiceLinks = [
+  {
+    href: "/services/operations",
+    label: "Operations",
+    subtext: "Refurbishment, QA, packaging, and operational support.",
+  },
+  {
+    href: "/services/workforce-solutions",
+    label: "Workforce Solutions",
+    subtext: "Operational workforce coordination and staffing support.",
+  },
+  {
+    href: "/services/automation-solutions",
+    label: "Automation Solutions",
+    subtext: "Workflow optimization and operational automation support.",
+  },
+  {
+    href: "/services/global-business-support",
+    label: "Global Business Support",
+    subtext: "Operational setup and bilingual support for Korean companies.",
+  },
+];
+
 type HeaderProps = {
   variant?: "default" | "dark";
-  /** Automation page: black ShinyButton with restrained silver shine. */
   ctaVariant?: "primary" | "pro";
 };
+
+function MobileServicesDropdown({
+  isDark,
+  onNavigate,
+}: {
+  isDark: boolean;
+  onNavigate?: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [panelTop, setPanelTop] = useState(72);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!open || !buttonRef.current) return;
+
+    const updatePosition = () => {
+      const rect = buttonRef.current?.getBoundingClientRect();
+      if (rect) {
+        setPanelTop(rect.bottom + 8);
+      }
+    };
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition, { passive: true });
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("touchstart", handlePointerDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("touchstart", handlePointerDown);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+
+  const close = () => {
+    setOpen(false);
+    onNavigate?.();
+  };
+
+  return (
+    <div ref={containerRef} className="relative shrink-0 lg:hidden">
+      <button
+        ref={buttonRef}
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        onClick={() => setOpen((current) => !current)}
+        className={cn(
+          "inline-flex min-h-10 items-center gap-1 rounded-full border px-3 py-2 text-[13px] font-semibold transition sm:px-3.5 sm:text-[14px]",
+          isDark
+            ? "border-white/25 bg-white/10 text-white hover:bg-white/15"
+            : "border-[#0A3A86]/25 bg-[#EEF3FA] text-[#0A3A86] hover:bg-[#E3ECFA]",
+        )}
+      >
+        Services
+        <ChevronDown
+          className={cn("h-4 w-4 shrink-0 transition-transform", open && "rotate-180")}
+          aria-hidden
+        />
+      </button>
+
+      {open && mounted
+        ? createPortal(
+            <>
+              <button
+                type="button"
+                aria-label="Close services menu"
+                className="fixed inset-0 z-[55] bg-[#0B0F14]/25 lg:hidden"
+                onClick={close}
+              />
+              <div
+                className="fixed inset-x-3 z-[60] lg:hidden sm:inset-x-4"
+                style={{ top: panelTop }}
+              >
+                <div className="mx-auto w-full max-w-[1380px] rounded-2xl border border-black/10 bg-white p-2 shadow-[0_18px_50px_rgba(15,23,42,0.16)]">
+                  {mobileServiceLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block rounded-xl px-3 py-3 transition active:bg-[#F3F6FA] hover:bg-[#F3F6FA]"
+                      onClick={close}
+                    >
+                      <span className="block text-[14px] font-semibold leading-snug text-[#0B0F14]">
+                        {link.label}
+                      </span>
+                      <span className="mt-1 block text-[12px] leading-[1.5] text-[#64748B]">
+                        {link.subtext}
+                      </span>
+                    </Link>
+                  ))}
+                  <Link
+                    href="/services"
+                    className="mt-1 block rounded-xl px-3 py-2.5 text-[13px] font-medium text-[#0A3A86] active:bg-[#F3F6FA] hover:bg-[#F3F6FA]"
+                    onClick={close}
+                  >
+                    View all services →
+                  </Link>
+                </div>
+              </div>
+            </>,
+            document.body,
+          )
+        : null}
+    </div>
+  );
+}
 
 export default function Header({
   variant = "default",
   ctaVariant = "primary",
 }: HeaderProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const isDark = variant === "dark";
 
   const navLinkClassName = cn(
@@ -30,53 +196,215 @@ export default function Header({
       : "text-[#0B0F14] hover:text-[#0B3D91]",
   );
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setMobileOpen(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const ctaClassName = cn(
+    premiumPrimaryCtaClassName,
+    "min-h-11 px-5 py-2.5 text-[14px] md:px-6 md:py-3",
+  );
+
   return (
-    <header className="fixed left-1/2 top-4 z-50 w-[94%] max-w-[1380px] -translate-x-1/2 min-[1440px]:max-w-[1520px] md:top-6">
-      <div
-        className={cn(
-          "mx-auto flex items-center justify-between rounded-full border px-4 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.06)] backdrop-blur md:px-6 lg:px-8",
-          isDark
-            ? "border-white/20 bg-white/[0.08]"
-            : "border-[#E5E7EB] bg-white/92",
-        )}
-      >
-        <Link href="/" className="flex items-center">
-          <img
-            src={isDark ? "/images/its-logo-full-white.png" : "/images/its-logo.png"}
-            alt="ITS Logo"
-            className="h-8 w-auto object-contain md:h-9"
-          />
-        </Link>
-
-        <nav className="hidden items-center gap-8 lg:flex">
-          <Link href="/about" className={navLinkClassName}>
-            About Us
+    <>
+      <header className="fixed inset-x-3 top-3 z-50 mx-auto max-w-[1380px] min-[1440px]:max-w-[1520px] sm:inset-x-4 sm:top-4 md:top-6">
+        <div
+          className={cn(
+            "relative mx-auto flex min-w-0 items-center justify-between gap-2 rounded-full border px-3 py-2.5 shadow-[0_14px_40px_rgba(15,23,42,0.06)] backdrop-blur sm:gap-3 sm:px-4 sm:py-3 md:px-6 lg:px-8",
+            isDark
+              ? "border-white/20 bg-white/[0.08]"
+              : "border-[#E5E7EB] bg-white/92",
+          )}
+        >
+          <Link href="/" className="flex min-w-0 shrink items-center">
+            <img
+              src={
+                isDark
+                  ? "/images/its-logo-full-white.png"
+                  : "/images/its-logo.png"
+              }
+              alt="ITS Logo"
+              className="h-7 w-auto max-w-[120px] object-contain sm:h-8 sm:max-w-none md:h-9"
+            />
           </Link>
-          <ServicesNavDropdown variant={variant} />
-          {navItems.slice(1).map((item) => (
-            <Link key={item.href} href={item.href} className={navLinkClassName}>
-              {item.label}
+
+          <nav className="hidden items-center gap-8 lg:flex">
+            <Link href="/about" className={navLinkClassName}>
+              About Us
             </Link>
-          ))}
-        </nav>
+            <ServicesNavDropdown variant={variant} />
+            {navItems.slice(1).map((item) => (
+              <Link key={item.href} href={item.href} className={navLinkClassName}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-        {ctaVariant === "pro" ? (
-          <ShinyButton
-            href="/contact"
-            variant="pro"
-            className="min-h-11 px-5 py-2.5 text-[14px] md:px-6 md:py-3"
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
+            <MobileServicesDropdown
+              isDark={isDark}
+              onNavigate={() => setMobileOpen(false)}
+            />
+
+            {ctaVariant === "pro" ? (
+              <ShinyButton
+                href="/contact"
+                variant="pro"
+                className="hidden min-h-11 px-5 py-2.5 text-[14px] lg:inline-flex md:px-6 md:py-3"
+              >
+                Get In Touch
+              </ShinyButton>
+            ) : (
+              <Link
+                href="/contact"
+                className={cn(ctaClassName, "hidden lg:inline-flex")}
+              >
+                Get In Touch
+              </Link>
+            )}
+
+            <button
+              type="button"
+              aria-expanded={mobileOpen}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMobileOpen((open) => !open)}
+              className={cn(
+                "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition lg:hidden",
+                isDark
+                  ? "border-white/25 bg-white/10 text-white hover:bg-white/15"
+                  : "border-[#D1D5DB] bg-white text-[#0B0F14] shadow-sm hover:bg-[#F8FAFC]",
+              )}
+            >
+              {mobileOpen ? (
+                <X className="h-5 w-5" aria-hidden />
+              ) : (
+                <Menu className="h-5 w-5" aria-hidden />
+              )}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {mobileOpen ? (
+        <div className="fixed inset-0 z-40 lg:hidden">
+          <button
+            type="button"
+            aria-label="Close menu"
+            className="absolute inset-0 bg-[#0B0F14]/40 backdrop-blur-[2px]"
+            onClick={() => setMobileOpen(false)}
+          />
+
+          <div
+            className={cn(
+              "absolute right-0 top-0 flex h-full w-[min(100%,320px)] flex-col border-l px-5 pb-8 pt-24 shadow-2xl",
+              isDark
+                ? "border-white/10 bg-[#0B0F14] text-white"
+                : "border-[#E5E7EB] bg-white text-[#0B0F14]",
+            )}
           >
-            Get In Touch
-          </ShinyButton>
-        ) : (
-          <Link
-            href="/contact"
-            className={`${premiumPrimaryCtaClassName} min-h-11 px-5 py-2.5 text-[14px] md:px-6 md:py-3`}
-          >
-            Get In Touch
-          </Link>
-        )}
-      </div>
-    </header>
+            <nav className="flex flex-1 flex-col gap-1 overflow-y-auto">
+              <Link
+                href="/about"
+                className={cn(
+                  "rounded-xl px-3 py-3 text-[16px] font-medium",
+                  isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                )}
+                onClick={() => setMobileOpen(false)}
+              >
+                About Us
+              </Link>
+
+              <div className="mt-2">
+                <p
+                  className={cn(
+                    "px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em]",
+                    isDark ? "text-white/50" : "text-[#64748B]",
+                  )}
+                >
+                  Services
+                </p>
+                {mobileServiceLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "block rounded-xl px-3 py-2.5 text-[15px] font-medium",
+                      isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                    )}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/services"
+                  className={cn(
+                    "block rounded-xl px-3 py-2.5 text-[14px]",
+                    isDark
+                      ? "text-white/65 hover:bg-white/8"
+                      : "text-[#64748B] hover:bg-[#F4F7FB]",
+                  )}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  View all services
+                </Link>
+              </div>
+
+              {navItems.slice(1).map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "rounded-xl px-3 py-3 text-[16px] font-medium",
+                    isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                  )}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div
+              className={cn(
+                "mt-6 border-t pt-6",
+                isDark ? "border-white/10" : "border-black/[0.06]",
+              )}
+            >
+              {ctaVariant === "pro" ? (
+                <ShinyButton
+                  href="/contact"
+                  variant="pro"
+                  className="min-h-11 w-full justify-center"
+                >
+                  Get In Touch
+                </ShinyButton>
+              ) : (
+                <Link
+                  href="/contact"
+                  className={cn(ctaClassName, "w-full justify-center")}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Get In Touch
+                </Link>
+              )}
+            </div>
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 }

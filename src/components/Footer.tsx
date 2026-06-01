@@ -64,8 +64,8 @@ export default function Footer() {
         <div className="absolute inset-y-0 w-1/2 animate-footer-shine bg-[linear-gradient(90deg,transparent_0%,rgba(10,58,134,0.14)_35%,rgba(17,17,17,0.55)_50%,rgba(10,58,134,0.14)_65%,transparent_100%)] shadow-[0_0_20px_rgba(10,58,134,0.22),0_0_8px_rgba(17,17,17,0.12)]" />
       </div>
 
-      <div className="layout-container py-14 md:py-16 lg:py-20">
-        <div className="flex flex-col gap-12 lg:grid lg:grid-cols-[minmax(0,1.35fr)_repeat(3,minmax(0,1fr))] lg:gap-0 lg:gap-y-0">
+      <div className="layout-container py-12 sm:py-14 md:py-16 lg:py-20">
+        <div className="flex flex-col gap-10 sm:grid sm:grid-cols-2 sm:gap-12 lg:grid lg:grid-cols-[minmax(0,1.35fr)_repeat(3,minmax(0,1fr))] lg:gap-0">
           <div className="max-w-md lg:pr-12">
             <Link href="/" className="inline-block">
               <Image
