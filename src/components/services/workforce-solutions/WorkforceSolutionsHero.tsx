@@ -55,13 +55,13 @@ export default function WorkforceSolutionsHero() {
             </span>
 
             <span
-              className="relative mx-auto mt-5 flex h-[1.1em] w-full max-w-xl items-center justify-center overflow-hidden px-2 text-[clamp(2rem,10vw,4.75rem)] font-bold leading-none tracking-[-0.04em] text-[#021f45] md:mt-6"
+              className="relative mx-auto mt-5 flex min-h-[1.3em] w-full max-w-xl items-center justify-center overflow-hidden px-2 pb-1 text-[clamp(2rem,10vw,4.75rem)] font-bold leading-[1.15] tracking-[-0.04em] text-[#021f45] md:mt-6"
               aria-live="polite"
             >
               {words.map((word, index) => (
                 <motion.span
                   key={word}
-                  className="absolute max-w-full truncate px-1 sm:max-w-none sm:whitespace-nowrap sm:px-0"
+                  className="absolute max-w-full px-1 sm:max-w-none sm:whitespace-nowrap sm:px-0"
                   initial={{ opacity: 0, y: "-100%" }}
                   transition={{ type: "spring", stiffness: 50 }}
                   animate={

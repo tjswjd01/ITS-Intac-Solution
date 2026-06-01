@@ -54,10 +54,9 @@ export function HeroHighlight({
   return (
     <div
       className={cn(
-        "group relative flex w-full",
-        variant === "default" &&
-          "h-[40rem] items-center justify-center bg-white dark:bg-black",
-        variant === "subtle" && "h-auto items-stretch justify-stretch bg-transparent",
+        "group relative flex w-full bg-white dark:bg-white",
+        variant === "default" && "h-[40rem] items-center justify-center",
+        variant === "subtle" && "h-auto items-center justify-center bg-transparent",
         containerClassName,
       )}
       onMouseMove={handleMouseMove}
@@ -69,12 +68,6 @@ export function HeroHighlight({
         )}
         style={dotPattern(baseDotColor)}
       />
-      {!isSubtle ? (
-        <div
-          className="pointer-events-none absolute inset-0 opacity-0 dark:opacity-70"
-          style={dotPattern("rgb(38 38 38)")}
-        />
-      ) : null}
       <motion.div
         className={cn(
           "pointer-events-none absolute inset-0 opacity-0 transition duration-500",
@@ -87,7 +80,9 @@ export function HeroHighlight({
         }}
       />
 
-      <div className={cn("relative z-20", className)}>{children}</div>
+      <div className={cn("relative z-20 flex w-full justify-center", className)}>
+        {children}
+      </div>
     </div>
   );
 }
