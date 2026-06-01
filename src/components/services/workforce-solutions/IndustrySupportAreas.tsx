@@ -6,43 +6,31 @@ const industryPhotos = [
     title: "Mobile Refurbishment",
     image: "/images/its-refurbish.png",
     imageAlt: "Mobile refurbishment workforce operations",
-    className:
-      "h-[176px] w-[164px] sm:h-[210px] sm:w-[196px] md:h-[252px] md:w-[236px] lg:h-[296px] lg:w-[276px] xl:h-[330px] xl:w-[308px]",
   },
   {
     title: "Warehouse Operations",
     image: "/images/who-warehouse.jpeg",
     imageAlt: "Warehouse operations workforce",
-    className:
-      "h-[192px] w-[180px] sm:h-[228px] sm:w-[214px] md:h-[274px] md:w-[258px] lg:h-[322px] lg:w-[300px] xl:h-[358px] xl:w-[334px]",
   },
   {
     title: "Quality Assurance",
     image: "/images/its-qa.png",
     imageAlt: "Quality assurance workforce operations",
-    className:
-      "h-[168px] w-[156px] sm:h-[200px] sm:w-[186px] md:h-[240px] md:w-[224px] lg:h-[282px] lg:w-[262px] xl:h-[314px] xl:w-[292px]",
   },
   {
     title: "Packaging & Fulfillment",
-    image: "/images/services/packaging-logistics.jpg",
+    image: "/images/who-warehouse.jpeg",
     imageAlt: "Packaging and fulfillment workforce",
-    className:
-      "h-[184px] w-[172px] sm:h-[218px] sm:w-[204px] md:h-[262px] md:w-[246px] lg:h-[308px] lg:w-[288px] xl:h-[342px] xl:w-[318px]",
   },
   {
     title: "Manufacturing Support",
     image: "/images/its-automation.jpeg",
     imageAlt: "Manufacturing support workforce",
-    className:
-      "h-[200px] w-[188px] sm:h-[238px] sm:w-[224px] md:h-[286px] md:w-[270px] lg:h-[336px] lg:w-[316px] xl:h-[374px] xl:w-[350px]",
   },
   {
     title: "Administrative & Office Support",
     image: "/images/who-team.jpeg",
     imageAlt: "Administrative and office support workforce",
-    className:
-      "h-[172px] w-[160px] sm:h-[204px] sm:w-[190px] md:h-[246px] md:w-[230px] lg:h-[290px] lg:w-[270px] xl:h-[322px] xl:w-[300px]",
   },
 ] as const;
 
@@ -89,6 +77,29 @@ const industryItems = [
   },
 ] as const;
 
+function IndustryPhotoCard({
+  photo,
+  className,
+}: {
+  photo: (typeof industryPhotos)[number];
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "overflow-hidden rounded-2xl border border-black/[0.06] bg-[#F4F6F8] aspect-[4/5] w-full",
+        className,
+      )}
+    >
+      <img
+        src={photo.image}
+        alt={photo.imageAlt}
+        className="h-full w-full object-cover"
+      />
+    </div>
+  );
+}
+
 export default function IndustrySupportAreas() {
   const col1 = industryPhotos.filter((_, index) => index % 3 === 0);
   const col2 = industryPhotos.filter((_, index) => index % 3 === 1);
@@ -108,84 +119,38 @@ export default function IndustrySupportAreas() {
           eyebrowTone="black"
         />
 
-        <div className="mt-12 flex flex-col gap-10 lg:mt-14 lg:flex-row lg:items-start lg:gap-8 xl:gap-10">
-          <div className="grid min-w-0 flex-[7] grid-cols-1 gap-4 sm:grid-cols-2 lg:hidden">
+        <div className="mt-12 grid w-full min-w-0 grid-cols-1 gap-10 lg:mt-14 lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] lg:items-start lg:gap-10 xl:grid-cols-[minmax(0,1fr)_380px] xl:gap-12">
+          <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:hidden">
             {industryPhotos.map((photo) => (
-              <div
-                key={photo.title}
-                className="overflow-hidden rounded-2xl border border-black/[0.06] bg-[#F4F6F8] aspect-[4/5]"
-              >
-                <img
-                  src={photo.image}
-                  alt={photo.imageAlt}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+              <IndustryPhotoCard key={photo.title} photo={photo} />
             ))}
           </div>
 
-          <div className="hidden min-w-0 flex-[7] justify-center gap-2.5 sm:gap-3 md:gap-4 lg:flex lg:justify-start">
-            <div className="flex flex-col gap-2.5 sm:gap-3 md:gap-4">
+          <div className="hidden min-w-0 grid-cols-3 gap-3 lg:grid xl:gap-4">
+            <div className="flex min-w-0 flex-col gap-3 xl:gap-4">
               {col1.map((photo) => (
-                <div
-                  key={photo.title}
-                  className={cn(
-                    "overflow-hidden rounded-2xl border border-black/[0.06] bg-[#F4F6F8]",
-                    photo.className,
-                  )}
-                >
-                  <img
-                    src={photo.image}
-                    alt={photo.imageAlt}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                <IndustryPhotoCard key={photo.title} photo={photo} />
               ))}
             </div>
 
-            <div className="mt-14 flex flex-col gap-2.5 sm:mt-16 sm:gap-3 md:mt-[88px] md:gap-4 lg:mt-[96px]">
+            <div className="flex min-w-0 flex-col gap-3 pt-16 xl:gap-4 xl:pt-20">
               {col2.map((photo) => (
-                <div
-                  key={photo.title}
-                  className={cn(
-                    "overflow-hidden rounded-2xl border border-black/[0.06] bg-[#F4F6F8]",
-                    photo.className,
-                  )}
-                >
-                  <img
-                    src={photo.image}
-                    alt={photo.imageAlt}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                <IndustryPhotoCard key={photo.title} photo={photo} />
               ))}
             </div>
 
-            <div className="mt-7 flex flex-col gap-2.5 sm:mt-8 sm:gap-3 md:mt-10 md:gap-4 lg:mt-12">
+            <div className="flex min-w-0 flex-col gap-3 pt-8 xl:gap-4 xl:pt-10">
               {col3.map((photo) => (
-                <div
-                  key={photo.title}
-                  className={cn(
-                    "overflow-hidden rounded-2xl border border-black/[0.06] bg-[#F4F6F8]",
-                    photo.className,
-                  )}
-                >
-                  <img
-                    src={photo.image}
-                    alt={photo.imageAlt}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                <IndustryPhotoCard key={photo.title} photo={photo} />
               ))}
             </div>
           </div>
 
-          {/* Right: horizontal dot + text list (~30%) */}
           <nav
             aria-label="Industries we support"
-            className="min-w-0 flex-[3] lg:max-w-[340px] lg:pt-2 xl:max-w-[380px]"
+            className="min-w-0 shrink-0 lg:pt-2"
           >
-            <ul className="flex flex-col gap-5 md:gap-5" role="list">
+            <ul className="flex flex-col gap-5" role="list">
               {industryItems.map((item) => (
                 <li key={item.title} className="group">
                   <div className="flex gap-3">
@@ -196,7 +161,7 @@ export default function IndustrySupportAreas() {
                       )}
                       aria-hidden
                     />
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-[15px] font-semibold leading-snug tracking-[-0.02em] text-[#0B0F14] transition-colors duration-300 group-hover:text-[#0A3A86] md:text-[16px]">
                         {item.title}
                       </p>

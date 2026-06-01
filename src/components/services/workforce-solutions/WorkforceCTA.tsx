@@ -9,8 +9,11 @@ import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 export default function WorkforceCTA() {
   return (
     <section id="workforce-cta" className="border-t border-black/[0.06] bg-white">
-      <HeroHighlight containerClassName="h-[22rem] md:h-[24rem]">
-        <div className="layout-container px-5 text-center">
+      <HeroHighlight
+        variant="subtle"
+        containerClassName="h-auto min-h-0 bg-[#FAFAF8] py-16 sm:py-20 md:py-24"
+      >
+        <div className="layout-container w-full min-w-0 px-5 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}

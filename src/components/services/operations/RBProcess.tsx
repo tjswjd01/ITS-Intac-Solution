@@ -683,6 +683,56 @@ function RBSerpentinePath() {
   );
 }
 
+function MobileRBRepairStep({
+  step,
+  isLast,
+}: {
+  step: RBStep;
+  isLast: boolean;
+}) {
+  return (
+    <div className="flex gap-4">
+      <div className="flex flex-col items-center">
+        <StepBadge number={step.number} dark />
+        {!isLast ? (
+          <div
+            className="mt-2 min-h-[32px] w-px flex-1 bg-gradient-to-b from-[#60A5FA] via-[#A78BFA] to-[#22D3EE]"
+            aria-hidden
+          />
+        ) : null}
+      </div>
+
+      <div className={`min-w-0 flex-1 ${isLast ? "" : "pb-8"}`}>
+        {step.image ? (
+          <ImageSurface
+            src={step.image}
+            alt={step.title}
+            className="mb-3 aspect-[16/10] w-full max-w-sm rounded-[16px] border border-white/10"
+          />
+        ) : null}
+
+        <h3 className="text-[15px] font-semibold uppercase tracking-[0.04em] text-white">
+          {step.title}
+        </h3>
+
+        <div className="mt-2">
+          <BulletList bullets={step.bullets} dark />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const rbRepairStepsInOrder: RBStep[] = [
+  ...rbRow1,
+  rbRow2[2],
+  rbRow2[1],
+  rbRow2[0],
+  ...rbRow3,
+  rbRow4[1],
+  rbRow4[0],
+];
+
 function RBRepairTimeline() {
   const steps = {
     diagnostic: rbRow1[0],
@@ -702,7 +752,7 @@ function RBRepairTimeline() {
   const [y1, y2, y3, y4] = RB_ROW_BADGE_Y;
 
   return (
-    <div className="relative min-w-[820px] py-4">
+    <div className="relative min-w-[820px] py-4 max-lg:hidden">
       <div
         className="relative w-full"
         style={{ height: RB_MAP_HEIGHT }}
@@ -799,8 +849,18 @@ function RBRepairProcess() {
             </div>
           </aside>
 
-          <div className="relative overflow-x-auto pb-6">
+          <div className="relative max-lg:mt-8 lg:overflow-x-auto lg:pb-6">
             <RBRepairTimeline />
+
+            <div className="lg:hidden">
+              {rbRepairStepsInOrder.map((step, index) => (
+                <MobileRBRepairStep
+                  key={step.number}
+                  step={step}
+                  isLast={index === rbRepairStepsInOrder.length - 1}
+                />
+              ))}
+            </div>
           </div>
         </div>
 

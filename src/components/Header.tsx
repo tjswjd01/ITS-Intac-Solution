@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import ServicesNavDropdown from "./ServicesNavDropdown";
 import { ShinyButton } from "./ui/ShinyButton";
@@ -17,170 +16,16 @@ const navItems = [
 ];
 
 const mobileServiceLinks = [
-  {
-    href: "/services/operations",
-    label: "Operations",
-    subtext: "Refurbishment, QA, packaging, and operational support.",
-  },
-  {
-    href: "/services/workforce-solutions",
-    label: "Workforce Solutions",
-    subtext: "Operational workforce coordination and staffing support.",
-  },
-  {
-    href: "/services/automation-solutions",
-    label: "Automation Solutions",
-    subtext: "Workflow optimization and operational automation support.",
-  },
-  {
-    href: "/services/global-business-support",
-    label: "Global Business Support",
-    subtext: "Operational setup and bilingual support for Korean companies.",
-  },
+  { href: "/services/operations", label: "Operations" },
+  { href: "/services/workforce-solutions", label: "Workforce Solutions" },
+  { href: "/services/automation-solutions", label: "Automation Solutions" },
+  { href: "/services/global-business-support", label: "Global Business Support" },
 ];
 
 type HeaderProps = {
   variant?: "default" | "dark";
   ctaVariant?: "primary" | "pro";
 };
-
-function MobileServicesDropdown({
-  isDark,
-  onNavigate,
-}: {
-  isDark: boolean;
-  onNavigate?: () => void;
-}) {
-  const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const [panelTop, setPanelTop] = useState(72);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!open || !buttonRef.current) return;
-
-    const updatePosition = () => {
-      const rect = buttonRef.current?.getBoundingClientRect();
-      if (rect) {
-        setPanelTop(rect.bottom + 8);
-      }
-    };
-
-    updatePosition();
-    window.addEventListener("resize", updatePosition);
-    window.addEventListener("scroll", updatePosition, { passive: true });
-    return () => {
-      window.removeEventListener("resize", updatePosition);
-      window.removeEventListener("scroll", updatePosition);
-    };
-  }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
-
-    const handlePointerDown = (event: MouseEvent | TouchEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handlePointerDown);
-    document.addEventListener("touchstart", handlePointerDown);
-    return () => {
-      document.removeEventListener("mousedown", handlePointerDown);
-      document.removeEventListener("touchstart", handlePointerDown);
-    };
-  }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previous;
-    };
-  }, [open]);
-
-  const close = () => {
-    setOpen(false);
-    onNavigate?.();
-  };
-
-  return (
-    <div ref={containerRef} className="relative shrink-0 lg:hidden">
-      <button
-        ref={buttonRef}
-        type="button"
-        aria-expanded={open}
-        aria-haspopup="true"
-        onClick={() => setOpen((current) => !current)}
-        className={cn(
-          "inline-flex min-h-10 items-center gap-1 rounded-full border px-3 py-2 text-[13px] font-semibold transition sm:px-3.5 sm:text-[14px]",
-          isDark
-            ? "border-white/25 bg-white/10 text-white hover:bg-white/15"
-            : "border-[#0A3A86]/25 bg-[#EEF3FA] text-[#0A3A86] hover:bg-[#E3ECFA]",
-        )}
-      >
-        Services
-        <ChevronDown
-          className={cn("h-4 w-4 shrink-0 transition-transform", open && "rotate-180")}
-          aria-hidden
-        />
-      </button>
-
-      {open && mounted
-        ? createPortal(
-            <>
-              <button
-                type="button"
-                aria-label="Close services menu"
-                className="fixed inset-0 z-[55] bg-[#0B0F14]/25 lg:hidden"
-                onClick={close}
-              />
-              <div
-                className="fixed inset-x-3 z-[60] lg:hidden sm:inset-x-4"
-                style={{ top: panelTop }}
-              >
-                <div className="mx-auto w-full max-w-[1380px] rounded-2xl border border-black/10 bg-white p-2 shadow-[0_18px_50px_rgba(15,23,42,0.16)]">
-                  {mobileServiceLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block rounded-xl px-3 py-3 transition active:bg-[#F3F6FA] hover:bg-[#F3F6FA]"
-                      onClick={close}
-                    >
-                      <span className="block text-[14px] font-semibold leading-snug text-[#0B0F14]">
-                        {link.label}
-                      </span>
-                      <span className="mt-1 block text-[12px] leading-[1.5] text-[#64748B]">
-                        {link.subtext}
-                      </span>
-                    </Link>
-                  ))}
-                  <Link
-                    href="/services"
-                    className="mt-1 block rounded-xl px-3 py-2.5 text-[13px] font-medium text-[#0A3A86] active:bg-[#F3F6FA] hover:bg-[#F3F6FA]"
-                    onClick={close}
-                  >
-                    View all services →
-                  </Link>
-                </div>
-              </div>
-            </>,
-            document.body,
-          )
-        : null}
-    </div>
-  );
-}
 
 export default function Header({
   variant = "default",
@@ -254,11 +99,6 @@ export default function Header({
           </nav>
 
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
-            <MobileServicesDropdown
-              isDark={isDark}
-              onNavigate={() => setMobileOpen(false)}
-            />
-
             {ctaVariant === "pro" ? (
               <ShinyButton
                 href="/contact"
