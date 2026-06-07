@@ -1,49 +1,46 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
-import OperationsSectionHeader from "../operations/OperationsSectionHeader";
+import GlobalSectionHeader from "@/components/services/global-business-support/GlobalSectionHeader";
 
 const supportAreas = [
   {
-    title: "Manufacturing Operations",
-    items: [
-      "Production workforce staffing",
-      "Line operators",
-      "Supervisors",
-      "Quality inspectors",
-      "Production support personnel",
-    ],
+    title: "Manufacturing",
+    description:
+      "Production workforce planning, line operators, supervisors, and quality support for facility launch and scale-up.",
+    image: "/images/its-refurbish.png",
   },
   {
     title: "Warehouse & Logistics",
-    items: [
-      "Warehouse staffing",
-      "Inventory support",
-      "Shipping and receiving",
-      "Packaging operations",
-      "Fulfillment support",
-    ],
+    description:
+      "Warehouse staffing, inventory support, shipping and receiving, packaging operations, and fulfillment coordination.",
+    image: "/images/who-warehouse.jpeg",
   },
   {
     title: "Administrative Operations",
-    items: [
-      "Office managers",
-      "HR coordinators",
-      "Payroll administrators",
-      "Administrative assistants",
-      "Customer support representatives",
-    ],
+    description:
+      "Office managers, HR coordinators, payroll administrators, and bilingual administrative support teams.",
+    image: "/images/who-team.jpeg",
+  },
+  {
+    title: "Consumer Products",
+    description:
+      "Operational support for product handling, inspection, packaging, distribution, and customer-facing operations.",
+    image: "/images/its-qa.png",
+  },
+  {
+    title: "Technical Support",
+    description:
+      "Field-ready technical personnel, equipment support teams, and operational coordination for service environments.",
+    image: "/images/its-automation.jpeg",
   },
   {
     title: "Expansion Projects",
-    items: [
-      "Facility startup support",
-      "Workforce planning",
-      "Site launch coordination",
-      "Vendor coordination",
-      "Operational stabilization",
-    ],
+    description:
+      "Facility startup support, workforce planning, site launch coordination, vendor alignment, and operational stabilization.",
+    image: "/images/its-hhp.png",
   },
 ] as const;
 
@@ -51,45 +48,43 @@ export default function SupportAreasGrid() {
   return (
     <section
       id="support-areas"
-      className="section-shell border-t border-black/[0.06] bg-white"
+      className="border-t border-[#E5E7EB] bg-[#FAFAFA] py-16 md:py-20 lg:py-24"
     >
-      <div className="layout-container">
-        <OperationsSectionHeader
+      <div className="mx-auto w-full min-w-0 max-w-[1280px] px-5 sm:px-6 lg:px-8">
+        <GlobalSectionHeader
           eyebrow="Support Areas"
-          title="End-to-End Support for U.S. Expansion"
+          title="End-to-end support for U.S. expansion."
           description="From manufacturing floors and warehouse operations to administrative teams and new facility launches, ITS supports the full scope of U.S. market entry and ongoing operations."
-          descriptionClassName="max-w-3xl"
-          eyebrowTone="black"
         />
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 md:mt-14 xl:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3">
           {supportAreas.map((area, index) => (
             <motion.article
               key={area.title}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="premium-card flex h-full flex-col p-6 md:p-7"
+              transition={{ duration: 0.45, delay: index * 0.04 }}
+              className="overflow-hidden rounded-3xl border border-[#E5E7EB] bg-white shadow-[0_4px_20px_rgba(15,23,42,0.04)]"
             >
-              <h3 className="text-[17px] font-semibold tracking-[-0.03em] text-[#0B0F14]">
-                {area.title}
-              </h3>
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F3F4F6]">
+                <Image
+                  src={area.image}
+                  alt={area.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 400px"
+                />
+              </div>
 
-              <ul className="mt-5 space-y-2.5" role="list">
-                {area.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex gap-2.5 text-[14px] leading-[1.65] text-[#64748B]"
-                  >
-                    <span
-                      className="mt-[8px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#0A3A86]"
-                      aria-hidden
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="p-6 md:p-7">
+                <h3 className="text-[17px] font-semibold tracking-[-0.03em] text-[#111827]">
+                  {area.title}
+                </h3>
+                <p className="mt-3 text-[14px] leading-[1.8] text-[#6B7280]">
+                  {area.description}
+                </p>
+              </div>
             </motion.article>
           ))}
         </div>

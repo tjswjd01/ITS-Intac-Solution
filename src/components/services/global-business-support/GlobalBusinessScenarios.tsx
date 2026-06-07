@@ -12,6 +12,7 @@ import {
 import { useRef } from "react";
 
 import { TimelineContent } from "@/components/ui/timeline-animation";
+import { GBS_ACCENT } from "@/components/services/global-business-support/globalBusinessTheme";
 import { cn } from "@/lib/utils";
 
 type CardVariant = "white" | "white-grid" | "navy" | "blue";
@@ -158,35 +159,35 @@ const variantStyles: Record<
 > = {
   white: {
     card: "border-black/[0.08] bg-white",
-    iconBadge: "border-black/[0.08] bg-[#F4F6F8] text-[#0A3A86]",
-    title: "text-[#0B0F14]",
-    description: "text-[#475569]",
-    tag: "text-[#64748B]",
-    listItem: "text-[#64748B]",
-    bullet: "bg-[#0A3A86]",
+    iconBadge: "border-black/[0.08] bg-[#F8FAFA] text-[#3A5560]",
+    title: "text-[#111827]",
+    description: "text-[#6B7280]",
+    tag: "text-[#6B7280]",
+    listItem: "text-[#6B7280]",
+    bullet: "bg-[#3A5560]",
   },
   "white-grid": {
     card: "border-black/[0.08] bg-white",
-    iconBadge: "border-black/[0.08] bg-[#F4F6F8] text-[#0A3A86]",
-    title: "text-[#0B0F14]",
-    description: "text-[#475569]",
-    tag: "text-[#64748B]",
-    listItem: "text-[#64748B]",
-    bullet: "bg-[#0A3A86]",
+    iconBadge: "border-black/[0.08] bg-[#F8FAFA] text-[#3A5560]",
+    title: "text-[#111827]",
+    description: "text-[#6B7280]",
+    tag: "text-[#6B7280]",
+    listItem: "text-[#6B7280]",
+    bullet: "bg-[#3A5560]",
     gridClass:
       "bg-[linear-gradient(to_right,#4f4f4f14_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f14_1px,transparent_1px)] bg-[size:50px_56px]",
   },
   navy: {
-    card: "border-white/[0.08] bg-[#111111] text-white",
+    card: "border-white/[0.08] bg-[#111827] text-white",
     iconBadge: "border-white/[0.12] bg-white/[0.08] text-white",
     title: "text-white",
     description: "text-white/72",
     tag: "text-white/55",
     listItem: "text-white/58",
-    bullet: "bg-[#60A5FA]",
+    bullet: "bg-[#3A5560]",
   },
   blue: {
-    card: "border-white/[0.1] bg-[#0A3A86] text-white",
+    card: "border-white/[0.1] bg-[#3A5560] text-white transition-colors duration-300 hover:bg-[#2F4750]",
     iconBadge: "border-white/[0.14] bg-white/[0.1] text-white",
     title: "text-white",
     description: "text-white/78",
@@ -349,9 +350,14 @@ export default function GlobalBusinessScenarios() {
               animationNum={0}
               customVariants={revealVariants}
               timelineRef={sectionRef}
-              className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#111111]"
+              className="flex items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em]"
+              style={{ color: GBS_ACCENT }}
             >
-              <span className="h-2 w-2 rounded-full bg-[#111111]" aria-hidden />
+              <span
+                className="h-2 w-2 rounded-full"
+                style={{ backgroundColor: GBS_ACCENT }}
+                aria-hidden
+              />
               Common Expansion Scenarios
             </TimelineContent>
 

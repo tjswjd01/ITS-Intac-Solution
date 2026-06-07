@@ -1,104 +1,255 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
+  BarChart3,
   Building2,
+  CalendarDays,
   Check,
+  ClipboardList,
   Factory,
+  FileText,
   Globe2,
+  Headset,
+  MapPin,
+  Quote,
+  Settings2,
+  UserPlus,
+  Users,
   Warehouse,
+  Wrench,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const bulletPoints = [
-  "Deep understanding of Korean business culture",
-  "Experience supporting U.S. workforce operations",
-  "Knowledge of Texas employment practices",
-  "Local operational management capabilities",
-  "Bilingual Korean-English communication",
-  "Flexible workforce scaling solutions",
-  "Fast deployment and operational support",
-  "Single point of contact for U.S. operations",
-] as const;
+import { GlobalSectionEyebrow } from "@/components/services/global-business-support/GlobalSectionHeader";
+import {
+  GBS_ACCENT,
+  GBS_BODY,
+  GBS_BORDER,
+  GBS_HEADING,
+  GBS_LIGHT_BG,
+} from "@/components/services/global-business-support/globalBusinessTheme";
 
-function SupportFlowDiagram() {
-  const operations = [
-    { label: "Manufacturing", icon: Factory },
-    { label: "Warehouse", icon: Warehouse },
-    { label: "Office", icon: Building2 },
-  ] as const;
+type SubFeature = {
+  label: string;
+  icon: LucideIcon;
+};
+
+type ActionRow = {
+  step: string;
+  title: string;
+  description: string;
+  image: string;
+  fallback: string;
+  imageAlt: string;
+  subFeatures: SubFeature[];
+  supportAreas: readonly string[];
+};
+
+const actionRows: ActionRow[] = [
+  {
+    step: "01",
+    title: "Workforce Deployment",
+    description:
+      "Recruitment, onboarding, and workforce management for manufacturing, warehouse, and administrative operations.",
+    image: "/images/its-refurbish.png",
+    fallback: "/images/its-hhp.png",
+    imageAlt: "ITS team supporting manufacturing workforce operations",
+    subFeatures: [
+      { label: "Recruitment", icon: UserPlus },
+      { label: "Onboarding", icon: Users },
+      { label: "Workforce Planning", icon: CalendarDays },
+    ],
+    supportAreas: [
+      "Line operator staffing",
+      "Supervisor placement",
+      "Attendance management",
+      "Shift coordination",
+      "Workforce reporting",
+    ],
+  },
+  {
+    step: "02",
+    title: "Facility Launch Support",
+    description:
+      "Support for production lines, warehouse operations, and operational readiness during U.S. facility startup.",
+    image: "/images/who-warehouse.jpeg",
+    fallback: "/images/who-team.jpeg",
+    imageAlt: "Warehouse and logistics facility operations",
+    subFeatures: [
+      { label: "Production Lines", icon: Factory },
+      { label: "Warehouse Ops", icon: Warehouse },
+      { label: "Operational Readiness", icon: Settings2 },
+    ],
+    supportAreas: [
+      "Facility launch coordination",
+      "Equipment staging support",
+      "Safety readiness checks",
+      "Operational workflow setup",
+      "Vendor coordination",
+    ],
+  },
+  {
+    step: "03",
+    title: "Operational Management",
+    description:
+      "Ongoing management and administrative support so you can focus on growing your business.",
+    image: "/images/its-hhp.png",
+    fallback: "/images/global-business-support/korean-business-meeting.jpg",
+    imageAlt: "ITS operations team managing daily U.S. business support",
+    subFeatures: [
+      { label: "Daily Operations", icon: Headset },
+      { label: "Vendor Coordination", icon: FileText },
+      { label: "Reporting & Compliance", icon: BarChart3 },
+    ],
+    supportAreas: [
+      "HR & payroll support",
+      "Compliance & administration",
+      "Customer & vendor support",
+      "Office management",
+    ],
+  },
+];
+
+const typicalSupportAreas: { label: string; icon: LucideIcon }[] = [
+  { label: "Manufacturing", icon: Factory },
+  { label: "Warehouse & Logistics", icon: Warehouse },
+  { label: "Office Operations", icon: Building2 },
+  { label: "Technical Support", icon: Wrench },
+  { label: "Administration", icon: ClipboardList },
+  { label: "Expansion Projects", icon: Globe2 },
+];
+
+const entranceEase = [0.22, 1, 0.36, 1] as const;
+
+function RowImage({
+  src,
+  fallback,
+  alt,
+}: {
+  src: string;
+  fallback: string;
+  alt: string;
+}) {
+  const [imageSrc, setImageSrc] = useState(src);
 
   return (
-    <div className="relative overflow-hidden rounded-[28px] border border-black/[0.08] bg-white p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] md:p-8">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(10,58,134,0.08),transparent_42%)]" />
+    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#F3F4F6] lg:aspect-auto lg:min-h-[200px] lg:h-full">
+      <Image
+        src={imageSrc}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes="(max-width: 1024px) 100vw, 280px"
+        onError={() => setImageSrc(fallback)}
+      />
+    </div>
+  );
+}
 
-      <div className="relative flex flex-col items-center">
-        <div className="flex w-full max-w-[280px] flex-col items-center rounded-2xl border border-black/[0.06] bg-[#FAFBFC] px-5 py-4 text-center">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EEF3FA] text-[#0A3A86]">
-            <Globe2 className="h-5 w-5" strokeWidth={1.75} />
-          </div>
-          <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#64748B]">
-            Korea HQ
-          </p>
-          <p className="mt-1 text-[15px] font-semibold tracking-[-0.02em] text-[#0B0F14]">
-            Korean Headquarters
-          </p>
+function ActiveSupportPanel({ areas }: { areas: readonly string[] }) {
+  return (
+    <div
+      className="h-full rounded-xl border p-5"
+      style={{ borderColor: GBS_BORDER, backgroundColor: GBS_LIGHT_BG }}
+    >
+      <h4
+        className="text-[14px] font-semibold tracking-[-0.02em]"
+        style={{ color: GBS_HEADING }}
+      >
+        Active Support Areas
+      </h4>
+
+      <ul className="mt-4 space-y-2.5" role="list">
+        {areas.map((area) => (
+          <li key={area} className="flex items-start gap-2.5">
+            <Check
+              className="mt-0.5 h-4 w-4 shrink-0"
+              style={{ color: GBS_ACCENT }}
+              strokeWidth={2.5}
+              aria-hidden
+            />
+            <span
+              className="text-[14px] leading-[1.55]"
+              style={{ color: GBS_BODY }}
+            >
+              {area}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ActionRowCard({ row, index }: { row: ActionRow; index: number }) {
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, delay: index * 0.05, ease: entranceEase }}
+      className="grid grid-cols-1 gap-5 rounded-2xl border bg-white p-5 lg:grid-cols-[0.7fr_1.4fr_0.8fr] lg:items-stretch lg:gap-6"
+      style={{ borderColor: GBS_BORDER }}
+    >
+      <RowImage src={row.image} fallback={row.fallback} alt={row.imageAlt} />
+
+      <div className="flex min-w-0 flex-col justify-center">
+        <div>
+          <span
+            className="text-[13px] font-bold tabular-nums tracking-[0.08em]"
+            style={{ color: GBS_ACCENT }}
+          >
+            {row.step}
+          </span>
+          <div
+            className="mt-2 h-px w-10"
+            style={{ backgroundColor: GBS_ACCENT }}
+          />
         </div>
 
-        <div className="my-4 flex h-10 flex-col items-center" aria-hidden>
-          <div className="h-full w-px bg-gradient-to-b from-[#CBD5E1] via-[#0A3A86]/40 to-[#0A3A86]" />
-          <div className="h-0 w-0 border-x-[5px] border-t-[7px] border-x-transparent border-t-[#0A3A86]" />
-        </div>
+        <h3
+          className="mt-4 text-[clamp(1.125rem,1.8vw,1.375rem)] font-semibold tracking-[-0.03em]"
+          style={{ color: GBS_HEADING }}
+        >
+          {row.title}
+        </h3>
 
-        <div className="w-full max-w-[280px] rounded-2xl border border-[#0A3A86]/20 bg-[#0A3A86] px-5 py-4 text-center shadow-[0_12px_32px_rgba(10,58,134,0.24)]">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
-            Local Partner
-          </p>
-          <p className="mt-1 text-[16px] font-semibold tracking-[-0.02em] text-white">
-            ITS Dallas Team
-          </p>
-          <p className="mt-1 text-[12px] text-white/65">
-            U.S. operational coordination hub
-          </p>
-        </div>
+        <p
+          className="mt-2.5 text-[15px] leading-[1.7]"
+          style={{ color: GBS_BODY }}
+        >
+          {row.description}
+        </p>
 
-        <div className="relative mt-6 grid w-full grid-cols-3 gap-3">
-          <div
-            className="pointer-events-none absolute left-[16.67%] right-[16.67%] top-0 h-px bg-[#CBD5E1]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute left-[16.67%] top-0 h-4 w-px bg-[#CBD5E1]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute left-1/2 top-0 h-4 w-px -translate-x-1/2 bg-[#CBD5E1]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute right-[16.67%] top-0 h-4 w-px bg-[#CBD5E1]"
-            aria-hidden
-          />
-
-          {operations.map((item) => {
-            const Icon = item.icon;
+        <div className="mt-5 flex flex-wrap gap-6 sm:gap-8">
+          {row.subFeatures.map((feature) => {
+            const Icon = feature.icon;
 
             return (
-              <div
-                key={item.label}
-                className="flex flex-col items-center rounded-2xl border border-black/[0.06] bg-[#FAFBFC] px-3 pb-4 pt-5 text-center"
-              >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-[#0A3A86] shadow-sm">
-                  <Icon className="h-4 w-4" strokeWidth={1.75} />
-                </div>
-                <p className="mt-2.5 text-[11px] font-semibold leading-snug tracking-[-0.01em] text-[#0B0F14]">
-                  {item.label}
+              <div key={feature.label} className="flex min-w-[72px] flex-col items-center text-center">
+                <Icon
+                  className="h-5 w-5"
+                  style={{ color: GBS_ACCENT }}
+                  strokeWidth={1.75}
+                  aria-hidden
+                />
+                <p
+                  className="mt-2 text-[12px] font-medium leading-snug"
+                  style={{ color: GBS_HEADING }}
+                >
+                  {feature.label}
                 </p>
               </div>
             );
           })}
         </div>
       </div>
-    </div>
+
+      <ActiveSupportPanel areas={row.supportAreas} />
+    </motion.article>
   );
 }
 
@@ -106,57 +257,111 @@ export default function WhyChooseITSGlobal() {
   return (
     <section
       id="why-choose-its-global"
-      className="section-shell border-t border-black/[0.06] bg-[#FAFAF8]"
+      className="border-t bg-white py-16 lg:py-20"
+      style={{ borderColor: GBS_BORDER }}
     >
-      <div className="layout-container">
-        <div className="grid w-full min-w-0 items-center gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1fr)] lg:gap-16 xl:gap-20">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.45 }}
-            className="order-2 w-full min-w-0 lg:order-1"
+      <div className="mx-auto w-full min-w-0 max-w-[1280px] px-5 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, ease: entranceEase }}
+          className="max-w-[720px]"
+        >
+          <GlobalSectionEyebrow>Why ITS</GlobalSectionEyebrow>
+
+          <h2
+            className="mt-5 text-[clamp(1.75rem,3.5vw,2.5rem)] font-medium leading-[1.08] tracking-[-0.04em]"
+            style={{ color: GBS_HEADING }}
           >
-            <SupportFlowDiagram />
-          </motion.div>
+            Operational Support in Action
+          </h2>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.45, delay: 0.08 }}
-            className="order-1 w-full min-w-0 lg:order-2"
+          <p
+            className="mt-5 max-w-[680px] text-[15px] leading-[1.8] md:text-base"
+            style={{ color: GBS_BODY }}
           >
-            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-              <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
-              Why ITS
-            </p>
+            See how ITS supports Korean companies throughout every stage of U.S.
+            market entry and daily operations.
+          </p>
+        </motion.div>
 
-            <h2 className="section-title mt-5 max-w-[640px]">
-              Local Expertise. Korean Business Understanding.
-            </h2>
-
-            <ul className="mt-8 space-y-3.5" role="list">
-              {bulletPoints.map((point, index) => (
-                <motion.li
-                  key={point}
-                  initial={{ opacity: 0, x: 8 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.4, delay: index * 0.04 }}
-                  className="flex items-start gap-3"
-                >
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EEF3FA] text-[#0A3A86]">
-                    <Check className="h-3 w-3" strokeWidth={2.5} aria-hidden />
-                  </span>
-                  <span className="text-[15px] leading-[1.65] text-[#475569] md:text-[16px]">
-                    {point}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
+        <div className="mt-10 flex flex-col gap-4 lg:mt-12">
+          {actionRows.map((row, index) => (
+            <ActionRowCard key={row.step} row={row} index={index} />
+          ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: entranceEase }}
+          className="mt-12 grid grid-cols-1 gap-10 border-t pt-12 lg:mt-14 lg:grid-cols-[1fr_minmax(0,360px)] lg:gap-16 lg:pt-14"
+          style={{ borderColor: GBS_BORDER }}
+        >
+          <div>
+            <h3
+              className="text-[14px] font-bold uppercase tracking-[0.16em]"
+              style={{ color: GBS_ACCENT }}
+            >
+              Typical Support Areas
+            </h3>
+
+            <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-6 lg:gap-6">
+              {typicalSupportAreas.map((area) => {
+                const Icon = area.icon;
+
+                return (
+                  <div
+                    key={area.label}
+                    className="flex flex-col items-center text-center"
+                  >
+                    <Icon
+                      className="h-5 w-5"
+                      style={{ color: GBS_ACCENT }}
+                      strokeWidth={1.75}
+                      aria-hidden
+                    />
+                    <p
+                      className="mt-3 text-[12px] font-medium leading-snug sm:text-[13px]"
+                      style={{ color: GBS_HEADING }}
+                    >
+                      {area.label}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div
+            className="relative lg:border-l lg:pl-10"
+            style={{ borderColor: GBS_BORDER }}
+          >
+            <Quote
+              className="h-9 w-9"
+              style={{ color: GBS_ACCENT }}
+              aria-hidden
+            />
+
+            <blockquote className="mt-4">
+              <p
+                className="text-[15px] leading-[1.75] md:text-base"
+                style={{ color: GBS_BODY }}
+              >
+                ITS serves as a trusted local operational partner for Korean
+                companies entering the U.S. market.
+              </p>
+              <footer
+                className="mt-4 text-[13px]"
+                style={{ color: GBS_BODY }}
+              >
+                — Korean Manufacturing Client
+              </footer>
+            </blockquote>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

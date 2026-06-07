@@ -94,30 +94,42 @@ export default function ServicesNavDropdown({
     };
   }, [open, cancelClose]);
 
-  const triggerClassName = cn(
-    "inline-flex items-center gap-1 text-[15px] font-medium transition",
+  const linkClassName = cn(
+    "text-[15px] font-medium transition",
+    isDark
+      ? "text-white/85 hover:text-white"
+      : "text-[#0B0F14] hover:text-[#0B3D91]",
+  );
+
+  const chevronButtonClassName = cn(
+    "inline-flex items-center justify-center rounded-md p-0.5 transition",
     isDark
       ? "text-white/85 hover:text-white"
       : "text-[#0B0F14] hover:text-[#0B3D91]",
   );
 
   return (
-    <div
-      ref={containerRef}
-      className="relative"
-      onMouseEnter={openMenu}
-      onMouseLeave={scheduleClose}
-    >
-      <button
-        type="button"
-        aria-expanded={open}
-        aria-haspopup="true"
-        onClick={toggleMenu}
-        className={triggerClassName}
-      >
+    <div className="relative inline-flex items-center gap-0.5">
+      <Link href="/services" className={linkClassName}>
         Services
-        <ChevronDown className="h-4 w-4" aria-hidden />
-      </button>
+      </Link>
+
+      <div
+        ref={containerRef}
+        className="relative"
+        onMouseEnter={openMenu}
+        onMouseLeave={scheduleClose}
+      >
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-haspopup="true"
+          aria-label="Show services menu"
+          onClick={toggleMenu}
+          className={chevronButtonClassName}
+        >
+          <ChevronDown className="h-4 w-4" aria-hidden />
+        </button>
 
       {open ? (
         <div className="absolute left-0 top-full z-50 w-[19rem] pt-3">
@@ -143,6 +155,7 @@ export default function ServicesNavDropdown({
           </div>
         </div>
       ) : null}
+      </div>
     </div>
   );
 }

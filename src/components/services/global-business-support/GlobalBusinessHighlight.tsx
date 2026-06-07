@@ -9,6 +9,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
+import { GBS_ACCENT } from "@/components/services/global-business-support/globalBusinessTheme";
 
 const stats = [
   {
@@ -151,8 +152,14 @@ export default function GlobalBusinessHighlight() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/55">
-            <span className="h-2 w-2 rounded-full bg-[#60A5FA]" aria-hidden />
+          <p
+            className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/55"
+          >
+            <span
+              className="h-2 w-2 rounded-full"
+              style={{ backgroundColor: GBS_ACCENT }}
+              aria-hidden
+            />
             U.S. Market Entry Partner
           </p>
 

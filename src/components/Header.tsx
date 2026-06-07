@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import ServicesNavDropdown from "./ServicesNavDropdown";
@@ -32,6 +32,7 @@ export default function Header({
   ctaVariant = "primary",
 }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesExpanded, setMobileServicesExpanded] = useState(false);
   const isDark = variant === "dark";
 
   const navLinkClassName = cn(
@@ -168,39 +169,56 @@ export default function Header({
               </Link>
 
               <div className="mt-2">
-                <p
-                  className={cn(
-                    "px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em]",
-                    isDark ? "text-white/50" : "text-[#64748B]",
-                  )}
-                >
-                  Services
-                </p>
-                {mobileServiceLinks.map((link) => (
+                <div className="flex items-center gap-1">
                   <Link
-                    key={link.href}
-                    href={link.href}
+                    href="/services"
                     className={cn(
-                      "block rounded-xl px-3 py-2.5 text-[15px] font-medium",
+                      "flex-1 rounded-xl px-3 py-3 text-[16px] font-medium",
                       isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
-                    {link.label}
+                    Services
                   </Link>
-                ))}
-                <Link
-                  href="/services"
-                  className={cn(
-                    "block rounded-xl px-3 py-2.5 text-[14px]",
-                    isDark
-                      ? "text-white/65 hover:bg-white/8"
-                      : "text-[#64748B] hover:bg-[#F4F7FB]",
-                  )}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  View all services
-                </Link>
+                  <button
+                    type="button"
+                    aria-expanded={mobileServicesExpanded}
+                    aria-label="Toggle services submenu"
+                    onClick={() =>
+                      setMobileServicesExpanded((expanded) => !expanded)
+                    }
+                    className={cn(
+                      "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition",
+                      isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                    )}
+                  >
+                    <ChevronDown
+                      className={cn(
+                        "h-4 w-4 transition-transform",
+                        mobileServicesExpanded && "rotate-180",
+                      )}
+                      aria-hidden
+                    />
+                  </button>
+                </div>
+
+                {mobileServicesExpanded ? (
+                  <div className="mt-1 space-y-0.5 pl-3">
+                    {mobileServiceLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={cn(
+                          "block rounded-xl px-3 py-2.5 text-[15px] font-medium",
+                          isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                        )}
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
               </div>
 
               {navItems.slice(1).map((item) => (

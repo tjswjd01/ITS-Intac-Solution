@@ -1,51 +1,189 @@
 "use client";
 
-import Link from "next/link";
-import { MoveRight } from "lucide-react";
+import React, { useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { PerspectiveCamera } from "@react-three/drei";
+import * as THREE from "three";
 
-import ConnectionGlobe from "@/components/ui/ConnectionGlobe";
-import { premiumPrimaryCtaClassName } from "@/components/ui/premiumCtaStyles";
-import { cn } from "@/lib/utils";
+const entranceEase = [0.22, 1, 0.36, 1] as const;
+
+function HeroWireGlobe({ paused }: { paused: boolean }) {
+  const globeRef = useRef<THREE.Mesh>(null!);
+
+  useFrame(() => {
+    if (!paused && globeRef.current) {
+      globeRef.current.rotation.y += 0.0025;
+      globeRef.current.rotation.x += 0.0005;
+    }
+  });
+
+  return (
+    <mesh ref={globeRef}>
+      <sphereGeometry args={[1.6, 96, 96]} />
+      <meshBasicMaterial
+        color="#111111"
+        transparent
+        opacity={0.025}
+        wireframe
+      />
+    </mesh>
+  );
+}
 
 export default function GlobalBusinessSupportHero() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section
       id="hero"
-      className="relative overflow-hidden border-b border-black/[0.06] bg-white pt-28 pb-14 sm:pt-32 sm:pb-16 md:pb-20 lg:pt-36 lg:pb-24"
+      className="relative overflow-hidden border-b border-black/[0.06] bg-white pt-24 pb-12 lg:pt-28 lg:pb-14"
     >
-      <div className="layout-container w-full min-w-0">
-        <div className="grid w-full min-w-0 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 xl:gap-16">
-          <div className="w-full min-w-0 max-w-xl">
-            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-              <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
-              Global Business Support
-            </p>
+      {/* Background Globe */}
+      <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+        <div className="h-[360px] w-[360px] translate-y-[4%] sm:h-[460px] sm:w-[460px] lg:h-[540px] lg:w-[540px]">
+          <Canvas
+            gl={{ alpha: true, antialias: true }}
+            frameloop={prefersReducedMotion ? "never" : "always"}
+          >
+            <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={40} />
+            <ambientLight intensity={1} />
+            <HeroWireGlobe paused={prefersReducedMotion ?? false} />
+          </Canvas>
+        </div>
+      </div>
 
-            <h1 className="mt-6 text-[clamp(2rem,4.2vw,3.25rem)] font-medium leading-[1.12] tracking-[-0.04em] text-[#0B0F14]">
-              Bridging{" "}
-              <span className="text-[#0A3A86]">Korea</span> and the{" "}
-              <span className="text-[#0A3A86]">United States</span>.
-            </h1>
+      {/* Soft Glow */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_55%,rgba(0,0,0,0.018)_0%,transparent_58%)]"
+        aria-hidden
+      />
 
-            <p className="mt-6 max-w-[520px] text-base leading-[1.8] text-[#64748B] md:text-[17px]">
-              ITS supports cross-border growth through sourcing, manufacturing
-              partnerships, compliance coordination, logistics, and operational
-              execution.
-            </p>
+      <div className="layout-container relative z-10 w-full min-w-0">
+        <div
+          className="
+            mx-auto flex w-full min-w-0 max-w-4xl
+            flex-col items-center justify-center
+            px-4 text-center
+            min-h-[360px]
+            md:min-h-[420px]
+            lg:min-h-[470px]
+          "
+        >
+          {/* Eyebrow */}
+          <motion.p
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: entranceEase }}
+            className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#4B5563]"
+          >
+            <span className="h-2 w-2 rounded-full bg-[#4B5563]" />
+            Global Business Support
+          </motion.p>
 
-            <div className="mt-8 md:mt-10">
-              <Link href="/contact" className={cn(premiumPrimaryCtaClassName, "w-full justify-center sm:w-auto")}>
-                Schedule a Consultation
-                <MoveRight className="h-4 w-4" aria-hidden />
-              </Link>
-            </div>
-          </div>
+          {/* Headline */}
+          <h1 className="mt-5 w-full sm:mt-6">
+            <motion.span
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.65,
+                delay: 0.08,
+                ease: entranceEase,
+              }}
+              className="
+                block
+                font-light
+                leading-[0.98]
+                tracking-[-0.06em]
+                text-[#4A4A4A]
+                text-[clamp(1.8rem,8vw,2.7rem)]
+                lg:text-[clamp(2.4rem,4vw,4rem)]
+              "
+            >
+              Global Expansion
+            </motion.span>
 
-          <div className="relative flex w-full min-w-0 items-center justify-center">
-            <div className="relative z-10 aspect-square w-full max-w-[min(100%,520px)]">
-              <ConnectionGlobe className="size-full" />
-            </div>
-          </div>
+            <motion.span
+              initial={
+                prefersReducedMotion
+                  ? false
+                  : { opacity: 0, y: 14, scale: 0.99 }
+              }
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.18,
+                ease: entranceEase,
+              }}
+              className="
+                mt-1 block
+                font-bold
+                leading-[0.94]
+                tracking-[-0.055em]
+                text-[#111111]
+                text-[clamp(2rem,10vw,3rem)]
+                lg:text-[clamp(2.8rem,4.4vw,4.65rem)]
+              "
+            >
+              U.S. Workforce Setup
+            </motion.span>
+          </h1>
+
+          {/* Line */}
+          <motion.div
+            className="
+              mx-auto mt-4
+              h-1
+              w-[82%]
+              max-w-[720px]
+              origin-center
+              rounded-full
+              shadow-[0_7px_18px_rgba(17,17,17,0.12)]
+              lg:mt-5
+              lg:w-[76%]
+            "
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(17,17,17,0.58) 0%, rgba(17,17,17,0.42) 48%, rgba(100,116,139,0.15) 78%, transparent 100%)",
+            }}
+            initial={prefersReducedMotion ? false : { scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{
+              duration: 0.9,
+              delay: 0.3,
+              ease: entranceEase,
+            }}
+          />
+
+          {/* Description */}
+          <motion.p
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.65,
+              delay: 0.46,
+              ease: entranceEase,
+            }}
+            className="
+              mt-5
+              max-w-[680px]
+              text-[14px]
+              font-normal
+              leading-[1.8]
+              text-[#5B5B5B]
+              md:mt-6
+              md:text-[15px]
+            "
+          >
+            ITS supports Korean and global companies expanding operations in the
+            United States through{" "}
+            <span className="rounded-sm bg-[#E5E5E5] px-2 py-0.5 font-semibold text-[#111111]">
+              workforce setup
+            </span>
+            , administrative support, operational coordination, and local
+            management assistance.
+          </motion.p>
         </div>
       </div>
     </section>
