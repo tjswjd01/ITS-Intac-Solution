@@ -20,7 +20,7 @@ export default function AutomationSolutionsHero() {
               className="max-w-[520px] text-[clamp(28px,7vw,64px)] font-semibold leading-[1.08] tracking-[-0.04em]"
             >
               <span className="bg-gradient-to-b from-white via-white to-neutral-500 bg-clip-text text-transparent">
-                Automation programs built for scalable operational efficiency.
+                Warehouse automation and workflow systems integration.
               </span>
             </motion.h1>
 

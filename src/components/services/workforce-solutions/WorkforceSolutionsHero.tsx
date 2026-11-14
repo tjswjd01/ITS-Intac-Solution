@@ -51,7 +51,7 @@ export default function WorkforceSolutionsHero() {
 
           <h1 className="mt-6 w-full">
             <span className="block text-[clamp(1.5rem,5.5vw,2.75rem)] font-medium leading-[1.2] tracking-[-0.04em] text-[#0B0F14] lg:whitespace-nowrap">
-              Scalable workforce solutions for modern operational industries.
+              Warehouse staffing and managed workforce solutions.
             </span>
 
             <span

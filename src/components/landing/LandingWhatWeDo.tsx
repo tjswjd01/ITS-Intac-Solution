@@ -47,7 +47,7 @@ export default function LandingWhatWeDo() {
             </p>
 
             <h2 className="mt-6 max-w-[520px] text-[clamp(30px,2.5vw,42px)] font-[500] leading-[1.08] tracking-[-0.04em] text-[#0B0F14]">
-              Operational Solutions
+              Device &amp; Workforce Services
               <br />
               <span className="text-[#8B929D]">Built to Scale.</span>
             </h2>

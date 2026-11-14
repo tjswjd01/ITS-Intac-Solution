@@ -27,7 +27,7 @@ export default function AboutClosingPartners() {
           </p>
 
           <h2 className="mt-6 text-[clamp(1.85rem,3vw,2.65rem)] font-medium leading-[1.12] tracking-[-0.04em] text-black">
-            Built to support the teams behind every operation.
+            The teams behind device refurbishment and warehouse operations.
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-[1.85] text-neutral-500 md:text-[17px]">

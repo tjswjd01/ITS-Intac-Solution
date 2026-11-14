@@ -471,7 +471,7 @@ function ReceivingInboundLine() {
         <Eyebrow>INBOUND DEVICE PROCESSING</Eyebrow>
 
         <h2 className="section-title mt-5 max-w-[760px]">
-          Receiving & Grading Operations
+          Reverse Logistics: Receiving & Grading
         </h2>
 
         <p className="section-copy mt-5 max-w-2xl">

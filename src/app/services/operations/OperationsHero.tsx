@@ -78,9 +78,9 @@ export default function OperationsHero() {
             transition={{ duration: 0.65, delay: 0.08 }}
             className="mt-4 max-w-[780px] text-[clamp(29px,3.38vw,51px)] font-medium leading-[1.04] tracking-[-0.045em] text-white"
           >
-            End-to-end operational services built for{" "}
+            Device refurbishment, quality inspection and packaging{" "}
             <span className="bg-gradient-to-r from-[#bfdbfe] via-[#60a5fa] to-[#a5f3fc] bg-clip-text text-transparent">
-              measurable performance.
+              at enterprise scale.
             </span>
           </motion.h1>
 

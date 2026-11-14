@@ -598,7 +598,7 @@ export default function HoverServicesSlider() {
           </p>
 
           <h2 className="section-title mt-5 max-w-[760px] text-[#0B0F14]">
-            Operational capabilities built for structured execution.
+            Capabilities across device refurbishment, QA and logistics.
           </h2>
         </div>
 

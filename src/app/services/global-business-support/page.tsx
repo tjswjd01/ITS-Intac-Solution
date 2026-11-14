@@ -10,9 +10,10 @@ import GlobalBusinessTrustSection from "@/components/services/global-business-su
 import WhyChooseITSGlobal from "@/components/services/global-business-support/WhyChooseITSGlobal";
 
 export const metadata: Metadata = {
-  title: "Global Business Support | ITS Intac Solution",
+  title: "U.S. Market Entry & Business Support",
   description:
-    "U.S. market entry and operational support partner for Korean companies. Workforce deployment, facility setup, manufacturing launch, warehouse operations, and bilingual coordination from Dallas, Texas.",
+    "U.S. market entry partner for Korean companies — workforce deployment, facility setup, manufacturing launch and bilingual coordination from Dallas, Texas.",
+  alternates: { canonical: "/services/global-business-support" },
 };
 
 export default function GlobalBusinessSupportPage() {

@@ -46,7 +46,7 @@ export default function CareersHero() {
               </p>
 
               <h1 className="mt-4 max-w-[480px] text-[38px] font-bold leading-[1.05] tracking-[-0.04em] text-[#0B0F14] md:text-[44px] lg:text-[56px]">
-                Culture & Opportunities
+                Careers in Device & Warehouse Operations
               </h1>
 
               <p className="mt-5 max-w-[480px] text-[16px] font-semibold leading-[1.5] text-[#0B0F14] md:text-[18px]">

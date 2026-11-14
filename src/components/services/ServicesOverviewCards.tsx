@@ -271,7 +271,7 @@ export default function ServicesOverviewCards() {
           </p>
 
           <h2 className="section-title mx-auto mt-5 max-w-[760px]">
-            Four Core Service Categories. End-to-End Support.
+            Four core services: device lifecycle, workforce, automation, U.S. setup.
           </h2>
 
           <p className="section-copy mx-auto mt-6 max-w-2xl">

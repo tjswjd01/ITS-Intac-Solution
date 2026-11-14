@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import AutomationCTA from "@/components/services/automation-solutions/AutomationCTA";
 import AutomationCoreTechnologies from "@/components/services/automation-solutions/AutomationCoreTechnologies";
@@ -6,6 +7,13 @@ import AutomationPerformanceImpact from "@/components/services/automation-soluti
 import AutomationOverview from "@/components/services/automation-solutions/AutomationOverview";
 import AutomationSolutionsHero from "@/components/services/automation-solutions/AutomationSolutionsHero";
 import AutomationApplicationAreas from "@/components/services/automation-solutions/WhereAutomationCanBeApplied";
+
+export const metadata: Metadata = {
+  title: "Warehouse Automation & Workflow Systems",
+  description:
+    "Robotics integration, conveyor systems and packaging automation. INTAC designs and operates workflow automation for high-volume device and fulfillment sites.",
+  alternates: { canonical: "/services/automation-solutions" },
+};
 
 export default function AutomationSolutionsPage() {
   return (

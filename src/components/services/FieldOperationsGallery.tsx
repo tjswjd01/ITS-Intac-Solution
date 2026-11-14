@@ -310,7 +310,7 @@ export default function FieldOperationsGallery() {
           </p>
 
           <h2 className="section-title mx-auto mt-5 max-w-[760px] text-[#0B0F14]">
-            How Operations Come Together
+            How a Device Program Comes Together
           </h2>
 
           <p className="section-copy mx-auto mt-6 max-w-2xl">

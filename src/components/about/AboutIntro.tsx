@@ -150,14 +150,14 @@ export default function AboutIntro() {
           </p>
 
           <h1 className="mt-6 text-[clamp(2rem,3.2vw,2.75rem)] font-medium leading-[1.1] tracking-[-0.04em] text-black">
-            Operational infrastructure{" "}
+            Device operations &amp; workforce infrastructure{" "}
             <span className="text-[#8B929D]">for enterprise teams.</span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-[1.85] text-neutral-500 md:text-[17px]">
-            ITS is a workforce and operations partner dedicated to helping enterprise teams
-            run refurbishment, quality assurance, logistics, technical support, and automation
-            programs with greater consistency, visibility, and accountability.
+            ITS is a device operations and workforce partner for wireless carriers, OEMs and
+            retail distributors, running mobile device refurbishment, reverse logistics, quality
+            inspection, packaging and warehouse automation across five U.S. facilities.
           </p>
         </motion.div>
 

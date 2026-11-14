@@ -1,16 +1,13 @@
 "use client";
 
 const logos = [
-  "GoodRx",
-  "Betterment",
-  "Vanta",
-  "Opendoor",
-  "POSHMARK",
-  "Quora",
-  "NVIDIA",
-  "ramp",
-  "deel.",
-  "Notion",
+  "Samsung",
+  "Verizon",
+  "AT&T",
+  "T-Mobile",
+  "US Cellular",
+  "Cricket",
+  "MetroPCS",
 ];
 
 export default function LandingTrustedCompanies() {

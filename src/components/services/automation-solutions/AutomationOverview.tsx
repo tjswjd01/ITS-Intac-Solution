@@ -44,7 +44,7 @@ export default function AutomationOverview() {
       <div className="layout-container">
         <OperationsSectionHeader
           eyebrow="Automation Overview"
-          title="Automation systems designed for real operational environments."
+          title="Warehouse automation systems for real production environments."
           description="ITS develops practical automation solutions that combine equipment handling, inspection technology, control systems, and operational data to support more consistent and scalable workflows."
           descriptionClassName="max-w-3xl sm:max-w-4xl lg:max-w-[900px]"
           eyebrowTone="black"

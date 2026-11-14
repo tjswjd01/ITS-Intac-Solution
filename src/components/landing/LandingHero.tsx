@@ -39,18 +39,18 @@ export default function LandingHero() {
 
           <h1 className="mt-5 max-w-none text-[clamp(2rem,8vw,3.58rem)] font-[500] leading-[1.05] tracking-[-0.042em] text-[#0B0F14]">
             <span className="block lg:whitespace-nowrap">
-              Operational Workforce
+              Device Refurbishment,
             </span>
             <span className="block lg:whitespace-nowrap">
-              Solutions Built on
+              Reverse Logistics &amp;
             </span>
-            <span className="block text-[#7F8691]">Experience.</span>
+            <span className="block text-[#7F8691]">Workforce Operations.</span>
           </h1>
 
           <p className="mt-7 max-w-[520px] text-[16px] leading-[1.9] text-[#3F4652]">
-            ITS provides operational workforce solutions and device lifecycle
-            support across refurbishment, quality assurance, logistics,
-            technical operations, and workforce management.
+            ITS provides mobile device refurbishment, reverse logistics, quality
+            inspection, device packaging and warehouse staffing for wireless
+            carriers, OEMs and retail distributors across the United States.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">

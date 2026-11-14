@@ -13,10 +13,10 @@ export default function LandingWhoWeAre() {
             </div>
 
             <h2 className="mt-7 text-[clamp(28px,2.25vw,38px)] font-[500] leading-[1.1] tracking-[-0.04em] text-[#0B0F14]">
-              More Than a Partner.
-              <span className="block">We’re Your</span>
+              More Than a Vendor.
+              <span className="block">Your Device &amp; Workforce</span>
               <span className="block text-[#8B93A1]">
-                Operational Advantage.
+                Operations Partner.
               </span>
             </h2>
 

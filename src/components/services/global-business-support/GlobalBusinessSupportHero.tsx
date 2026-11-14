@@ -101,7 +101,7 @@ export default function GlobalBusinessSupportHero() {
                 lg:text-[clamp(2.4rem,4vw,4rem)]
               "
             >
-              Global Expansion
+              U.S. Market Entry
             </motion.span>
 
             <motion.span
@@ -126,7 +126,7 @@ export default function GlobalBusinessSupportHero() {
                 lg:text-[clamp(2.8rem,4.4vw,4.65rem)]
               "
             >
-              U.S. Workforce Setup
+              &amp; Workforce Setup
             </motion.span>
           </h1>
 

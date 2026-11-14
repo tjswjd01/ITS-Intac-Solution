@@ -92,7 +92,7 @@ export default function RelatedServices() {
           </p>
 
           <h2 className="section-title mx-auto mt-5 max-w-[760px]">
-            Additional Solutions Designed to Support Your Operations
+            Related Device and Workforce Services
           </h2>
 
           <p className="section-copy mx-auto mt-6 max-w-2xl">

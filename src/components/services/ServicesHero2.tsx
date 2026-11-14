@@ -191,13 +191,13 @@ export default function ServicesHero2() {
               </p>
 
               <h1 className="section-title mx-auto mt-5 max-w-none lg:mx-0 lg:max-w-[16ch]">
-                Operational services built for real-world execution.
+                Device refurbishment, workforce and automation services.
               </h1>
 
               <p className="section-copy mx-auto mt-6 max-w-lg lg:mx-0">
-                ITS supports operational workflows across refurbishment, quality
-                assurance, workforce management, ATM technical support,
-                automation, and global business support.
+                ITS runs mobile device refurbishment, reverse logistics, quality
+                inspection, packaging and fulfillment, warehouse staffing, ATM
+                technical support, automation and U.S. market entry programs.
               </p>
 
               <div className="mt-8">

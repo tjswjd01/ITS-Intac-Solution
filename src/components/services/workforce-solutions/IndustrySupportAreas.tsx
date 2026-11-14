@@ -113,7 +113,7 @@ export default function IndustrySupportAreas() {
       <div className="layout-container">
         <OperationsSectionHeader
           eyebrow="Industries We Support"
-          title="Supporting operations across every industry."
+          title="Warehouse, refurbishment and logistics staffing by industry."
           description="From refurbishment centers and warehouses to manufacturing facilities, logistics operations, administrative offices, and technical field service environments, ITS delivers workforce programs designed to adapt to virtually any operational setting."
           descriptionClassName="max-w-3xl"
           eyebrowTone="black"

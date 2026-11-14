@@ -10,9 +10,10 @@ import WorkforceCTA from "@/components/services/workforce-solutions/WorkforceCTA
 import WorkforceSolutionsHero from "@/components/services/workforce-solutions/WorkforceSolutionsHero";
 
 export const metadata: Metadata = {
-  title: "Workforce Solutions | ITS Intac Solution",
+  title: "Managed Workforce Solutions",
   description:
-    "Scalable workforce programs for warehouse, refurbishment, quality assurance, and operational environments. Beyond staffing — managed workforce operations.",
+    "Scalable workforce programs for warehouse, refurbishment, quality assurance and operational environments — beyond staffing, these are managed operations.",
+  alternates: { canonical: "/services/workforce-solutions" },
 };
 
 export default function WorkforceSolutionsPage() {

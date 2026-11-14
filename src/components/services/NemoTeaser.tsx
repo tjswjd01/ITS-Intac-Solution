@@ -354,7 +354,7 @@ export default function NemoTeaser() {
           </p>
 
           <h2 className="section-title mx-auto mt-5 max-w-[760px]">
-            Operational visibility built into daily workflows.
+            Workforce visibility built into daily warehouse workflows.
           </h2>
 
           <p className="section-copy mx-auto mt-6 max-w-2xl">

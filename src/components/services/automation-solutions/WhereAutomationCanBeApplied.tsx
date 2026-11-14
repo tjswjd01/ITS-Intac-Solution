@@ -237,7 +237,7 @@ export default function WhereAutomationCanBeApplied() {
         <div className="max-w-4xl">
           <OperationsSectionHeader
             eyebrow="Application Areas"
-            title="Where automation is applied across real operational environments."
+            title="Where warehouse automation is applied."
             description="From device testing and packaging verification to QA stations, sorting systems, and production support—ITS implements automation where floor operations need consistency, visibility, and scale."
             className="[&_.section-title]:max-w-[52rem]"
             descriptionClassName="max-w-[42rem]"

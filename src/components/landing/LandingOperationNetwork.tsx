@@ -14,7 +14,7 @@ export default function LandingOperationNetwork() {
             </p>
 
             <h2 className="section-title mt-5 max-w-none lg:max-w-[11ch]">
-              Based in Dallas. Built to support teams across the U.S.
+              Based in Dallas, Texas. Device and warehouse operations nationwide.
             </h2>
 
             <p className="section-copy mt-6 max-w-[560px]">

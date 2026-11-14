@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import MailInServiceDetail from "@/components/services/operations/MailInServiceDetail";
 import MailInServiceIntro from "@/components/services/operations/MailInServiceIntro";
@@ -14,6 +15,13 @@ import RBTechnology from "@/components/services/operations/RBTechnology";
 import WorkforceManagement from "@/components/services/operations/WorkforceManagement";
 
 import OperationsHero from "./OperationsHero";
+
+export const metadata: Metadata = {
+  title: "Device Operations, QA & Packaging",
+  description:
+    "10 million devices packaged and 1.5 million tested a year. INTAC runs refurbishment, quality assurance, packaging and mail-in operations for U.S. carriers.",
+  alternates: { canonical: "/services/operations" },
+};
 
 export default function OperationsPage() {
   return (

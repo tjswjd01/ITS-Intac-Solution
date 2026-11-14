@@ -204,7 +204,7 @@ export default function RBKPI() {
       <div className="layout-container">
         <OperationsSectionHeader
           eyebrow="RB KPI"
-          title="Operational metrics tracked across refurbishment programs."
+          title="Metrics tracked across device refurbishment programs."
           description="ITS monitors defect rate, turnaround time, pass rates, recovery performance, and quality indicators to support transparent reporting and continuous improvement."
         />
 

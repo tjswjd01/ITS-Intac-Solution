@@ -83,7 +83,7 @@ export default function WorkforceManagement() {
           <OperationsSectionHeader
             className="lg:sticky lg:top-28 lg:self-start"
             eyebrow="Workforce Management"
-            title="Operational workforce structure behind reliable refurbishment execution."
+            title="The warehouse workforce behind reliable refurbishment output."
             description="Refurbishment performance depends on trained teams, clear workflows, and coordinated supervision. ITS supports workforce planning and day-to-day execution across refurbishment environments."
           />
 

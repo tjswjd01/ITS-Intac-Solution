@@ -65,7 +65,7 @@ export default function CareersOpportunities() {
           <div>
             <p className="eyebrow">Current Opportunities</p>
             <h2 className="section-title mt-5 max-w-[640px]">
-              Find your next opportunity at ITS.
+              Open roles in device operations and warehouse management.
             </h2>
           </div>
 
