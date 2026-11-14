@@ -195,10 +195,10 @@ function StatusScreen() {
       ctx.font = "500 13px system-ui, sans-serif";
       ctx.fillStyle = "#aeb8c4";
       ctx.textAlign = "left";
-      ctx.fillText("Cycle Time", SCREEN_PAD_X, 108);
+      ctx.fillText("Cycle", SCREEN_PAD_X, 108);
       ctx.textAlign = "right";
       ctx.fillStyle = "#ffffff";
-      ctx.fillText("2.48 sec", canvas.width - SCREEN_PAD_X, 108);
+      ctx.fillText("Done", canvas.width - SCREEN_PAD_X, 108);
 
       ctx.beginPath();
       ctx.arc(SCREEN_PAD_X + 10, 140, 12, 0, Math.PI * 2);
@@ -233,15 +233,15 @@ function StatusScreen() {
       ctx.fillStyle = "#aeb8c4";
       ctx.textAlign = "center";
       ctx.font = "500 13px system-ui, sans-serif";
-      ctx.fillText("Throughput", cx, 305);
+      ctx.fillText("Illustration", cx, 305);
 
       ctx.fillStyle = "#ffffff";
       ctx.font = "700 18px system-ui, sans-serif";
-      ctx.fillText("1,245 units/hr", cx, 334);
+      ctx.fillText("Sample screen", cx, 334);
 
       const bars = [0.35, 0.55, 0.45, 0.7, 0.5, 0.85];
       bars.forEach((h, i) => {
-        ctx.fillStyle = "#2d8cff";
+        ctx.fillStyle = "#a5b5c5";
         ctx.fillRect(56 + i * 28, 370 - h * 42, 16, h * 42);
       });
     }

@@ -75,7 +75,7 @@ export default function Header({
             "relative mx-auto flex min-w-0 items-center justify-between gap-2 rounded-full border px-3 py-2.5 shadow-[0_14px_40px_rgba(15,23,42,0.06)] backdrop-blur sm:gap-3 sm:px-4 sm:py-3 md:px-6 lg:px-8",
             isDark
               ? "border-white/20 bg-white/[0.08]"
-              : "border-[#E5E7EB] bg-white/92",
+              : "border-[#E5E7EB] bg-white/95",
           )}
         >
           <Link href="/" className="flex min-w-0 shrink items-center">

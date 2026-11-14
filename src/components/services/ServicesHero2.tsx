@@ -12,55 +12,43 @@ type AccordionItemData = {
   imageUrl: string;
 };
 
+// The five ITS solutions, in the same order as the Home page and the menu.
+// Photos are existing ITS assets. TODO(owner): swap in a photo per solution.
 const accordionItems: AccordionItemData[] = [
   {
     id: 1,
-    title: "Mobile Refurbishment",
+    title: "Direct Hire",
     description:
-      "Repair, testing, grading, and restoration programs for mobile devices.",
-    imageUrl: "/images/services/mobile-refurbishment.jpg",
+      "Executive, professional, technical and bilingual talent acquisition.",
+    imageUrl: "/images/who-team.jpeg",
   },
   {
     id: 2,
-    title: "Quality Assurance",
+    title: "Staffing & Workforce",
     description:
-      "Inspection and verification workflows designed to maintain consistent quality.",
-    imageUrl: "/images/services/quality-inspection.jpg",
+      "Flexible staffing for logistics, warehouse, manufacturing and professional roles.",
+    imageUrl: "/images/who-warehouse.jpeg",
   },
   {
     id: 3,
-    title: "Mail-in Service",
+    title: "Managed Operations",
     description:
-      "End-to-end customer repair support from intake to return delivery.",
-    imageUrl: "/images/services/mobile-refurbishment.jpg",
+      "Engineering-led management of people, processes, quality and KPIs.",
+    imageUrl: "/images/its-hhp.png",
   },
   {
     id: 4,
-    title: "Workforce Management",
+    title: "Automation & Robotics",
     description:
-      "Operational staffing coordination for scalable business execution.",
-    imageUrl: "/images/services/staffing.jpg",
+      "Customized refurbishment-process automation and AMR robots in our facility.",
+    imageUrl: "/images/its-2025.png",
   },
   {
     id: 5,
-    title: "ATM Technical Support",
+    title: "U.S. Market Entry",
     description:
-      "Field and depot support for ATM installation, maintenance, and service needs.",
-    imageUrl: "/images/services/atm-support.jpg",
-  },
-  {
-    id: 6,
-    title: "Automation Solutions",
-    description:
-      "Workflow optimization and automation support for operational efficiency.",
-    imageUrl: "/images/services/automation.jpg",
-  },
-  {
-    id: 7,
-    title: "Global Business Support",
-    description:
-      "Bilingual operational setup and support for Korean companies entering the U.S.",
-    imageUrl: "/images/services/packaging-logistics.jpg",
+      "Workforce planning, facility/production-line support and U.S. operational setup.",
+    imageUrl: "/images/its-2022.png",
   },
 ];
 
@@ -187,17 +175,17 @@ export default function ServicesHero2() {
             <div className="w-full text-center lg:w-[42%] lg:text-left">
               <p className="eyebrow justify-center lg:justify-start">
                 <span className="h-2 w-2 rounded-full bg-[#0B3D91]" aria-hidden />
-                Our Services
+                Our Solutions
               </p>
 
               <h1 className="section-title mx-auto mt-5 max-w-none lg:mx-0 lg:max-w-[16ch]">
-                Device refurbishment, workforce and automation services.
+                Workforce, operations and automation solutions.
               </h1>
 
               <p className="section-copy mx-auto mt-6 max-w-lg lg:mx-0">
-                ITS runs mobile device refurbishment, reverse logistics, quality
-                inspection, packaging and fulfillment, warehouse staffing, ATM
-                technical support, automation and U.S. market entry programs.
+                ITS provides direct hire, staffing and workforce management,
+                engineering-led managed operations, refurbishment-process
+                automation and U.S. market entry support.
               </p>
 
               <div className="mt-8">

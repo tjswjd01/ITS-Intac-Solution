@@ -7,7 +7,6 @@ import {
   Building2,
   Cog,
   Languages,
-  Mail,
   Package,
   ShieldCheck,
   Smartphone,
@@ -34,137 +33,166 @@ type CategoryCard = {
   subServices: SubService[];
 };
 
+// Five solutions, in the same order and scope as the Home page.
+// Staffing covers warehouse and logistics labor; automation means equipment
+// applied in the mobile-device refurbishment process and AMR robots used in
+// that facility, never general warehouse automation.
 const categoryCards: CategoryCard[] = [
   {
     number: "01",
-    title: "Operations",
+    title: "Direct Hire",
     description:
-      "End-to-end device lifecycle management from intake to return delivery.",
-    href: "/services/operations",
-    exploreLabel: "Explore Operations",
-    image: "/images/services/mobile-refurbishment.jpg",
+      "Executive, professional, technical and bilingual talent acquisition. Your company employs the hire.",
+    href: "/services/direct-hire",
+    exploreLabel: "Explore Direct Hire",
+    image: "/images/global-business-support/korean-business-meeting.jpg",
     subServices: [
       {
-        title: "Mobile Refurbishment",
+        title: "Executive & Professional Search",
         description:
-          "Repair, testing, grading, and restoration of mobile devices.",
-        icon: Smartphone,
-        href: "/services/operations",
+          "Leaders, managers, finance, supply chain and HR professionals.",
+        icon: UserPlus,
+        href: "/services/direct-hire",
       },
       {
-        title: "Quality Assurance",
+        title: "Engineering & Technical Recruiting",
         description:
-          "Inspection and verification workflows for consistent quality.",
-        icon: ShieldCheck,
-        href: "/services/operations",
+          "Equipment and field service engineers, technicians and specialists.",
+        icon: Cog,
+        href: "/services/direct-hire",
       },
       {
-        title: "Mail-in Service",
+        title: "Korean–English Bilingual Talent",
         description:
-          "End-to-end customer repair support from intake to return.",
-        icon: Mail,
-        href: "/services/operations",
-      },
-      {
-        title: "Packaging & Operational Support",
-        description:
-          "Secure packaging, kitting, and operational execution support.",
-        icon: Package,
-        href: "/services/operations",
+          "Professionals who work across Korean headquarters and U.S. teams.",
+        icon: Languages,
+        href: "/services/direct-hire",
       },
     ],
   },
   {
     number: "02",
-    title: "Workforce Solutions",
+    title: "Staffing & Workforce",
     description:
-      "Scalable workforce programs designed to support warehouse, refurbishment, quality assurance, and operational environments.",
+      "Flexible staffing for logistics, warehouse, manufacturing and professional roles, with HR, payroll and attendance management.",
     href: "/services/workforce-solutions",
-    exploreLabel: "Explore Workforce Solutions",
-    image: "/images/services/staffing.jpg",
+    exploreLabel: "Explore Staffing & Workforce",
+    image: "/images/who-warehouse.jpeg",
     subServices: [
       {
-        title: "Warehouse Workforce",
+        title: "Warehouse & Logistics Workforce",
         description:
-          "Warehouse operations staffing, material handling, inventory support, and logistics workforce programs.",
+          "Forklift operators, warehouse associates, shipping/receiving and inventory personnel.",
         icon: Package,
         href: "/services/workforce-solutions",
       },
       {
-        title: "RB & QA Workforce",
+        title: "Manufacturing & Technical Workforce",
         description:
-          "Refurbishment, testing, inspection, and quality assurance workforce support for operational environments.",
+          "Production workers, technicians, testing and quality inspection staff.",
         icon: ShieldCheck,
         href: "/services/workforce-solutions",
       },
       {
-        title: "Workforce Coordination",
+        title: "Workforce Administration",
         description:
-          "Recruitment, onboarding, scheduling, attendance tracking, and workforce management support.",
-        icon: UserPlus,
+          "Recruitment, onboarding, payroll, benefits, attendance and workforce support.",
+        icon: Users,
         href: "/services/workforce-solutions",
       },
     ],
   },
   {
     number: "03",
-    title: "Automation Solutions",
+    title: "Managed Operations",
     description:
-      "Automation technologies and process improvement solutions designed to increase operational efficiency and scalability.",
-    href: "/services/automation-solutions",
-    exploreLabel: "Explore Automation Solutions",
-    image: "/images/services/automation.jpg",
+      "Engineering-led management of people, processes, quality and KPIs within a defined, contracted scope.",
+    href: "/services/operations",
+    exploreLabel: "Explore Managed Operations",
+    image: "/images/its-hhp.png",
     subServices: [
       {
-        title: "Customized Automation Systems",
+        title: "Site & Process Management",
         description:
-          "Custom-designed automation equipment and workflow solutions tailored to client operational requirements.",
-        icon: Cog,
-        href: "/services/automation-solutions",
-      },
-      {
-        title: "Robotics & Smart Operations",
-        description:
-          "AMR robotics, material movement automation, and smart operational technologies designed to improve productivity and efficiency.",
-        icon: Package,
-        href: "/services/automation-solutions",
-      },
-      {
-        title: "Process Optimization",
-        description:
-          "Workflow analysis, process improvement, and operational optimization programs focused on scalability, efficiency, and execution quality.",
+          "Production and process oversight led by technical managers.",
         icon: Workflow,
-        href: "/services/automation-solutions",
+        href: "/services/operations",
+      },
+      {
+        title: "Quality & KPI Control",
+        description:
+          "Quality, productivity and cost tracked against agreed KPIs.",
+        icon: ShieldCheck,
+        href: "/services/operations",
+      },
+      {
+        title: "Mobile Device Refurbishment",
+        description:
+          "Repair, testing, grading and packaging operations as a working example.",
+        icon: Smartphone,
+        href: "/services/operations",
       },
     ],
   },
   {
     number: "04",
-    title: "Global Business Support",
+    title: "Automation & Robotics",
     description:
-      "End-to-end support for Korean companies entering and establishing their business in the U.S.",
-    href: "/services/global-business-support",
-    exploreLabel: "Explore Global Business Support",
-    image: "/images/services/packaging-logistics.jpg",
+      "Customized automation for mobile-device refurbishment processes, and AMR robots used in our facility.",
+    href: "/services/automation-solutions",
+    exploreLabel: "Explore Automation & Robotics",
+    image: "/images/its-2025.png",
     subServices: [
       {
-        title: "U.S. Business Setup",
+        title: "Custom Equipment",
         description:
-          "Entity setup, compliance, facility and line setup, and operational infrastructure support.",
+          "Purpose-built and customized equipment for specific refurbishment tasks.",
+        icon: Cog,
+        href: "/services/automation-solutions",
+      },
+      {
+        title: "Inspection & QA",
+        description:
+          "Systems and devices supporting repeatable checks and quality verification.",
+        icon: ShieldCheck,
+        href: "/services/automation-solutions",
+      },
+      {
+        title: "AMR Robots",
+        description:
+          "Material movement within our refurbishment facility, with rental, sales and repair inquiries.",
+        icon: Package,
+        href: "/services/automation-solutions",
+      },
+    ],
+  },
+  {
+    number: "05",
+    title: "U.S. Market Entry",
+    description:
+      "Workforce planning, facility and production-line support and U.S. operational setup for Korean and global companies.",
+    href: "/services/global-business-support",
+    exploreLabel: "Explore U.S. Market Entry",
+    image: "/images/its-2022.png",
+    subServices: [
+      {
+        title: "Workforce Strategy & Hiring",
+        description:
+          "Executive, professional and operational hiring plans for a U.S. launch.",
         icon: Building2,
         href: "/services/global-business-support",
       },
       {
-        title: "Workforce Setup & Management",
+        title: "Line & Facility Setup Support",
         description:
-          "Recruitment, onboarding, HR administration, and ongoing workforce management.",
-        icon: Users,
+          "Process and production-line planning and operational readiness.",
+        icon: Workflow,
         href: "/services/global-business-support",
       },
       {
         title: "Ongoing Operational Support",
         description:
-          "Bilingual support for daily operations and continuous business success.",
+          "Bilingual coordination for daily operations after launch.",
         icon: Languages,
         href: "/services/global-business-support",
       },
@@ -271,17 +299,17 @@ export default function ServicesOverviewCards() {
           </p>
 
           <h2 className="section-title mx-auto mt-5 max-w-[760px]">
-            Four core services: device lifecycle, workforce, automation, U.S. setup.
+            Five solutions, from a single hire to a fully managed operation.
           </h2>
 
           <p className="section-copy mx-auto mt-6 max-w-2xl">
-            ITS provides structured operational support across device lifecycle
-            management, workforce coordination, automation, and global business
-            expansion.
+            Direct hire, staffing and workforce management, managed
+            operations, automation and U.S. market entry support, delivered by
+            one partner.
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-[1180px] gap-5 lg:grid-cols-2">
+        <div className="mx-auto mt-12 grid max-w-[1180px] gap-5 lg:grid-cols-2 lg:[&>*:last-child:nth-child(odd)]:col-span-2">
           {categoryCards.map((card) => (
             <CategoryOverviewCard key={card.number} card={card} />
           ))}

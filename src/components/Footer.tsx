@@ -3,17 +3,18 @@ import Link from "next/link";
 
 const companyLinks = [
   { label: "About Us", href: "/about" },
+  { label: "Industries", href: "/industries" },
+  { label: "Insights", href: "/insights" },
   { label: "Careers", href: "/careers" },
-  { label: "Our Services", href: "/services" },
 ];
 
 const serviceLinks = [
-  { label: "Mobile Refurbishment", href: "/services" },
-  { label: "Quality Assurance & Inspection", href: "/services" },
-  { label: "Staffing Solutions", href: "/services" },
-  { label: "Packaging & Logistics", href: "/services" },
-  { label: "ATM Technical Support", href: "/services" },
-  { label: "Automation Solutions", href: "/services" },
+  { label: "Direct Hire", href: "/services/direct-hire" },
+  { label: "Staffing & Workforce", href: "/services/workforce-solutions" },
+  { label: "Managed Operations", href: "/services/operations" },
+  { label: "Automation & Robotics", href: "/services/automation-solutions" },
+  { label: "U.S. Market Entry", href: "/services/global-business-support" },
+  { label: "All Solutions", href: "/services" },
 ];
 
 const contactLinks = [
@@ -77,8 +78,8 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-6 text-[15px] leading-[1.75] text-[#6B7280] md:text-base md:leading-8">
-              ITS delivers intelligent solutions that connect people,
-              processes, and technology.
+              ITS provides direct hire, staffing, managed operations,
+              automation and U.S. market entry support.
             </p>
           </div>
 
@@ -89,7 +90,7 @@ export default function Footer() {
           />
 
           <FooterColumn
-            title="Services"
+            title="Solutions"
             links={serviceLinks}
             className="border-t border-[#E5E7EB] pt-10 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"
           />

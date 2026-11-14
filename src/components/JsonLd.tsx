@@ -6,7 +6,7 @@ const ORG = {
   alternateName: "ITS",
   url: "https://www.intacsolution.com/",
   description:
-    "INTAC Solution provides mobile device refurbishment, quality assurance, packaging, workforce operations and warehouse automation support for Samsung and major U.S. wireless carriers.",
+    "INTAC Solution (ITS) provides direct hire recruiting, staffing and workforce management, engineering-led managed operations, refurbishment-process automation and U.S. market entry support for Korean and global companies in the United States.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "5550 Granite Parkway STE 295",
@@ -61,12 +61,14 @@ const ORG = {
     },
   ],
   knowsAbout: [
-    "Mobile device refurbishment",
-    "Reverse logistics",
-    "Device interoperability testing",
-    "Device packaging and kitting",
-    "Warehouse workforce operations",
-    "Warehouse automation",
+    "Direct hire recruiting",
+    "Korean-English bilingual recruiting",
+    "Staffing and workforce management",
+    "Warehouse and logistics staffing",
+    "Managed operations",
+    "Mobile device refurbishment operations",
+    "Refurbishment process automation",
+    "U.S. market entry support",
   ],
   // TODO: add the headhunting site here once its domain is live, e.g.
   // sameAs: ["https://www.linkedin.com/company/intac-solution/", "https://<headhunting-domain>/"],

@@ -35,11 +35,11 @@ const pretendardKr = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.intacsolution.com"),
   title: {
-    default: "Workforce & Device Operations Services | INTAC Solution",
+    default: "Workforce, Operations & Automation Solutions | INTAC Solution",
     template: "%s | INTAC Solution",
   },
   description:
-    "INTAC Solution runs device refurbishment, quality assurance, packaging and workforce operations at scale — 10M+ devices processed a year across five U.S. facilities.",
+    "ITS provides direct hire, staffing and workforce management, engineering-led managed operations, refurbishment-process automation and U.S. market entry support in the United States.",
   openGraph: {
     type: "website",
     siteName: "INTAC Solution",

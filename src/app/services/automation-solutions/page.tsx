@@ -1,38 +1,40 @@
 import type { Metadata } from "next";
+
 import Header from "@/components/Header";
-import AutomationCTA from "@/components/services/automation-solutions/AutomationCTA";
-import AutomationCoreTechnologies from "@/components/services/automation-solutions/AutomationCoreTechnologies";
-import AutomationIndustryUseCases from "@/components/services/automation-solutions/AutomationIndustryUseCases";
-import AutomationPerformanceImpact from "@/components/services/automation-solutions/AutomationPerformanceImpact";
-import AutomationOverview from "@/components/services/automation-solutions/AutomationOverview";
-import AutomationSolutionsHero from "@/components/services/automation-solutions/AutomationSolutionsHero";
+import AutomationCapabilities from "@/components/services/automation-solutions/AutomationCapabilities";
+import AutomationFeaturedAmr from "@/components/services/automation-solutions/AutomationFeaturedAmr";
+import AutomationHeroV2 from "@/components/services/automation-solutions/AutomationHeroV2";
 import AutomationApplicationAreas from "@/components/services/automation-solutions/WhereAutomationCanBeApplied";
+import { automationClosing } from "@/components/services/automation-solutions/automationContent";
+import { CtaBanner } from "@/components/site/primitives";
 
 export const metadata: Metadata = {
-  title: "Warehouse Automation & Workflow Systems",
+  title: "Automation & Robotics",
   description:
-    "Robotics integration, conveyor systems and packaging automation. INTAC designs and operates workflow automation for high-volume device and fulfillment sites.",
+    "ITS develops and customizes automation equipment for mobile-device refurbishment processes and supports AMR robots used for material movement within its facility.",
   alternates: { canonical: "/services/automation-solutions" },
 };
 
 export default function AutomationSolutionsPage() {
   return (
-    <main className="page-shell">
-      <Header variant="dark" ctaVariant="pro" />
+    <main className="page-shell bg-its-offwhite">
+      <Header />
 
-      <AutomationSolutionsHero />
+      <AutomationHeroV2 />
 
-      <AutomationOverview />
+      <AutomationCapabilities />
 
-      <AutomationCoreTechnologies />
+      <AutomationFeaturedAmr />
 
       <AutomationApplicationAreas />
 
-      <AutomationIndustryUseCases />
-
-      <AutomationPerformanceImpact />
-
-      <AutomationCTA />
+      <div className="bg-its-offwhite pt-16 md:pt-20">
+        <CtaBanner
+          title={automationClosing.title}
+          copy={automationClosing.copy}
+          label={automationClosing.label}
+        />
+      </div>
     </main>
   );
 }

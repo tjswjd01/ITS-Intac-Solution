@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import Header from "../../components/Header";
 import ServicesHero2 from "@/components/services/ServicesHero2";
-import HoverServicesSlider from "@/components/services/HoverServicesSlider";
 import ServicesOverviewCards from "@/components/services/ServicesOverviewCards";
 import FieldOperationsGallery from "@/components/services/FieldOperationsGallery";
-import NemoTeaser from "@/components/services/NemoTeaser";
+import HomeNemo from "@/components/home/HomeNemo";
 import ServicesCTA from "@/components/services/ServicesCTA";
 
 export const metadata: Metadata = {
-  title: "Device & Workforce Operational Services",
+  title: "Workforce & Operations Solutions",
   description:
-    "Device lifecycle operations, managed workforce solutions, workflow automation and U.S. business infrastructure support — the full INTAC Solution service range.",
+    "Direct hire, staffing and workforce management, managed operations, refurbishment-process automation and U.S. market entry support — the five ITS solutions.",
   alternates: { canonical: "/services" },
 };
 
@@ -20,9 +19,8 @@ export default function ServicesPage() {
       <Header />
       <ServicesHero2 />
       <ServicesOverviewCards />
-      <HoverServicesSlider />
       <FieldOperationsGallery />
-      <NemoTeaser />
+      <HomeNemo />
       <ServicesCTA />
     </main>
   );
