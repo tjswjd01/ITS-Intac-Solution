@@ -1,29 +1,67 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Briefcase, ChevronDown, Menu, Newspaper, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import ServicesNavDropdown from "./ServicesNavDropdown";
+import NavDropdown, { type NavDropdownItem } from "./NavDropdown";
 import { ShinyButton } from "./ui/ShinyButton";
 import { premiumPrimaryCtaClassName } from "./ui/premiumCtaStyles";
 import { cn } from "@/lib/utils";
 
+// Mobile menu order. On desktop, Careers and Insights sit under Resources.
 const navItems = [
   { href: "/about", label: "About Us" },
   { href: "/industries", label: "Industries" },
-  { href: "/insights", label: "Insights" },
   { href: "/careers", label: "Careers" },
+  { href: "/insights", label: "Insights" },
   { href: "/contact", label: "Contact Us" },
 ];
 
-const mobileServiceLinks = [
-  { href: "/services/direct-hire", label: "Direct Hire" },
-  { href: "/services/workforce-solutions", label: "Staffing & Workforce" },
-  { href: "/services/operations", label: "Managed Operations" },
-  { href: "/services/automation-solutions", label: "Automation & Robotics" },
-  { href: "/services/global-business-support", label: "U.S. Market Entry" },
+const solutionItems: NavDropdownItem[] = [
+  {
+    label: "Direct Hire",
+    subtext: "Executive, professional, technical and bilingual talent.",
+    href: "/services/direct-hire",
+  },
+  {
+    label: "Staffing & Workforce",
+    subtext: "Staffing for logistics, warehouse, manufacturing and professional roles.",
+    href: "/services/workforce-solutions",
+  },
+  {
+    label: "Managed Operations",
+    subtext: "Engineering-led management of people, processes, quality and KPIs.",
+    href: "/services/operations",
+  },
+  {
+    label: "Automation & Robotics",
+    subtext: "Refurbishment-process automation and AMR robots in our facility.",
+    href: "/services/automation-solutions",
+  },
+  {
+    label: "U.S. Market Entry",
+    subtext: "Workforce planning, facility support and U.S. operational setup.",
+    href: "/services/global-business-support",
+  },
 ];
+
+const resourceItems: NavDropdownItem[] = [
+  {
+    label: "Careers",
+    subtext: "Search open positions or submit your resume.",
+    href: "/careers",
+    icon: Briefcase,
+  },
+  {
+    label: "Insights",
+    subtext: "HR, job market, operations and career perspectives.",
+    href: "/insights",
+    icon: Newspaper,
+  },
+];
+
+const mobileServiceLinks = solutionItems.map(({ href, label }) => ({ href, label }));
 
 type HeaderProps = {
   variant?: "default" | "dark";
@@ -94,12 +132,14 @@ export default function Header({
             <Link href="/about" className={navLinkClassName}>
               About Us
             </Link>
-            <ServicesNavDropdown variant={variant} />
-            {navItems.slice(1).map((item) => (
-              <Link key={item.href} href={item.href} className={navLinkClassName}>
-                {item.label}
-              </Link>
-            ))}
+            <NavDropdown label="Solutions" href="/services" items={solutionItems} variant={variant} />
+            <Link href="/industries" className={navLinkClassName}>
+              Industries
+            </Link>
+            <NavDropdown label="Resources" items={resourceItems} variant={variant} align="right" />
+            <Link href="/contact" className={navLinkClassName}>
+              Contact Us
+            </Link>
           </nav>
 
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
