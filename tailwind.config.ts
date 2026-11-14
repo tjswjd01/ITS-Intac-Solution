@@ -12,6 +12,19 @@ const config: Config = {
         muted: "#6B7280",
         surface: "#FAFAF8",
         border: "#E5E7EB",
+        // Home redesign palette (Nov 2026). Additive: existing tokens above are unchanged.
+        its: {
+          navy: "#14243D", // headings, primary CTAs, the single dark module
+          slate: "#758194", // dividers, large supporting type
+          "slate-ink": "#566173", // body copy on off-white (5.8:1)
+          offwhite: "#F7F6F3", // page background, quiet surfaces
+          dusty: "#A5B5C5", // icon strokes
+          "dusty-soft": "#EDF1F5", // icon tiles
+          mint: "#8FAAA5", // decorative rules and dots only
+          "mint-ink": "#4F6F69", // eyebrow text (5.1:1 on off-white)
+          coral: "#D97868", // rare accent, under 3% of the page
+          line: "#E3E5E8", // card borders
+        },
       },
       boxShadow: {
         premium: "0 18px 50px rgba(15, 23, 42, 0.06)",
@@ -29,7 +42,18 @@ const config: Config = {
         "shell-desktop": "1520px",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "Helvetica Neue", "Arial", "sans-serif"],
+        sans: [
+          "var(--font-pretendard)",
+          "var(--font-pretendard-kr)",
+          "Pretendard",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Apple SD Gothic Neo",
+          "Segoe UI",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
       },
       keyframes: {
         "footer-shine": {

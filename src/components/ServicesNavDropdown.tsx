@@ -8,23 +8,28 @@ import { cn } from "@/lib/utils";
 
 const serviceLinks = [
   {
-    label: "Operations",
-    subtext: "Refurbishment, QA, packaging, and operational support.",
-    href: "/services/operations",
+    label: "Direct Hire",
+    subtext: "Executive, professional, technical and bilingual talent.",
+    href: "/services/direct-hire",
   },
   {
-    label: "Workforce Solutions",
-    subtext: "Operational workforce coordination and staffing support.",
+    label: "Staffing & Workforce",
+    subtext: "Staffing for logistics, warehouse, manufacturing and professional roles.",
     href: "/services/workforce-solutions",
   },
   {
-    label: "Automation Solutions",
-    subtext: "Workflow optimization and operational automation support.",
+    label: "Managed Operations",
+    subtext: "Engineering-led management of people, processes, quality and KPIs.",
+    href: "/services/operations",
+  },
+  {
+    label: "Automation & Robotics",
+    subtext: "Refurbishment-process automation and logistics robot solutions.",
     href: "/services/automation-solutions",
   },
   {
-    label: "Global Business Support",
-    subtext: "Operational setup and bilingual support for Korean companies.",
+    label: "U.S. Market Entry",
+    subtext: "Workforce planning, facility support and U.S. operational setup.",
     href: "/services/global-business-support",
   },
 ];
@@ -111,7 +116,7 @@ export default function ServicesNavDropdown({
   return (
     <div className="relative inline-flex items-center gap-0.5">
       <Link href="/services" className={linkClassName}>
-        Services
+        Solutions
       </Link>
 
       <div
@@ -124,7 +129,7 @@ export default function ServicesNavDropdown({
           type="button"
           aria-expanded={open}
           aria-haspopup="true"
-          aria-label="Show services menu"
+          aria-label="Show solutions menu"
           onClick={toggleMenu}
           className={chevronButtonClassName}
         >

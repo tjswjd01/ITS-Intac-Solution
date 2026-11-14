@@ -7,11 +7,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "", priority: 1.0 },
     { path: "/about", priority: 0.8 },
     { path: "/services", priority: 0.9 },
+    { path: "/services/direct-hire", priority: 0.9 },
     { path: "/services/operations", priority: 0.9 },
     { path: "/services/mobile-refurbishment", priority: 0.9 },
     { path: "/services/workforce-solutions", priority: 0.9 },
     { path: "/services/automation-solutions", priority: 0.8 },
     { path: "/services/global-business-support", priority: 0.8 },
+    { path: "/industries", priority: 0.7 },
     { path: "/careers", priority: 0.7 },
     { path: "/contact", priority: 0.6 },
   ];

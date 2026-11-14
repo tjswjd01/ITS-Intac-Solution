@@ -11,15 +11,18 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/about", label: "About Us" },
+  { href: "/industries", label: "Industries" },
+  { href: "/insights", label: "Insights" },
   { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact Us" },
 ];
 
 const mobileServiceLinks = [
-  { href: "/services/operations", label: "Operations" },
-  { href: "/services/workforce-solutions", label: "Workforce Solutions" },
-  { href: "/services/automation-solutions", label: "Automation Solutions" },
-  { href: "/services/global-business-support", label: "Global Business Support" },
+  { href: "/services/direct-hire", label: "Direct Hire" },
+  { href: "/services/workforce-solutions", label: "Staffing & Workforce" },
+  { href: "/services/operations", label: "Managed Operations" },
+  { href: "/services/automation-solutions", label: "Automation & Robotics" },
+  { href: "/services/global-business-support", label: "U.S. Market Entry" },
 ];
 
 type HeaderProps = {
@@ -87,7 +90,7 @@ export default function Header({
             />
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-5 lg:flex xl:gap-8">
             <Link href="/about" className={navLinkClassName}>
               About Us
             </Link>
@@ -178,12 +181,12 @@ export default function Header({
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
-                    Services
+                    Solutions
                   </Link>
                   <button
                     type="button"
                     aria-expanded={mobileServicesExpanded}
-                    aria-label="Toggle services submenu"
+                    aria-label="Toggle solutions submenu"
                     onClick={() =>
                       setMobileServicesExpanded((expanded) => !expanded)
                     }
