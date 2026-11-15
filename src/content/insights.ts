@@ -85,3 +85,48 @@ export const formatDate = (iso: string) =>
     day: "numeric",
     timeZone: "UTC",
   });
+
+/* Insights page layout copy (Nov 2026 layout). TODO(owner): review wording. */
+export const insightsPage = {
+  hero: {
+    label: "ITS Insights",
+    title: "Insights for Better Hiring, Stronger Workforces, and Smarter Operations.",
+    copy: "Practical perspectives on HR, the job market, careers, and operations from ITS.",
+    cta: { label: "Browse Articles", href: "#articles" },
+    // Placeholder image from the existing site. TODO(owner): replace.
+    image: "/images/its-automation.jpeg",
+    alt: "ITS operations floor",
+  },
+  pillars: [
+    {
+      key: "hiring",
+      title: "Hiring & Workforce",
+      text: "What we see in recruiting and site staffing, from bilingual hiring to onboarding and retention.",
+    },
+    {
+      key: "operations",
+      title: "Operations & Industry",
+      text: "Lessons from running production, logistics and refurbishment sites: quality, KPIs, process.",
+    },
+    {
+      key: "careers",
+      title: "Career Advice",
+      text: "Practical guidance for candidates on interviews, U.S. workplace norms and growing a technical career.",
+    },
+  ],
+  featured: {
+    label: "Featured",
+    cta: "Read Article",
+  },
+  topics: {
+    label: "Browse by Topic",
+    title: "Four Topics, One Practical Point of View.",
+    copy: "Each article offers ITS’s own view from the work we do every day. Pick a topic to filter the articles below.",
+    descriptions: {
+      "hr-workforce": "Onboarding, attendance, retention and managing teams on site.",
+      "job-market-hiring": "Hiring trends, bilingual talent and how to recruit in the U.S.",
+      "operations-industry": "Quality, productivity and process in manufacturing and logistics.",
+      "career-advice": "Interviews, resumes and building a career in technical roles.",
+    } satisfies Record<InsightCategoryCode, string>,
+  },
+};
