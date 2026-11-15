@@ -17,13 +17,17 @@ const config: Config = {
           navy: "#14243D", // headings, primary CTAs, the single dark module
           slate: "#758194", // dividers, large supporting type
           "slate-ink": "#566173", // body copy on off-white (5.8:1)
-          offwhite: "#F7F6F3", // page background, quiet surfaces
+          offwhite: "#F5F6F8", // quiet surface on inner pages (cool, was warm #F7F6F3)
+          cool: "#F0F2F5", // Home section bands and proof cards
           dusty: "#A5B5C5", // icon strokes
           "dusty-soft": "#EDF1F5", // icon tiles
           mint: "#8FAAA5", // decorative rules and dots only
           "mint-ink": "#4F6F69", // eyebrow text (5.1:1 on off-white)
           coral: "#D97868", // rare accent, under 3% of the page
           line: "#E3E5E8", // card borders
+          periwinkle: "#5A74C9", // Direct Hire accent: primary button, step highlight (white text 4.9:1)
+          "periwinkle-soft": "#E9EEFA", // periwinkle tint for tiles and chips
+          "periwinkle-ink": "#3F57A6", // periwinkle text on light surfaces (6.3:1)
         },
       },
       boxShadow: {

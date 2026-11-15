@@ -12,7 +12,7 @@ import { hero } from "./homeContent";
 
 export default function HomeHero() {
   return (
-    <section className="relative overflow-hidden bg-its-offwhite pb-14 pt-28 md:pb-16 md:pt-36 lg:pb-20 lg:pt-40">
+    <section className="relative overflow-hidden bg-white pb-14 pt-28 md:pb-16 md:pt-36 lg:pb-20 lg:pt-40">
       <div className="layout-container">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] lg:gap-12">
           <div className="max-w-[660px]">
@@ -46,7 +46,7 @@ export default function HomeHero() {
             {/* quiet tinted panel set behind the media */}
             <div
               aria-hidden
-              className="absolute -bottom-5 -left-5 right-10 top-10 rounded-[36px] bg-[#E3EAE8] sm:-left-7"
+              className="absolute -bottom-5 -left-5 right-10 top-10 rounded-[36px] bg-its-cool sm:-left-7"
             />
             <div className="relative aspect-video overflow-hidden rounded-[28px] bg-its-dusty-soft sm:rounded-[32px]">
               <Image

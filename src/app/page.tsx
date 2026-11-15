@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 
 import Header from "../components/Header";
-import HomeCaseStudies from "../components/home/HomeCaseStudies";
+import HomeCta from "../components/home/HomeCta";
 import HomeHero from "../components/home/HomeHero";
 import HomeIndustries from "../components/home/HomeIndustries";
 import HomeInsights from "../components/home/HomeInsights";
 import HomeNemo from "../components/home/HomeNemo";
 import HomeProofStrip from "../components/home/HomeProofStrip";
 import HomeSolutions from "../components/home/HomeSolutions";
-import HomeTestimonials from "../components/home/HomeTestimonials";
 import HomeWhyIts from "../components/home/HomeWhyIts";
-import { closing } from "../components/home/homeContent";
-import { CtaBanner } from "../components/site/primitives";
 
 const title = "Workforce, Operations & Automation Solutions | INTAC Solution";
 const description =
@@ -33,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="page-shell bg-its-offwhite">
+    <main className="page-shell bg-white">
       <Header />
       <HomeHero />
       <HomeSolutions />
@@ -41,10 +38,8 @@ export default function Home() {
       <HomeWhyIts />
       <HomeIndustries />
       <HomeNemo />
-      <HomeCaseStudies />
-      <HomeTestimonials />
       <HomeInsights />
-      <CtaBanner title={closing.title} copy={closing.copy} />
+      <HomeCta />
     </main>
   );
 }

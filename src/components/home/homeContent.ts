@@ -6,14 +6,13 @@
  */
 
 export const hero = {
-  eyebrow: "Workforce · Operations · Automation",
-  headline: ["People, Operations and", "Technology for"],
-  headlineAccent: "U.S. Business Success.",
-  // Proposed copy from the v2 brief, subject to owner approval.
-  copy: "ITS provides direct hire, workforce staffing and management, engineering-led operations, specialized process automation, and U.S. market entry support.",
-  primary: { label: "Our Solutions", href: "/services" },
+  eyebrow: "Workforce & Operations Partner",
+  headline: ["People, Operations,", "and Technology"],
+  headlineAccent: "for Your U.S. Growth.",
+  copy: "ITS combines talent solutions, engineering-led operations management, and technical execution to support businesses operating and expanding in the U.S.",
+  primary: { label: "Explore Our Solutions", href: "/services" },
   secondary: { label: "About ITS", href: "/about" },
-  // TODO(owner): confirm the hero footage and still. Both are existing site assets.
+  // TODO(owner): the clip has a caption baked in. Replace when a clean clip exists.
   video: "/videos/its-smart.mp4",
   poster: "/images/who-team.jpeg",
   posterAlt: "ITS technicians working at stations on an operations floor",
@@ -26,120 +25,173 @@ export type SolutionKey =
   | "automation"
   | "market-entry";
 
-// Card copy is the owner-preferred wording from the v2 brief (section 9).
-// Service scope rules: staffing covers warehouse/logistics labor and is not
-// automation; automation means refurbishment-process equipment and the
-// logistics robots in that facility, never general warehouse automation.
+export const solutionsIntro = {
+  eyebrow: "Our Solutions",
+  title: "Five Integrated Solutions, One Trusted Partner",
+  copy: "From talent acquisition to full operations, we deliver the people, technology, and execution to keep your business moving.",
+  link: { label: "View All Solutions", href: "/services" },
+};
+
+// Scope rules: staffing covers warehouse and forklift labor and is not
+// automation; automation means refurbishment-process equipment and the AMR
+// robots in that facility, never general warehouse automation.
+// TODO(owner): card photos are placeholders from existing ITS media. Replace
+// each with a photo that fits the solution.
 export const solutions: {
   key: SolutionKey;
   title: string;
   description: string;
   href: string;
+  image: string;
+  alt: string;
 }[] = [
   {
     key: "direct-hire",
     title: "Direct Hire",
     description:
-      "Executive, professional, technical and bilingual talent acquisition.",
+      "Targeted executive, professional, technical, and bilingual recruiting for long-term roles.",
     href: "/services/direct-hire",
+    image: "/images/who-team.jpeg",
+    alt: "Team members at work on an ITS operations floor",
   },
   {
     key: "staffing",
     title: "Staffing & Workforce",
     description:
-      "Flexible staffing for logistics, warehouse, manufacturing and professional roles.",
+      "Flexible staffing and employee management for logistics, warehouse, manufacturing, technical, and professional roles, including forklift operators and warehouse associates.",
     href: "/services/workforce-solutions",
+    image: "/images/who-warehouse.jpeg",
+    alt: "Warehouse floor with pallets staged for handling",
   },
   {
     key: "managed-operations",
     title: "Managed Operations",
     description:
-      "Engineering-led management of people, processes, quality and KPIs.",
+      "Engineering-led management of workforce, processes, technical operations, quality, and KPIs.",
     href: "/services/operations",
+    image: "/images/its-hhp.png",
+    alt: "Technicians at repair stations on an ITS-run line",
   },
   {
     key: "automation",
     title: "Automation & Robotics",
     description:
-      "Customized refurbishment-process automation and logistics robot solutions.",
+      "Customized automation for mobile refurbishment processes and AMR robots used within the refurbishment facility, with robot rental, sales, and repair support.",
     href: "/services/automation-solutions",
+    image: "/images/its-2025.png",
+    alt: "ITS-built refurbishment process equipment",
   },
   {
     key: "market-entry",
     title: "U.S. Market Entry",
     description:
-      "Workforce planning, facility/production-line support and U.S. operational setup.",
+      "Workforce planning, recruiting, facility and production-line support, and operational setup for companies expanding in the U.S.",
     href: "/services/global-business-support",
+    image: "/images/its-2022.png",
+    alt: "Open production floor prepared for a new operation",
   },
 ];
 
-// TODO(owner): placeholder figures for layout. Confirm the exact numbers and
-// labels before publishing. Unverified figures from earlier versions
-// (10M+, 99.5%, 24/7, 20+ years) are intentionally left out.
-export const proof: { value: string; label: string }[] = [
-  { value: "500+", label: "Specialists Employed" },
-  { value: "5", label: "U.S. Facilities" },
-  { value: "Engineering-Led", label: "Managed Operations" },
-];
+// TODO(owner): wording to be finalized by the owner. No figures are shown
+// until the exact numbers and labels are approved.
+export const proof = {
+  lead: "Proven Operational Execution",
+  items: [
+    { key: "engineering", title: "Engineering-Led", label: "Operations Management" },
+    { key: "workforce", title: "Workforce", label: "Management at Scale" },
+    { key: "enterprise", title: "Enterprise", label: "Operations Experience" },
+  ],
+} as const;
 
 export const whyIts = {
   eyebrow: "Why ITS",
-  title: "A Trusted Partner for People, Operations and Growth.",
-  copy: "From hiring and workforce management to engineering-led site operations, ITS helps companies build and run stable, efficient operations in the United States.",
-  link: { label: "Learn More", href: "/about" },
+  title: "A Stronger Operations Partner",
+  copy: "We combine engineering expertise, workforce management, and large-scale operational experience to deliver reliable, scalable results for our clients.",
+  // TODO(owner): placeholder photo from existing ITS media.
+  image: "/images/its-automation.jpeg",
+  imageAlt: "ITS equipment in use on the operations floor",
   points: [
     {
       key: "engineering",
-      title: "Engineering-Led Operations",
-      description:
-        "Sites are run by managers with hands-on technical and process experience.",
+      title: "Engineering-Led Expertise",
+      description: "Process, quality, and operational know-how.",
     },
     {
       key: "workforce",
       title: "Workforce Management",
-      description:
-        "Hiring, onboarding, payroll, attendance and on-site supervision in one framework.",
-    },
-    {
-      key: "quality",
-      title: "KPI & Quality Control",
-      description:
-        "Quality, productivity and cost are tracked against agreed KPIs and reported.",
+      description: "Recruiting, placement, and on-site support.",
     },
     {
       key: "enterprise",
-      title: "Enterprise Operations Experience",
-      description:
-        "Long-running, high-volume programs delivered for global enterprise clients.",
+      title: "Enterprise-Level Execution",
+      description: "Experience with complex, large-scale operations.",
+    },
+    {
+      key: "technology",
+      title: "Technology-Enabled Operations",
+      description: "NEMO and process automation for greater efficiency and visibility.",
     },
   ],
 } as const;
 
+// The four categories and anchors match the /industries page.
+// TODO(owner): tile photos are placeholders from existing ITS media.
 export const industries = {
-  eyebrow: "Industries We Serve",
-  title: "Supporting Key Industries Across the U.S.",
-  link: { label: "View Industries", href: "/industries" },
+  eyebrow: "Industries",
+  title: "Industry Expertise for Real-World Impact",
+  copy: "Tailored workforce and operational solutions for key U.S. industries.",
   items: [
-    { key: "electronics", label: "Electronics / IT" },
-    { key: "logistics", label: "Logistics / Supply Chain" },
-    { key: "manufacturing", label: "Manufacturing / Refurbishment" },
-    { key: "automation", label: "Automation / Engineering" },
+    {
+      key: "electronics",
+      label: "Electronics / IT",
+      href: "/industries#electronics",
+      image: "/images/IMG_E8933.JPG",
+      alt: "Mobile device seated in a test fixture",
+    },
+    {
+      key: "logistics",
+      label: "Logistics / Supply Chain",
+      href: "/industries#logistics",
+      image: "/images/who-warehouse.jpeg",
+      alt: "Warehouse floor with staged pallets",
+    },
+    {
+      key: "manufacturing",
+      label: "Manufacturing / Refurbishment",
+      href: "/industries#manufacturing",
+      image: "/images/its-hhp.png",
+      alt: "Production and repair line with technicians",
+    },
+    {
+      key: "automation",
+      label: "Automation / Engineering",
+      href: "/industries#automation",
+      image: "/images/IMG_E8916.JPG",
+      alt: "ITS-built process equipment units",
+    },
   ],
 } as const;
 
 export const nemo = {
   eyebrow: "NEMO",
-  title: "NEMO: Our Operational Intelligence Advantage.",
-  copy: "NEMO is the workforce and site management system ITS built for its own operations. It brings attendance, working hours, site issues and reporting into one view, so headquarters and on-site managers work from the same information.",
+  title: "Operational Intelligence for Greater Performance",
+  copy: "NEMO is the internal platform ITS uses to connect people, processes, and operations across the sites we run.",
   points: [
-    "Attendance and working hours",
-    "Site issue tracking and follow-up",
-    "Headcount and operating status",
-    "Reporting for headquarters and site managers",
+    "Operations Visibility",
+    "Workforce Management",
+    "Quality & Productivity",
+    "Reporting",
   ],
   note: "NEMO is used inside ITS-run operations. It is not sold as a separate product.",
   link: { label: "Why ITS", href: "/about" },
   sampleLabel: "Illustrative sample dashboard",
+};
+
+export const insightsPreview = {
+  eyebrow: "Insights",
+  title: "Insights for Smarter Operations",
+  copy: "Market trends, hiring strategies, and operational insights from ITS.",
+  link: { label: "Read Insights", href: "/insights" },
 };
 
 // Neutral headings until the owner approves named case studies and metrics.
@@ -177,14 +229,9 @@ export const caseStudies = {
 
 // Hidden until real, approved content exists. Add items to show the sections.
 export const testimonials: { quote: string; attribution: string }[] = [];
-export const insights: {
-  category: string;
-  title: string;
-  href: string;
-  date: string;
-}[] = [];
-
 export const closing = {
-  title: "Let’s Build Your U.S. Operations Together.",
-  copy: "Connect with ITS to discuss your workforce, operations, or U.S. market entry needs.",
+  title: "Let’s Build Your Next Phase Together",
+  copy: "Discuss your talent, operations, or U.S. expansion needs with our team.",
+  // The contact page lists phone and email. Its form does not send yet.
+  cta: { label: "Get in Touch", href: "/contact" },
 };

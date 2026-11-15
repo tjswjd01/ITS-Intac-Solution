@@ -56,7 +56,7 @@ export default function AutomationHeroV2() {
             <motion.div {...enter(0.18)} className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={automationHero.primary.href}
-                className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-[15px] font-medium text-[#14243D] transition-colors duration-200 hover:bg-[#F7F6F3] ${focusOnDark}`}
+                className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-[15px] font-medium text-[#14243D] transition-colors duration-200 hover:bg-its-offwhite ${focusOnDark}`}
               >
                 {automationHero.primary.label}
                 <ArrowRight className="h-4 w-4" aria-hidden />
