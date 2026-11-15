@@ -197,7 +197,7 @@ export default function WhereAutomationCanBeApplied() {
   return (
     <section
       id="application-areas"
-      className="border-t border-black/[0.06] bg-white py-16 md:py-24 lg:py-28"
+      className="bg-its-offwhite py-16 md:py-24 lg:py-28"
     >
       <div className="layout-container">
         <div className="max-w-4xl">

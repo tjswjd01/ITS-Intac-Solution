@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Header from "@/components/Header";
 import AutomationCapabilities from "@/components/services/automation-solutions/AutomationCapabilities";
+import AutomationEquipment from "@/components/services/automation-solutions/AutomationEquipment";
 import AutomationFeaturedAmr from "@/components/services/automation-solutions/AutomationFeaturedAmr";
 import AutomationHeroV2 from "@/components/services/automation-solutions/AutomationHeroV2";
 import AutomationApplicationAreas from "@/components/services/automation-solutions/WhereAutomationCanBeApplied";
@@ -23,6 +24,8 @@ export default function AutomationSolutionsPage() {
       <AutomationHeroV2 />
 
       <AutomationCapabilities />
+
+      <AutomationEquipment />
 
       <AutomationFeaturedAmr />
 

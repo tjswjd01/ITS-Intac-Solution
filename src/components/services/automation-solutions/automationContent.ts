@@ -98,6 +98,59 @@ export const automationFeatured = {
   cta: { label: "Ask About AMR Robots", href: "/contact" },
 };
 
+/**
+ * Equipment designed and built by ITS for its mobile-device refurbishment
+ * line. Names and front-view photos come from the owner's Oct 2026 proposal
+ * deck (HD Hyundai Electric). The photos are cropped from that deck at low
+ * resolution: TODO(owner): replace with original product shots when available.
+ * TODO(owner): confirm each one-line description against the actual function.
+ */
+export const automationEquipment = {
+  label: "Our Equipment",
+  title: "Designed and Built In-House.",
+  intro:
+    "Equipment ITS designed and built for its own refurbishment line, developed and refined through daily operation before being standardized.",
+  note: "Shown: equipment in use on the ITS mobile-device refurbishment line.",
+  items: [
+    {
+      key: "grader",
+      name: "Grader",
+      role: "Device grading",
+      description:
+        "Supports consistent cosmetic grading of incoming devices before they enter the refurbishment process.",
+      image: "/images/automation/equipment/grader.jpg",
+      alt: "Front view of the ITS Grader equipment unit",
+    },
+    {
+      key: "function-tester",
+      name: "Function Tester",
+      role: "Functional testing",
+      description:
+        "Runs repeatable functional checks on devices to verify operation before and after repair.",
+      image: "/images/automation/equipment/function-tester.jpg",
+      alt: "Front view of the ITS Function Tester equipment unit",
+    },
+    {
+      key: "polisher",
+      name: "Polisher",
+      role: "Surface finishing",
+      description:
+        "Automates surface polishing steps so cosmetic finishing is uniform across volume.",
+      image: "/images/automation/equipment/polisher.jpg",
+      alt: "Front view of the ITS Polisher equipment unit",
+    },
+    {
+      key: "auto-screw-machine",
+      name: "Auto Screw Machine",
+      role: "Assembly",
+      description:
+        "Dual-station automated screw fastening for accurate, repeatable reassembly of devices.",
+      image: "/images/automation/equipment/auto-screw-machine.jpg",
+      alt: "Front view of the ITS Auto Screw Machine with two operator screens",
+    },
+  ],
+} as const;
+
 export const automationClosing = {
   title: "Need a Customized Automation Solution?",
   copy: "Tell us about your process, equipment, or AMR requirements.",

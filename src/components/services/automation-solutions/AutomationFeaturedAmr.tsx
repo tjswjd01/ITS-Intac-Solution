@@ -7,7 +7,7 @@ import { automationFeatured, automationMedia } from "./automationContent";
 
 export default function AutomationFeaturedAmr() {
   return (
-    <section aria-labelledby="amr-heading" className="bg-its-offwhite py-16 md:py-24">
+    <section aria-labelledby="amr-heading" className="bg-white py-16 md:py-24">
       <div className="layout-container">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-14">
           <div className="overflow-hidden rounded-[20px] border border-its-line bg-its-navy">
