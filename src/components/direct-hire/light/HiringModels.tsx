@@ -12,7 +12,7 @@ export default function HiringModels() {
     <section aria-labelledby="models-heading" className="bg-white py-16 md:py-24">
       <div className="layout-container">
         <div className="max-w-[680px]">
-          <Eyebrow rule>{modelsV3.label}</Eyebrow>
+          <Eyebrow rule index={3}>{modelsV3.label}</Eyebrow>
           <h2
             id="models-heading"
             className="mt-5 text-[clamp(1.9rem,3.4vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.035em] text-its-navy"
@@ -29,7 +29,7 @@ export default function HiringModels() {
               <article
                 key={col.key}
                 className={`flex flex-col rounded-[24px] border bg-its-offwhite p-7 ${
-                  current ? "border-its-periwinkle shadow-[0_18px_44px_rgba(90,116,201,0.12)]" : "border-its-line"
+                  current ? "border-its-coral shadow-[0_18px_44px_rgba(217,120,104,0.12)]" : "border-its-line"
                 }`}
               >
                 <div className="flex items-start justify-between gap-3">
@@ -38,7 +38,7 @@ export default function HiringModels() {
                     <p className="mt-1 text-[13.5px] text-its-slate-ink">{col.subtitle}</p>
                   </div>
                   {current ? (
-                    <span className="rounded-full bg-its-periwinkle-soft px-2.5 py-1 text-[11.5px] font-semibold text-its-periwinkle-ink">
+                    <span className="rounded-full bg-its-coral-soft px-2.5 py-1 text-[11.5px] font-semibold text-its-coral-ink">
                       This page
                     </span>
                   ) : null}
@@ -58,7 +58,7 @@ export default function HiringModels() {
                 {"href" in col && col.href ? (
                   <Link
                     href={col.href}
-                    className="mt-auto inline-flex items-center gap-1.5 pt-7 text-[14.5px] font-semibold text-its-periwinkle-ink hover:underline"
+                    className="mt-auto inline-flex items-center gap-1.5 pt-7 text-[14.5px] font-semibold text-its-coral-ink hover:underline"
                   >
                     About {col.title}
                     <ArrowRight className="h-4 w-4" aria-hidden />

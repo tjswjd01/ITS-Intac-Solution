@@ -78,7 +78,7 @@ export default function NavDropdown({
 
   const textClassName = cn(
     "text-[15px] font-medium transition",
-    isDark ? "text-white/85 hover:text-white" : "text-[#0B0F14] hover:text-its-navy",
+    isDark ? "text-white/85 hover:text-white" : "text-[#14243D] hover:text-its-navy",
   );
   const focusRing =
     "rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-its-navy";

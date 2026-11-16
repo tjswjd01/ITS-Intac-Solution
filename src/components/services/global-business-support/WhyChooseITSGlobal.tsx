@@ -136,7 +136,7 @@ function RowImage({
   const [imageSrc, setImageSrc] = useState(src);
 
   return (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#F3F4F6] lg:aspect-auto lg:min-h-[200px] lg:h-full">
+    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#F0F2F5] lg:aspect-auto lg:min-h-[200px] lg:h-full">
       <Image
         src={imageSrc}
         alt={alt}

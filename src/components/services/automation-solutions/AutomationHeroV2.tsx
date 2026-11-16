@@ -25,7 +25,7 @@ export default function AutomationHeroV2() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-[#081321] pb-14 pt-28 sm:pt-32 md:pb-16 lg:pb-20 lg:pt-36"
+      className="relative overflow-hidden bg-black pb-14 pt-28 sm:pt-32 md:pb-16 lg:pb-20 lg:pt-36"
     >
       <div className="layout-container relative z-10">
         <div className="flex w-full min-w-0 flex-col gap-10 lg:grid lg:grid-cols-[46%_54%] lg:items-center lg:gap-8">

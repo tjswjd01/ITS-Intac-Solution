@@ -95,10 +95,10 @@ function AutomationFlowDiagram() {
           </div>
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#3dff9a] opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3dff9a]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#D97868] opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#D97868]" />
             </span>
-            <span className="text-[11px] font-medium text-[#3dff9a]">ACTIVE</span>
+            <span className="text-[11px] font-medium text-[#D97868]">ACTIVE</span>
           </div>
         </div>
 
@@ -133,7 +133,7 @@ function AutomationFlowDiagram() {
                 </div>
                 {step === "Decision" ? (
                   <div className="flex shrink-0 gap-1.5">
-                    <span className="rounded-full border border-[#3dff9a]/30 bg-[#3dff9a]/10 px-2 py-0.5 text-[10px] font-semibold text-[#3dff9a]">
+                    <span className="rounded-full border border-[#D97868]/30 bg-[#D97868]/10 px-2 py-0.5 text-[10px] font-semibold text-[#D97868]">
                       PASS
                     </span>
                     <span className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-medium text-white/40">
@@ -167,7 +167,7 @@ function AutomationFlowDiagram() {
           <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/35">
             Signal line
           </span>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#3dff9a]/40 to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#D97868]/40 to-transparent" />
         </div>
       </div>
     </motion.div>

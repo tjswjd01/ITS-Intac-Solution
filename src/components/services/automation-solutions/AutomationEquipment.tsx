@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Reveal from "@/components/site/Reveal";
+import { Eyebrow, StatementBand } from "@/components/site/primitives";
 
 import { automationEquipment } from "./automationContent";
 
@@ -12,9 +13,7 @@ export default function AutomationEquipment() {
       <div className="layout-container">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-its-mint-ink">
-              {automationEquipment.label}
-            </p>
+            <Eyebrow index={2}>{automationEquipment.label}</Eyebrow>
             <h2
               id="equipment-heading"
               className="mt-4 max-w-[560px] text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-[1.12] tracking-[-0.03em] text-its-navy"
@@ -45,7 +44,7 @@ export default function AutomationEquipment() {
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-its-mint-ink">
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-its-slate">
                       {item.role}
                     </p>
                     <h3 className="mt-2 text-[18px] font-semibold leading-[1.25] tracking-[-0.02em] text-its-navy">
@@ -62,6 +61,10 @@ export default function AutomationEquipment() {
         </ul>
 
         <p className="mt-5 text-[13px] text-its-slate">{automationEquipment.note}</p>
+
+        <StatementBand className="mt-8" highlight={automationEquipment.statement[1]}>
+          {automationEquipment.statement[0]}
+        </StatementBand>
       </div>
     </section>
   );

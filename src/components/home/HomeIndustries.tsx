@@ -12,7 +12,7 @@ export default function HomeIndustries() {
       <div className="layout-container">
         <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-12">
           <div>
-            <Eyebrow>{industries.eyebrow}</Eyebrow>
+            <Eyebrow index={3}>{industries.eyebrow}</Eyebrow>
             <SectionTitle className="mt-3 text-[clamp(1.6rem,2.6vw,2.2rem)]">
               <span id="industries-heading">{industries.title}</span>
             </SectionTitle>

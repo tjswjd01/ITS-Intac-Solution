@@ -143,7 +143,7 @@ export default function GlobalBusinessHighlight() {
     <section
       ref={sectionRef}
       id="global-business-highlight"
-      className="section-shell border-t border-white/[0.06] bg-[#111827] text-white"
+      className="section-shell border-t border-white/[0.06] bg-[#14243D] text-white"
     >
       <div className="layout-container">
         <motion.div

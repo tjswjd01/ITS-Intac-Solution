@@ -1,35 +1,32 @@
 import type { Metadata } from "next";
-import Header from "../../components/Header";
 
-import AboutIntro from "../../components/about/AboutIntro";
-import HistorySection from "../../components/about/HistorySection";
-import IndustriesAndPartnersSection from "../../components/about/IndustriesAndPartnersSection";
-import FeaturedSectionStats from "../../components/about/FeaturedSectionStats";
-import AboutClosingPartners from "../../components/about/AboutClosingPartners";
+import AboutCoreStrengths from "@/components/about/AboutCoreStrengths";
+import AboutCta from "@/components/about/AboutCta";
+import AboutHero from "@/components/about/AboutHero";
+import AboutIndustries from "@/components/about/AboutIndustries";
+import AboutProof from "@/components/about/AboutProof";
+import HistorySection from "@/components/about/HistorySection";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "About Our Operations & Facilities",
+  title: "About ITS: Workforce & Operations Partner",
   description:
-    "INTAC Solution operates five U.S. facilities across Texas and Washington, supporting Samsung and major wireless carriers with device and workforce operations.",
+    "Since 2015, ITS has combined workforce solutions, engineering expertise, and operational management to help businesses build, manage, and scale their U.S. operations.",
   alternates: { canonical: "/about" },
 };
 
+// Section surfaces alternate: navy hero, white, light gray strip, white,
+// cool gray, navy closing. The footer comes from the root layout.
 export default function AboutPage() {
   return (
-    <main className="page-shell bg-[#FAFAF8]">
-      <Header />
-
-      <AboutIntro />
-
+    <main className="page-shell">
+      <Header variant="dark" />
+      <AboutHero />
+      <AboutCoreStrengths />
+      <AboutProof />
       <HistorySection />
-
-      <IndustriesAndPartnersSection />
-
-      <FeaturedSectionStats />
-
-      <AboutClosingPartners />
-
-
+      <AboutIndustries />
+      <AboutCta />
     </main>
   );
 }

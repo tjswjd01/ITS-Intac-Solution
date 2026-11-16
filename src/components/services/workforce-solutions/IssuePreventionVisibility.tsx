@@ -59,10 +59,10 @@ function NemoFeatureCell({
   return (
     <article className={cn("flex flex-col p-5 md:p-6 lg:p-7", className)}>
       <div>
-        <h3 className="text-[15px] font-semibold tracking-[-0.03em] text-[#0B0F14] md:text-base">
+        <h3 className="text-[15px] font-semibold tracking-[-0.03em] text-[#14243D] md:text-base">
           {feature.title}
         </h3>
-        <p className="mt-2 text-[13px] leading-[1.65] text-[#64748B]">
+        <p className="mt-2 text-[13px] leading-[1.65] text-[#566173]">
           {feature.description}
         </p>
       </div>
@@ -75,7 +75,7 @@ function NemoFeatureCell({
             className="h-full w-full object-cover object-top"
           />
         ) : (
-          <div className="flex h-full flex-col items-center justify-center gap-2 bg-[linear-gradient(180deg,#FAFBFC_0%,#EEF2F6_100%)] text-[#94A3B8]">
+          <div className="flex h-full flex-col items-center justify-center gap-2 bg-[linear-gradient(180deg,#F5F6F8_0%,#EEF2F6_100%)] text-[#758194]">
             <ImageIcon className="h-5 w-5" strokeWidth={1.5} aria-hidden />
             <span className="text-[11px] font-medium tracking-[0.04em] uppercase">
               Screenshot placeholder
@@ -91,7 +91,7 @@ export default function IssuePreventionVisibility() {
   return (
     <section
       id="issue-prevention"
-      className="section-shell border-t border-black/[0.06] bg-white"
+      className="section-shell border-t border-black/[0.06] bg-[#F5F6F8]"
     >
       <div className="layout-container">
         <div className="grid w-full min-w-0 gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-start lg:gap-12 xl:gap-16">
@@ -102,8 +102,8 @@ export default function IssuePreventionVisibility() {
             transition={{ duration: 0.45 }}
             className="w-full min-w-0 lg:sticky lg:top-28"
           >
-            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#111111]">
-              <span className="h-2 w-2 rounded-full bg-[#111111]" aria-hidden />
+            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+              <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
               Issue Prevention & Workforce Visibility
             </p>
 
@@ -118,13 +118,13 @@ export default function IssuePreventionVisibility() {
               visible, and coordinated workforce operation.
             </p>
 
-            <div className="mt-8 rounded-2xl border border-[#0A3A86]/12 bg-[#F6F9FF] px-5 py-5 md:mt-10">
-              <p className="text-[15px] font-semibold tracking-[-0.02em] text-[#062A56] md:text-base">
+            <div className="mt-8 rounded-2xl border border-[#14243D]/12 bg-[#F6F9FF] px-5 py-5 md:mt-10">
+              <p className="text-[15px] font-semibold tracking-[-0.02em] text-[#14243D] md:text-base">
                 More than staffing.
                 <br />
                 Fully managed workforce operations.
               </p>
-              <p className="mt-3 text-[14px] leading-[1.75] text-[#475569]">
+              <p className="mt-3 text-[14px] leading-[1.75] text-[#566173]">
                 ITS combines professional workforce oversight, structured
                 processes, and the NEMO platform to create workforce programs
                 with greater accountability, visibility, communication, and
@@ -133,10 +133,10 @@ export default function IssuePreventionVisibility() {
             </div>
 
             <div className="mt-6 flex items-center gap-2">
-              <span className="rounded-full border border-[#0A3A86]/15 bg-[#EEF4FF] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0A3A86]">
+              <span className="rounded-full border border-[#14243D]/15 bg-[#EEF4FF] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-its-coral-ink">
                 NEMO Platform
               </span>
-              <span className="text-[13px] text-[#64748B]">
+              <span className="text-[13px] text-[#566173]">
                 People + process + platform
               </span>
             </div>
@@ -158,7 +158,7 @@ export default function IssuePreventionVisibility() {
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.4, delay: 0.06 + index * 0.05 }}
                   className={cn(
-                    "border-[#E5E7EB]",
+                    "border-[#E3E5E8]",
                     index < nemoShowcaseFeatures.length - 1 && "max-sm:border-b",
                     index % 2 === 0 && "sm:border-r",
                     index < 2 && "sm:border-b",

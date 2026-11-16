@@ -26,7 +26,7 @@ export default function LandingHero() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(252,252,251,0.92)_0%,rgba(252,252,251,0.78)_42%,rgba(252,252,251,0.55)_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(252,252,251,0.98)_0%,rgba(252,252,251,0.88)_34%,rgba(252,252,251,0.42)_58%,rgba(252,252,251,0.08)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(6,42,86,0.04),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(20,36,61,0.04),transparent_42%)]" />
       </div>
 
       {/* Hero content */}
@@ -37,7 +37,7 @@ export default function LandingHero() {
             <span className="h-1.5 w-1.5 rounded-full bg-[#D4D8DE]" />
           </div>
 
-          <h1 className="mt-5 max-w-none text-[clamp(2rem,8vw,3.58rem)] font-[500] leading-[1.05] tracking-[-0.042em] text-[#0B0F14]">
+          <h1 className="mt-5 max-w-none text-[clamp(2rem,8vw,3.58rem)] font-[500] leading-[1.05] tracking-[-0.042em] text-[#14243D]">
             <span className="block lg:whitespace-nowrap">
               Device Refurbishment,
             </span>

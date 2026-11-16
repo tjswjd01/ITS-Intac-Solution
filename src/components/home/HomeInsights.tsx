@@ -16,7 +16,7 @@ export default function HomeInsights() {
       <div className="layout-container">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-12">
           <div>
-            <Eyebrow>{insightsPreview.eyebrow}</Eyebrow>
+            <Eyebrow index={5}>{insightsPreview.eyebrow}</Eyebrow>
             <SectionTitle className="mt-3 text-[clamp(1.6rem,2.6vw,2.2rem)]">
               <span id="insights-heading">{insightsPreview.title}</span>
             </SectionTitle>

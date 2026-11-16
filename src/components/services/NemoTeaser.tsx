@@ -56,7 +56,7 @@ function MockStat({
       <p
         className={cn(
           "mt-1 text-lg font-semibold tracking-[-0.03em]",
-          accent ? "text-[#0A3A86]" : "text-[#0B0F14]"
+          accent ? "text-[#14243D]" : "text-[#14243D]"
         )}
       >
         {value}
@@ -71,7 +71,7 @@ function BarChartMock({ heights }: { heights: string[] }) {
       {heights.map((height, index) => (
         <div key={`${height}-${index}`} className="flex flex-1 flex-col justify-end">
           <div
-            className="rounded-t-md bg-[#0A3A86]/80"
+            className="rounded-t-md bg-[#14243D]/80"
             style={{ height }}
             aria-hidden
           />
@@ -91,14 +91,14 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
   };
 
   return (
-    <div className="overflow-hidden rounded-[28px] border border-black/10 bg-[#F7F8FA] shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
+    <div className="overflow-hidden rounded-[28px] border border-black/10 bg-[#F5F6F8] shadow-[0_18px_50px_rgba(15,23,42,0.06)]">
       <div className="flex min-h-[420px] flex-col md:min-h-[480px] md:flex-row">
         <aside className="hidden w-[168px] shrink-0 border-r border-black/[0.06] bg-white p-4 md:block">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0A3A86] text-[11px] font-bold text-white">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#14243D] text-[11px] font-bold text-white">
               N
             </div>
-            <span className="text-sm font-semibold tracking-[-0.02em] text-[#0B0F14]">
+            <span className="text-sm font-semibold tracking-[-0.02em] text-[#14243D]">
               NEMO
             </span>
           </div>
@@ -112,7 +112,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                   className={cn(
                     "flex items-center gap-2 rounded-lg px-2.5 py-2 text-[12px] font-medium",
                     item.active
-                      ? "bg-[#EEF3FA] text-[#0A3A86]"
+                      ? "bg-[#EDF1F5] text-[#14243D]"
                       : "text-neutral-500"
                   )}
                 >
@@ -124,18 +124,18 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
           </nav>
         </aside>
 
-        <div className="flex min-w-0 flex-1 flex-col bg-[#FAFBFC]">
+        <div className="flex min-w-0 flex-1 flex-col bg-[#F5F6F8]">
           <div className="flex items-center justify-between border-b border-black/[0.06] bg-white px-4 py-3 md:px-5">
             <div>
               <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-neutral-400">
                 NEMO Dashboard
               </p>
-              <h3 className="text-sm font-semibold text-[#0B0F14] md:text-[15px]">
+              <h3 className="text-sm font-semibold text-[#14243D] md:text-[15px]">
                 {tabTitles[activeTab]}
               </h3>
             </div>
             <div className="flex items-center gap-2">
-              <div className="hidden h-8 w-36 items-center gap-2 rounded-lg border border-black/[0.06] bg-[#F7F8FA] px-2.5 sm:flex">
+              <div className="hidden h-8 w-36 items-center gap-2 rounded-lg border border-black/[0.06] bg-[#F5F6F8] px-2.5 sm:flex">
                 <Search className="h-3.5 w-3.5 text-neutral-400" aria-hidden />
                 <span className="text-[11px] text-neutral-400">Search</span>
               </div>
@@ -152,7 +152,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                 <MockStat label="On Shift" value="118" />
                 <MockStat label="Open Roles" value="6" />
                 <div className="rounded-xl border border-black/[0.06] bg-white p-4 md:col-span-2">
-                  <p className="text-xs font-semibold text-[#0B0F14]">
+                  <p className="text-xs font-semibold text-[#14243D]">
                     Attendance Trend
                   </p>
                   <div className="mt-3">
@@ -162,7 +162,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                   </div>
                 </div>
                 <div className="rounded-xl border border-black/[0.06] bg-white p-4">
-                  <p className="text-xs font-semibold text-[#0B0F14]">
+                  <p className="text-xs font-semibold text-[#14243D]">
                     Workforce Status
                   </p>
                   <div className="mt-3 space-y-2">
@@ -173,10 +173,10 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                     ].map(([name, status]) => (
                       <div
                         key={name}
-                        className="flex items-center justify-between rounded-lg bg-[#F7F8FA] px-2.5 py-2 text-[11px]"
+                        className="flex items-center justify-between rounded-lg bg-[#F5F6F8] px-2.5 py-2 text-[11px]"
                       >
-                        <span className="font-medium text-[#0B0F14]">{name}</span>
-                        <span className="text-[#0A3A86]">{status}</span>
+                        <span className="font-medium text-[#14243D]">{name}</span>
+                        <span className="text-[#14243D]">{status}</span>
                       </div>
                     ))}
                   </div>
@@ -187,7 +187,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
             {activeTab === "team-chat" && (
               <div className="grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
                 <div className="rounded-xl border border-black/[0.06] bg-white p-4">
-                  <p className="text-xs font-semibold text-[#0B0F14]">
+                  <p className="text-xs font-semibold text-[#14243D]">
                     Team Activity
                   </p>
                   <div className="mt-3 space-y-2.5">
@@ -198,7 +198,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                     ].map((message) => (
                       <div
                         key={message}
-                        className="rounded-lg border border-black/[0.05] bg-[#F7F8FA] px-3 py-2.5 text-[11px] leading-5 text-neutral-600"
+                        className="rounded-lg border border-black/[0.05] bg-[#F5F6F8] px-3 py-2.5 text-[11px] leading-5 text-neutral-600"
                       >
                         {message}
                       </div>
@@ -206,7 +206,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                   </div>
                 </div>
                 <div className="rounded-xl border border-black/[0.06] bg-white p-4">
-                  <p className="text-xs font-semibold text-[#0B0F14]">
+                  <p className="text-xs font-semibold text-[#14243D]">
                     Live Channels
                   </p>
                   <div className="mt-3 space-y-2">
@@ -217,9 +217,9 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                     ].map(([channel, count]) => (
                       <div
                         key={channel}
-                        className="flex items-center justify-between rounded-lg bg-[#EEF3FA] px-2.5 py-2 text-[11px]"
+                        className="flex items-center justify-between rounded-lg bg-[#EDF1F5] px-2.5 py-2 text-[11px]"
                       >
-                        <span className="font-medium text-[#0B0F14]">
+                        <span className="font-medium text-[#14243D]">
                           {channel}
                         </span>
                         <span className="text-neutral-500">{count}</span>
@@ -236,7 +236,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                 <MockStat label="Operating Cost" value="$516K" />
                 <MockStat label="Net Margin" value="18.4%" />
                 <div className="rounded-xl border border-black/[0.06] bg-white p-4 md:col-span-2">
-                  <p className="text-xs font-semibold text-[#0B0F14]">
+                  <p className="text-xs font-semibold text-[#14243D]">
                     Financial Summary
                   </p>
                   <div className="mt-3">
@@ -246,7 +246,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                   </div>
                 </div>
                 <div className="rounded-xl border border-black/[0.06] bg-white p-4">
-                  <p className="text-xs font-semibold text-[#0B0F14]">
+                  <p className="text-xs font-semibold text-[#14243D]">
                     Pending Approvals
                   </p>
                   <div className="mt-3 space-y-2 text-[11px] text-neutral-600">
@@ -261,18 +261,18 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
             {activeTab === "analytics" && (
               <div className="grid gap-3 md:grid-cols-[1.2fr_0.8fr]">
                 <div className="rounded-xl border border-black/[0.06] bg-white p-4">
-                  <p className="text-xs font-semibold text-[#0B0F14]">
+                  <p className="text-xs font-semibold text-[#14243D]">
                     Operational Analytics
                   </p>
-                  <div className="mt-4 h-36 rounded-xl bg-gradient-to-b from-[#EEF3FA] to-white p-3">
+                  <div className="mt-4 h-36 rounded-xl bg-gradient-to-b from-[#EDF1F5] to-white p-3">
                     <div className="relative h-full">
-                      <div className="absolute bottom-0 left-[8%] h-[42%] w-[10%] rounded-t bg-[#0A3A86]/25" />
-                      <div className="absolute bottom-0 left-[24%] h-[58%] w-[10%] rounded-t bg-[#0A3A86]/35" />
-                      <div className="absolute bottom-0 left-[40%] h-[52%] w-[10%] rounded-t bg-[#0A3A86]/30" />
-                      <div className="absolute bottom-0 left-[56%] h-[68%] w-[10%] rounded-t bg-[#0A3A86]/45" />
-                      <div className="absolute bottom-0 left-[72%] h-[62%] w-[10%] rounded-t bg-[#0A3A86]/40" />
-                      <div className="absolute bottom-[52%] left-[8%] right-[8%] h-px bg-[#94A3B8]/40" />
-                      <div className="absolute bottom-[72%] left-[8%] right-[8%] h-px bg-[#94A3B8]/25" />
+                      <div className="absolute bottom-0 left-[8%] h-[42%] w-[10%] rounded-t bg-[#14243D]/25" />
+                      <div className="absolute bottom-0 left-[24%] h-[58%] w-[10%] rounded-t bg-[#14243D]/35" />
+                      <div className="absolute bottom-0 left-[40%] h-[52%] w-[10%] rounded-t bg-[#14243D]/30" />
+                      <div className="absolute bottom-0 left-[56%] h-[68%] w-[10%] rounded-t bg-[#14243D]/45" />
+                      <div className="absolute bottom-0 left-[72%] h-[62%] w-[10%] rounded-t bg-[#14243D]/40" />
+                      <div className="absolute bottom-[52%] left-[8%] right-[8%] h-px bg-[#758194]/40" />
+                      <div className="absolute bottom-[72%] left-[8%] right-[8%] h-px bg-[#758194]/25" />
                     </div>
                   </div>
                 </div>
@@ -280,7 +280,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                   <MockStat label="Throughput" value="98.2%" accent />
                   <MockStat label="SLA Compliance" value="96.7%" />
                   <div className="rounded-xl border border-black/[0.06] bg-white p-4">
-                    <p className="text-xs font-semibold text-[#0B0F14]">
+                    <p className="text-xs font-semibold text-[#14243D]">
                       Key Insight
                     </p>
                     <p className="mt-2 text-[11px] leading-5 text-neutral-600">
@@ -295,7 +295,7 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
             {activeTab === "reports" && (
               <div className="grid gap-3 md:grid-cols-[1fr_1fr]">
                 <div className="rounded-xl border border-black/[0.06] bg-white p-4">
-                  <p className="text-xs font-semibold text-[#0B0F14]">
+                  <p className="text-xs font-semibold text-[#14243D]">
                     Reports Overview
                   </p>
                   <div className="mt-3 space-y-2">
@@ -306,10 +306,10 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                     ].map(([name, status]) => (
                       <div
                         key={name}
-                        className="flex items-center justify-between rounded-lg bg-[#F7F8FA] px-2.5 py-2 text-[11px]"
+                        className="flex items-center justify-between rounded-lg bg-[#F5F6F8] px-2.5 py-2 text-[11px]"
                       >
-                        <span className="font-medium text-[#0B0F14]">{name}</span>
-                        <span className="rounded-full bg-[#EEF3FA] px-2 py-0.5 text-[#0A3A86]">
+                        <span className="font-medium text-[#14243D]">{name}</span>
+                        <span className="rounded-full bg-[#EDF1F5] px-2 py-0.5 text-[#14243D]">
                           {status}
                         </span>
                       </div>
@@ -319,10 +319,10 @@ function DashboardPreview({ activeTab }: { activeTab: TabId }) {
                 <div className="rounded-xl border border-black/[0.06] bg-white p-4">
                   <div className="flex items-center gap-2">
                     <CalendarCheck
-                      className="h-4 w-4 text-[#0A3A86]"
+                      className="h-4 w-4 text-[#14243D]"
                       aria-hidden
                     />
-                    <p className="text-xs font-semibold text-[#0B0F14]">
+                    <p className="text-xs font-semibold text-[#14243D]">
                       Upcoming Exports
                     </p>
                   </div>
@@ -345,11 +345,11 @@ export default function NemoTeaser() {
   const [activeTab, setActiveTab] = useState<TabId>("workforce");
 
   return (
-    <section className="section-shell bg-[#FAFAF8]">
+    <section className="section-shell bg-[#F5F6F8]">
       <div className="layout-container">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-            <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
+          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+            <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
             Nemo System
           </p>
 
@@ -378,7 +378,7 @@ export default function NemoTeaser() {
                     className={cn(
                       "inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium transition duration-200",
                       isActive
-                        ? "bg-white text-[#0B0F14] shadow-[0_4px_14px_rgba(15,23,42,0.08)]"
+                        ? "bg-white text-[#14243D] shadow-[0_4px_14px_rgba(15,23,42,0.08)]"
                         : "text-neutral-500 hover:text-neutral-700"
                     )}
                   >

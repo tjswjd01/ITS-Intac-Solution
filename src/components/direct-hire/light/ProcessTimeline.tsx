@@ -1,5 +1,5 @@
 import Reveal from "@/components/site/Reveal";
-import { Eyebrow } from "@/components/site/primitives";
+import { Eyebrow, StatementBand } from "@/components/site/primitives";
 import { processV3 } from "@/content/directHire";
 
 /** Six steps on a thin rail. Step 03 (technical screening) is the one
@@ -10,7 +10,7 @@ export default function ProcessTimeline() {
       <div className="layout-container">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
           <div>
-            <Eyebrow rule>{processV3.label}</Eyebrow>
+            <Eyebrow rule index={2}>{processV3.label}</Eyebrow>
             <h2
               id="process-heading"
               className="mt-5 max-w-[560px] text-[clamp(1.9rem,3.4vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.035em] text-its-navy"
@@ -33,17 +33,17 @@ export default function ProcessTimeline() {
                   <div className="flex h-full flex-col">
                     <span
                       className={`relative z-10 flex h-11 w-11 items-center justify-center rounded-full text-[13px] font-semibold tabular-nums ring-4 ring-its-offwhite ${
-                        highlight ? "bg-its-periwinkle text-white" : "bg-white text-its-navy shadow-[0_0_0_1px_#CDD5E0]"
+                        highlight ? "bg-its-navy text-white" : "bg-white text-its-navy shadow-[0_0_0_1px_#CDD5E0]"
                       }`}
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <div
                       className={`mt-4 flex flex-1 flex-col rounded-[20px] border p-5 ${
-                        highlight ? "border-its-periwinkle bg-white shadow-[0_14px_34px_rgba(90,116,201,0.14)]" : "border-its-line bg-white"
+                        highlight ? "border-its-coral bg-white shadow-[0_14px_34px_rgba(217,120,104,0.14)]" : "border-its-line bg-white"
                       }`}
                     >
-                      <p className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${highlight ? "text-its-periwinkle-ink" : "text-its-slate"}`}>
+                      <p className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${highlight ? "text-its-coral-ink" : "text-its-slate"}`}>
                         {step.sub}
                       </p>
                       <h3 className="mt-1.5 text-[16px] font-semibold leading-[1.3] tracking-[-0.01em] text-its-navy">
@@ -62,10 +62,9 @@ export default function ProcessTimeline() {
           })}
         </ol>
 
-        <p className="mt-12 text-center text-[clamp(1.4rem,2.4vw,1.9rem)] font-semibold tracking-[-0.03em] text-its-navy">
-          {processV3.statement[0]}{" "}
-          <span className="text-its-periwinkle-ink">{processV3.statement[1]}</span>
-        </p>
+        <StatementBand className="mt-12" highlight={processV3.statement[1]}>
+          {processV3.statement[0]}
+        </StatementBand>
       </div>
     </section>
   );

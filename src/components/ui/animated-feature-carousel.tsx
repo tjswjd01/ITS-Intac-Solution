@@ -138,13 +138,13 @@ function FeatureCard({
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0A3A86]">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-its-coral-ink">
                 Step {current.name}
               </p>
-              <h3 className="text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1] tracking-[-0.035em] text-[#111111]">
+              <h3 className="text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1] tracking-[-0.035em] text-[#14243D]">
                 {current.title}
               </h3>
-              <p className="max-w-[560px] text-[15px] leading-[1.65] text-[#4B5563] min-[1440px]:max-w-[680px]">
+              <p className="max-w-[560px] text-[15px] leading-[1.65] text-[#566173] min-[1440px]:max-w-[680px]">
                 {current.description}
               </p>
             </motion.div>
@@ -185,10 +185,10 @@ function StepsNav({
               <button
                 type="button"
                 className={cn(
-                  "group flex w-full items-center gap-3 rounded-full px-4 py-2.5 text-left transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A3A86]/35 focus-visible:ring-offset-2",
+                  "group flex w-full items-center gap-3 rounded-full px-4 py-2.5 text-left transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#14243D]/35 focus-visible:ring-offset-2",
                   isCurrent
-                    ? "bg-[#0A3A86] text-white shadow-[0_8px_24px_rgba(10,58,134,0.28)]"
-                    : "bg-[#F3F4F6] text-[#4B5563] hover:bg-[#E5E7EB]",
+                    ? "bg-[#14243D] text-white shadow-[0_8px_24px_rgba(10,58,134,0.28)]"
+                    : "bg-[#F0F2F5] text-[#566173] hover:bg-[#E3E5E8]",
                 )}
                 onClick={() => onChange(stepIdx)}
               >
@@ -196,10 +196,10 @@ function StepsNav({
                   className={cn(
                     "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold transition-all duration-300",
                     isCurrent
-                      ? "bg-white text-[#0A3A86]"
+                      ? "bg-white text-[#14243D]"
                       : isCompleted
-                        ? "bg-[#0A3A86] text-white"
-                        : "bg-[#E5E7EB] text-[#6B7280] group-hover:bg-[#D1D5DB]",
+                        ? "bg-[#14243D] text-white"
+                        : "bg-[#E3E5E8] text-[#566173] group-hover:bg-[#C9D2DC]",
                   )}
                 >
                   {isCompleted && !isCurrent ? <IconCheck /> : stepNumber}
@@ -239,7 +239,7 @@ function PanelChrome({
       <div
         className={cn(
           "flex items-center gap-1.5 border-b px-4 py-3",
-          isDark ? "border-white/10 bg-black/40" : "border-black/[0.06] bg-[#F9FAFB]",
+          isDark ? "border-white/10 bg-black/40" : "border-black/[0.06] bg-[#F5F6F8]",
         )}
       >
         <span className={cn("h-2 w-2 rounded-full", isDark ? "bg-red-400/90" : "bg-red-400")} />
@@ -248,13 +248,13 @@ function PanelChrome({
         <span
           className={cn(
             "ml-2 text-[11px] font-semibold uppercase tracking-[0.14em]",
-            isDark ? "text-white/55" : "text-[#6B7280]",
+            isDark ? "text-white/55" : "text-[#566173]",
           )}
         >
           {title}
         </span>
       </div>
-      <div className={cn("p-3 md:p-4", isDark ? "bg-[#0F172A]" : "bg-white")}>{children}</div>
+      <div className={cn("p-3 md:p-4", isDark ? "bg-[#14243D]" : "bg-white")}>{children}</div>
     </div>
   );
 }
@@ -263,10 +263,10 @@ function VisionInspectionUI() {
   return (
     <PanelChrome title="Vision inspection UI" variant="light">
       <div className="grid h-[156px] grid-cols-[1fr_108px] gap-2.5 md:h-[168px]">
-        <div className="relative overflow-hidden rounded-xl border border-[#0A3A86]/15 bg-[#EEF4FC]">
+        <div className="relative overflow-hidden rounded-xl border border-[#14243D]/15 bg-[#EEF4FC]">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(10,58,134,0.08)_50%,transparent_100%)]" />
-          <div className="absolute left-4 top-4 h-24 w-32 rounded-lg border-2 border-dashed border-[#0A3A86]/35 bg-white/80" />
-          <div className="absolute bottom-4 left-4 right-4 flex justify-between text-[10px] font-medium text-[#0A3A86]">
+          <div className="absolute left-4 top-4 h-24 w-32 rounded-lg border-2 border-dashed border-[#14243D]/35 bg-white/80" />
+          <div className="absolute bottom-4 left-4 right-4 flex justify-between text-[10px] font-medium text-[#14243D]">
             <span>ALIGN</span>
             <span>DEFECT SCAN</span>
             <span>PASS / FAIL</span>
@@ -296,10 +296,10 @@ function ScanningStation() {
       <div className="relative h-[156px] md:h-[168px]">
         <div className="absolute bottom-0 left-0 right-0 h-10 rounded-lg bg-white/10" />
         <div className="absolute bottom-12 left-[18%] h-14 w-20 rounded-md bg-white/20" />
-        <div className="absolute bottom-12 left-[42%] h-14 w-20 rounded-md bg-[#0A3A86]/50 ring-2 ring-[#3dff9a]/60" />
+        <div className="absolute bottom-12 left-[42%] h-14 w-20 rounded-md bg-[#14243D]/50 ring-2 ring-[#D97868]/60" />
         <div className="absolute bottom-12 left-[66%] h-14 w-20 rounded-md bg-white/20" />
         <div className="absolute left-1/2 top-2 h-16 w-24 -translate-x-1/2 rounded-b-full bg-white/15" />
-        <p className="absolute right-3 top-3 rounded-full bg-[#3dff9a]/15 px-2 py-0.5 text-[10px] font-semibold text-[#3dff9a]">
+        <p className="absolute right-3 top-3 rounded-full bg-[#D97868]/15 px-2 py-0.5 text-[10px] font-semibold text-[#D97868]">
           SCAN ACTIVE
         </p>
       </div>
@@ -311,11 +311,11 @@ function RoboticHandlingVisual() {
   return (
     <PanelChrome title="Robotic handling line" variant="light">
       <div className="relative h-[156px] md:h-[168px]">
-        <div className="absolute bottom-6 left-0 right-0 h-3 rounded-full bg-[#E5E7EB]" />
-        <div className="absolute bottom-9 left-[8%] h-20 w-3 origin-bottom rotate-[-28deg] rounded-full bg-[#0A3A86]" />
-        <div className="absolute bottom-[52px] left-[14%] h-10 w-10 rounded-md border-2 border-[#0A3A86]/30 bg-white" />
-        <div className="absolute bottom-8 left-[38%] h-12 w-28 rounded-lg border border-[#0A3A86]/20 bg-[#EEF4FC]" />
-        <div className="absolute bottom-8 left-[68%] h-10 w-24 rounded-lg bg-[#D1D5DB]" />
+        <div className="absolute bottom-6 left-0 right-0 h-3 rounded-full bg-[#E3E5E8]" />
+        <div className="absolute bottom-9 left-[8%] h-20 w-3 origin-bottom rotate-[-28deg] rounded-full bg-[#14243D]" />
+        <div className="absolute bottom-[52px] left-[14%] h-10 w-10 rounded-md border-2 border-[#14243D]/30 bg-white" />
+        <div className="absolute bottom-8 left-[38%] h-12 w-28 rounded-lg border border-[#14243D]/20 bg-[#EEF4FC]" />
+        <div className="absolute bottom-8 left-[68%] h-10 w-24 rounded-lg bg-[#C9D2DC]" />
       </div>
     </PanelChrome>
   );
@@ -356,7 +356,7 @@ function PLCControlPanel() {
                 key={i}
                 className={cn(
                   "aspect-square rounded-md",
-                  i % 3 === 0 ? "bg-[#3dff9a]/70" : "bg-white/10",
+                  i % 3 === 0 ? "bg-[#D97868]/70" : "bg-white/10",
                 )}
               />
             ))}
@@ -372,7 +372,7 @@ function PLCControlPanel() {
               <span
                 className={cn(
                   "h-2 w-2 rounded-full",
-                  i < 3 ? "bg-[#3dff9a]" : "bg-amber-400",
+                  i < 3 ? "bg-[#D97868]" : "bg-amber-400",
                 )}
               />
             </div>
@@ -395,20 +395,20 @@ function OperationsDashboard() {
           ].map((m) => (
             <div
               key={m.label}
-              className="rounded-xl border border-black/[0.06] bg-[#F9FAFB] px-3 py-3"
+              className="rounded-xl border border-black/[0.06] bg-[#F5F6F8] px-3 py-3"
             >
-              <p className="text-[10px] font-medium text-[#6B7280]">{m.label}</p>
-              <p className="mt-1 text-lg font-semibold tracking-[-0.03em] text-[#111111]">
+              <p className="text-[10px] font-medium text-[#566173]">{m.label}</p>
+              <p className="mt-1 text-lg font-semibold tracking-[-0.03em] text-[#14243D]">
                 {m.value}
               </p>
             </div>
           ))}
         </div>
-        <div className="flex h-[92px] items-end gap-2 rounded-xl border border-black/[0.06] bg-[#F9FAFB] px-4 pb-3 pt-3">
+        <div className="flex h-[92px] items-end gap-2 rounded-xl border border-black/[0.06] bg-[#F5F6F8] px-4 pb-3 pt-3">
           {[42, 58, 48, 72, 65, 80, 74].map((h, i) => (
             <div
               key={i}
-              className="flex-1 rounded-t-md bg-[#0A3A86]/80"
+              className="flex-1 rounded-t-md bg-[#14243D]/80"
               style={{ height: `${h}%` }}
             />
           ))}

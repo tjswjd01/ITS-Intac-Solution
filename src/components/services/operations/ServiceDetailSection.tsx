@@ -19,7 +19,7 @@ export default function ServiceDetailSection({
   background = "white",
   withBottomDivider = false,
 }: ServiceDetailSectionProps) {
-  const bgClass = background === "gray" ? "bg-[#FAFAF8]" : "bg-white";
+  const bgClass = background === "gray" ? "bg-[#F5F6F8]" : "bg-white";
 
   return (
     <section
@@ -30,8 +30,8 @@ export default function ServiceDetailSection({
       <div className="layout-container">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="min-w-0">
-            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-              <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
+            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+              <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
               {eyebrow}
             </p>
 
@@ -41,9 +41,9 @@ export default function ServiceDetailSection({
 
             <ul className="mt-8 space-y-3">
               {bullets.map((item) => (
-                <li key={item} className="flex gap-3 text-[15px] leading-[1.65] text-[#475569]">
+                <li key={item} className="flex gap-3 text-[15px] leading-[1.65] text-[#566173]">
                   <span
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0A3A86]"
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#14243D]"
                     aria-hidden
                   />
                   {item}

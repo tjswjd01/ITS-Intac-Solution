@@ -139,27 +139,27 @@ export default function LandingWhyChoose() {
         <div className="grid w-full min-w-0 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#5F6B7A]">
-              <span className="h-2 w-2 rounded-full bg-[#062A56]" />
+              <span className="h-2 w-2 rounded-full bg-its-coral" />
               Operational Advantage
             </p>
 
-            <h2 className="mt-6 max-w-[620px] text-[clamp(30px,2.6vw,42px)] font-[500] leading-[1.08] tracking-[-0.04em] text-[#0B0F14]">
+            <h2 className="mt-6 max-w-[620px] text-[clamp(30px,2.6vw,42px)] font-[500] leading-[1.08] tracking-[-0.04em] text-[#14243D]">
               Built for modern
               <br />
               operational <span className="text-[#8B929D]">excellence.</span>
             </h2>
           </div>
 
-          <p className="max-w-[560px] text-[16px] leading-[1.75] text-[#4B5563] lg:pt-10">
+          <p className="max-w-[560px] text-[16px] leading-[1.75] text-[#566173] lg:pt-10">
             ITS delivers real operational execution, automation integration,
             global support, and professional management infrastructure to help
             businesses operate more efficiently and scale with confidence.
           </p>
         </div>
 
-        <div className="mt-14 overflow-hidden rounded-[28px] border border-[#E5E7EB] bg-white shadow-[0_18px_50px_rgba(15,23,42,0.04)]">
+        <div className="mt-14 overflow-hidden rounded-[28px] border border-[#E3E5E8] bg-white shadow-[0_18px_50px_rgba(15,23,42,0.04)]">
           <div className="grid lg:grid-cols-[0.42fr_0.58fr]">
-            <div className="border-b border-[#E5E7EB] lg:border-b-0 lg:border-r">
+            <div className="border-b border-[#E3E5E8] lg:border-b-0 lg:border-r">
               {benefits.map((item, index) => {
                 const isActive = activeIndex === index;
 
@@ -168,25 +168,25 @@ export default function LandingWhyChoose() {
                     key={item.number}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`group grid w-full grid-cols-[48px_1fr_36px] items-center gap-3 border-b border-[#E5E7EB] px-4 py-5 text-left transition active:scale-[0.99] last:border-b-0 sm:grid-cols-[64px_1fr_40px] sm:gap-5 sm:px-7 sm:py-7 ${
+                    className={`group grid w-full grid-cols-[48px_1fr_36px] items-center gap-3 border-b border-[#E3E5E8] px-4 py-5 text-left transition active:scale-[0.99] last:border-b-0 sm:grid-cols-[64px_1fr_40px] sm:gap-5 sm:px-7 sm:py-7 ${
                       isActive
                         ? "bg-[#F6F9FF] shadow-[inset_-18px_0_28px_rgba(10,58,134,0.06)]"
-                        : "bg-white hover:bg-[#FAFBFC]"
+                        : "bg-white hover:bg-[#F5F6F8]"
                     }`}
                   >
                     <span
                       className={`text-[28px] font-semibold tracking-[-0.04em] ${
-                        isActive ? "text-[#0A3A86]" : "text-[#64748B]"
+                        isActive ? "text-[#14243D]" : "text-[#566173]"
                       }`}
                     >
                       {item.number}
                     </span>
 
                     <span>
-                      <span className="block text-[17px] font-[520] leading-tight tracking-[-0.03em] text-[#0B0F14]">
+                      <span className="block text-[17px] font-[520] leading-tight tracking-[-0.03em] text-[#14243D]">
                         {item.title}
                       </span>
-                      <span className="mt-2 block max-w-[300px] text-[13.5px] leading-[1.55] text-[#4B5563]">
+                      <span className="mt-2 block max-w-[300px] text-[13.5px] leading-[1.55] text-[#566173]">
                         {item.short}
                       </span>
                     </span>
@@ -194,8 +194,8 @@ export default function LandingWhyChoose() {
                     <span
                       className={`relative flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 ${
                         isActive
-                          ? "border-[#0A3A86]/30 bg-white text-[#0A3A86] shadow-[0_0_0_6px_rgba(10,58,134,0.08)]"
-                          : "border-[#D6DCE5] bg-white text-[#0B0F14] shadow-[0_4px_12px_rgba(15,23,42,0.08)] group-hover:border-[#0A3A86]/40 group-hover:text-[#0A3A86] group-hover:shadow-[0_0_22px_rgba(10,58,134,0.22)]"
+                          ? "border-[#14243D]/30 bg-white text-[#14243D] shadow-[0_0_0_6px_rgba(10,58,134,0.08)]"
+                          : "border-[#D6DCE5] bg-white text-[#14243D] shadow-[0_4px_12px_rgba(15,23,42,0.08)] group-hover:border-[#14243D]/40 group-hover:text-[#14243D] group-hover:shadow-[0_0_22px_rgba(10,58,134,0.22)]"
                       }`}
                     >
                       <svg
@@ -225,11 +225,11 @@ export default function LandingWhyChoose() {
               <div className="pointer-events-none absolute left-0 top-0 h-full w-[1px] bg-[#DCE7F8]" />
               <div className="pointer-events-none absolute left-0 top-1/2 h-[65%] w-[120px] -translate-y-1/2 bg-[#EAF2FF] blur-3xl opacity-70" />
               <div className="relative z-10 w-full max-w-[760px] text-center">
-                <h3 className="text-[clamp(25px,2.16vw,36px)] font-[500] leading-[1.08] tracking-[-0.04em] text-[#0B0F14]">
+                <h3 className="text-[clamp(25px,2.16vw,36px)] font-[500] leading-[1.08] tracking-[-0.04em] text-[#14243D]">
                   {active.heading}
                 </h3>
 
-                <p className="mx-auto mt-5 max-w-[640px] text-[15.5px] leading-[1.75] text-[#4B5563]">
+                <p className="mx-auto mt-5 max-w-[640px] text-[15.5px] leading-[1.75] text-[#566173]">
                   {active.description}
                 </p>
 
@@ -237,7 +237,7 @@ export default function LandingWhyChoose() {
                   {active.points.map((point) => (
                     <div
                       key={point.title}
-                      className="flex min-h-[220px] flex-col items-center border-l border-[#E5E7EB] px-3 first:border-l-0 sm:min-h-[270px] sm:px-4"
+                      className="flex min-h-[220px] flex-col items-center border-l border-[#E3E5E8] px-3 first:border-l-0 sm:min-h-[270px] sm:px-4"
                     >
                       <div className="mx-auto flex h-6 w-6 items-center justify-center">
                         {"icon" in point && point.icon ? (
@@ -247,17 +247,17 @@ export default function LandingWhyChoose() {
                             className="h-6 w-6 object-contain"
                           />
                         ) : (
-                          <span className="text-[18px] leading-none text-[#0A3A86]">
+                          <span className="text-[18px] leading-none text-[#14243D]">
                             ✓
                           </span>
                         )}
                       </div>
 
-                      <p className="mt-5 flex min-h-[58px] items-start justify-center text-[12.6px] font-[520] leading-[1.32] tracking-[-0.025em] text-[#0B0F14]">
+                      <p className="mt-5 flex min-h-[58px] items-start justify-center text-[12.6px] font-[520] leading-[1.32] tracking-[-0.025em] text-[#14243D]">
                         {point.title}
                       </p>
 
-                      <p className="mt-3 max-w-[150px] text-[12.5px] leading-[1.6] text-[#4B5563]">
+                      <p className="mt-3 max-w-[150px] text-[12.5px] leading-[1.6] text-[#566173]">
                         {point.desc}
                       </p>
                     </div>
@@ -269,7 +269,7 @@ export default function LandingWhyChoose() {
         </div>
 
         {/* NEMO TEASER */}
-        <div className="mt-8 overflow-hidden rounded-[28px] bg-[#062A56] text-white shadow-[0_24px_60px_rgba(15,23,42,0.14)]">
+        <div className="mt-8 overflow-hidden rounded-[28px] bg-[#14243D] text-white shadow-[0_24px_60px_rgba(15,23,42,0.14)]">
           <div className="grid gap-8 p-8 lg:grid-cols-[0.66fr_1.34fr] lg:p-10">
             <div>
               <p className="text-[26px] font-semibold tracking-[-0.04em] text-[#3BA7FF]">
@@ -290,21 +290,21 @@ export default function LandingWhyChoose() {
 
               <a
                 href="/services"
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-medium text-[#062A56]"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-medium text-[#14243D]"
               >
                 See How NEMO Works <span className="ml-2">→</span>
               </a>
             </div>
 
-            <div className="overflow-hidden rounded-[24px] border border-white/16 bg-[#F6F8FC] p-4 text-[#111827] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.28)]">
+            <div className="overflow-hidden rounded-[24px] border border-white/16 bg-[#F6F8FC] p-4 text-[#14243D] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.28)]">
               <div className="rounded-[20px] border border-[#DFE6F0] bg-white shadow-[0_20px_55px_rgba(15,23,42,0.16)]">
                 <div className="flex items-center justify-between border-b border-[#EEF2F6] px-5 py-4">
                   <div className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EAF1FF] text-[11px] font-bold text-[#0A3A86]">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EAF1FF] text-[11px] font-bold text-[#14243D]">
                       N
                     </span>
                     <div>
-                      <p className="text-[13px] font-semibold text-[#0B0F14]">
+                      <p className="text-[13px] font-semibold text-[#14243D]">
                         NEMO
                       </p>
                       <p className="text-[10px] text-[#8792A3]">
@@ -313,7 +313,7 @@ export default function LandingWhyChoose() {
                     </div>
                   </div>
 
-                  <div className="hidden items-center gap-2 rounded-full bg-[#F5F7FA] px-3 py-2 text-[10px] text-[#6B7280] md:flex">
+                  <div className="hidden items-center gap-2 rounded-full bg-[#F5F7FA] px-3 py-2 text-[10px] text-[#566173] md:flex">
                     <span className="h-2 w-2 rounded-full bg-[#22C55E]" />
                     Live Dashboard
                   </div>
@@ -333,8 +333,8 @@ export default function LandingWhyChoose() {
                           key={item}
                           className={`rounded-[12px] px-3 py-2 text-[11px] font-medium ${
                             index === 0
-                              ? "bg-[#EAF1FF] text-[#0A3A86]"
-                              : "text-[#6B7280]"
+                              ? "bg-[#EAF1FF] text-[#14243D]"
+                              : "text-[#566173]"
                           }`}
                         >
                           {item}
@@ -346,15 +346,15 @@ export default function LandingWhyChoose() {
                   <div className="p-5">
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0A3A86]">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-its-coral-ink">
                           Dashboard
                         </p>
-                        <h4 className="mt-2 text-[20px] font-semibold tracking-[-0.04em] text-[#0B0F14]">
+                        <h4 className="mt-2 text-[20px] font-semibold tracking-[-0.04em] text-[#14243D]">
                           Today’s Workforce Overview
                         </h4>
                       </div>
 
-                      <div className="rounded-full bg-[#F6F8FC] px-3 py-2 text-[10px] text-[#6B7280]">
+                      <div className="rounded-full bg-[#F6F8FC] px-3 py-2 text-[10px] text-[#566173]">
                         Updated now
                       </div>
                     </div>
@@ -380,7 +380,7 @@ export default function LandingWhyChoose() {
                           >
                             {value}
                           </p>
-                          <p className="mt-2 text-[10.5px] font-medium text-[#6B7280]">
+                          <p className="mt-2 text-[10.5px] font-medium text-[#566173]">
                             {label}
                           </p>
                           <div
@@ -399,7 +399,7 @@ export default function LandingWhyChoose() {
                     <div className="mt-5 grid gap-4 md:grid-cols-[0.62fr_0.38fr]">
                       <div className="rounded-[18px] border border-[#E8EDF4] bg-[#FBFCFE] p-4">
                         <div className="mb-4 flex items-center justify-between">
-                          <p className="text-[12px] font-semibold text-[#0B0F14]">
+                          <p className="text-[12px] font-semibold text-[#14243D]">
                             Key Metrics
                           </p>
                           <p className="text-[10px] text-[#8792A3]">
@@ -416,7 +416,7 @@ export default function LandingWhyChoose() {
                             <div key={label}>
                               <div className="mb-1.5 flex justify-between text-[11px] text-[#5B6472]">
                                 <span>{label}</span>
-                                <span className="font-semibold text-[#0B0F14]">
+                                <span className="font-semibold text-[#14243D]">
                                   {value}
                                 </span>
                               </div>
@@ -435,7 +435,7 @@ export default function LandingWhyChoose() {
                       </div>
 
                       <div className="rounded-[18px] border border-[#E8EDF4] bg-white p-4">
-                        <p className="text-[12px] font-semibold text-[#0B0F14]">
+                        <p className="text-[12px] font-semibold text-[#14243D]">
                           Notification
                         </p>
 
@@ -458,7 +458,7 @@ export default function LandingWhyChoose() {
                               >
                                 {value}
                               </span>
-                              <span className="text-[10.5px] leading-snug text-[#6B7280]">
+                              <span className="text-[10.5px] leading-snug text-[#566173]">
                                 {label}
                               </span>
                             </div>

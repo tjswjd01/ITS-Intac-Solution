@@ -122,8 +122,8 @@ function MobileServiceCard({
       className={cn(
         "w-full overflow-hidden rounded-2xl border text-left transition-all",
         isActive
-          ? "border-[#0A3A86]/25 shadow-[0_12px_32px_rgba(10,58,134,0.12)]"
-          : "border-[#E5E7EB] bg-white",
+          ? "border-[#14243D]/25 shadow-[0_12px_32px_rgba(10,58,134,0.12)]"
+          : "border-[#E3E5E8] bg-white",
       )}
     >
       {isActive ? (
@@ -154,10 +154,10 @@ function MobileServiceCard({
         </div>
       ) : (
         <div className="flex items-center justify-between px-4 py-4">
-          <span className="text-[15px] font-semibold text-[#0B0F14]">
+          <span className="text-[15px] font-semibold text-[#14243D]">
             {item.title}
           </span>
-          <span className="text-[#0A3A86]">+</span>
+          <span className="text-[#14243D]">+</span>
         </div>
       )}
     </button>
@@ -174,7 +174,7 @@ export default function ServicesHero2() {
           <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
             <div className="w-full text-center lg:w-[42%] lg:text-left">
               <p className="eyebrow justify-center lg:justify-start">
-                <span className="h-2 w-2 rounded-full bg-[#0B3D91]" aria-hidden />
+                <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
                 Our Solutions
               </p>
 

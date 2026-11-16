@@ -49,10 +49,10 @@ export default function USMapNetwork() {
           </pattern>
 
           <linearGradient id="routeGradient">
-            <stop offset="0%" stopColor="#0B3D91" stopOpacity="0" />
-            <stop offset="12%" stopColor="#0B3D91" stopOpacity="1" />
-            <stop offset="88%" stopColor="#0B3D91" stopOpacity="1" />
-            <stop offset="100%" stopColor="#0B3D91" stopOpacity="0" />
+            <stop offset="0%" stopColor="#14243D" stopOpacity="0" />
+            <stop offset="12%" stopColor="#14243D" stopOpacity="1" />
+            <stop offset="88%" stopColor="#14243D" stopOpacity="1" />
+            <stop offset="100%" stopColor="#14243D" stopOpacity="0" />
           </linearGradient>
 
           <filter id="softGlow">
@@ -134,7 +134,7 @@ export default function USMapNetwork() {
 
             <motion.circle
               r="4"
-              fill="#0B3D91"
+              fill="#14243D"
               filter="url(#softGlow)"
               style={{
                 offsetPath: `path('${route.d}')`,
@@ -159,9 +159,9 @@ export default function USMapNetwork() {
         ))}
 
         {/* DALLAS */}
-        <circle cx="365" cy="235" r="5" fill="#0B3D91" />
+        <circle cx="365" cy="235" r="5" fill="#14243D" />
 
-        <circle cx="365" cy="235" r="5" fill="#0B3D91" opacity="0.35">
+        <circle cx="365" cy="235" r="5" fill="#14243D" opacity="0.35">
           <animate
             attributeName="r"
             from="5"
@@ -185,13 +185,13 @@ export default function USMapNetwork() {
             cx={point.x}
             cy={point.y}
             r="4"
-            fill="#062A56"
+            fill="#14243D"
             opacity="0.85"
           />
         ))}
       </svg>
 
-      <div className="absolute bottom-8 left-8 rounded-full border border-[#E5E7EB] bg-white/92 px-5 py-3 text-[13px] font-semibold text-[#062A56] shadow-[0_12px_30px_rgba(7,27,59,0.08)] backdrop-blur">
+      <div className="absolute bottom-8 left-8 rounded-full border border-[#E3E5E8] bg-white/92 px-5 py-3 text-[13px] font-semibold text-[#14243D] shadow-[0_12px_30px_rgba(7,27,59,0.08)] backdrop-blur">
         Dallas-Based · Nationwide Support
       </div>
     </div>

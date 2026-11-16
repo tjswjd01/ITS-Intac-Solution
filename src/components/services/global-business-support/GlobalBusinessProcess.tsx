@@ -9,7 +9,7 @@ import {
   GBS_HEADING,
 } from "@/components/services/global-business-support/globalBusinessTheme";
 
-const TIMELINE_NAVY = "#0F172A";
+const TIMELINE_NAVY = "#14243D";
 const TIMELINE_LINE = "#CBD5E1";
 
 const processSteps = [
@@ -76,7 +76,7 @@ function TimelineStep({
         </p>
 
         <h3
-          className="mt-2 text-[17px] font-semibold tracking-[-0.03em] transition-colors duration-300 group-hover:text-[#0F172A] md:text-[18px]"
+          className="mt-2 text-[17px] font-semibold tracking-[-0.03em] transition-colors duration-300 group-hover:text-[#14243D] md:text-[18px]"
           style={{ color: GBS_HEADING }}
         >
           {step.title}
@@ -97,7 +97,7 @@ export default function GlobalBusinessProcess() {
   return (
     <section
       id="global-business-process"
-      className="border-t bg-white py-16 md:py-20 lg:py-24"
+      className="border-t bg-[#F5F6F8] py-16 md:py-20 lg:py-24"
       style={{ borderColor: GBS_BORDER }}
     >
       <div className="mx-auto w-full min-w-0 max-w-[1200px] px-5 sm:px-6 lg:px-8">

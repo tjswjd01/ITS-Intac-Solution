@@ -80,7 +80,7 @@ export default function Header({
     "text-[15px] font-medium transition",
     isDark
       ? "text-white/85 hover:text-white"
-      : "text-[#0B0F14] hover:text-[#0B3D91]",
+      : "text-[#14243D] hover:text-[#14243D]",
   );
 
   useEffect(() => {
@@ -113,7 +113,7 @@ export default function Header({
             "relative mx-auto flex min-w-0 items-center justify-between gap-2 rounded-full border px-3 py-2.5 shadow-[0_14px_40px_rgba(15,23,42,0.06)] backdrop-blur sm:gap-3 sm:px-4 sm:py-3 md:px-6 lg:px-8",
             isDark
               ? "border-white/20 bg-white/[0.08]"
-              : "border-[#E5E7EB] bg-white/95",
+              : "border-[#E3E5E8] bg-white/95",
           )}
         >
           <Link href="/" className="flex min-w-0 shrink items-center">
@@ -169,7 +169,7 @@ export default function Header({
                 "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition lg:hidden",
                 isDark
                   ? "border-white/25 bg-white/10 text-white hover:bg-white/15"
-                  : "border-[#D1D5DB] bg-white text-[#0B0F14] shadow-sm hover:bg-[#F8FAFC]",
+                  : "border-[#C9D2DC] bg-white text-[#14243D] shadow-sm hover:bg-[#F8FAFC]",
               )}
             >
               {mobileOpen ? (
@@ -187,7 +187,7 @@ export default function Header({
           <button
             type="button"
             aria-label="Close menu"
-            className="absolute inset-0 bg-[#0B0F14]/40 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-[#14243D]/40 backdrop-blur-[2px]"
             onClick={() => setMobileOpen(false)}
           />
 
@@ -195,8 +195,8 @@ export default function Header({
             className={cn(
               "absolute right-0 top-0 flex h-full w-[min(100%,320px)] flex-col border-l px-5 pb-8 pt-24 shadow-2xl",
               isDark
-                ? "border-white/10 bg-[#0B0F14] text-white"
-                : "border-[#E5E7EB] bg-white text-[#0B0F14]",
+                ? "border-white/10 bg-[#14243D] text-white"
+                : "border-[#E3E5E8] bg-white text-[#14243D]",
             )}
           >
             <nav className="flex flex-1 flex-col gap-1 overflow-y-auto">
@@ -204,7 +204,7 @@ export default function Header({
                 href="/about"
                 className={cn(
                   "rounded-xl px-3 py-3 text-[16px] font-medium",
-                  isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                  isDark ? "hover:bg-white/8" : "hover:bg-[#F0F2F5]",
                 )}
                 onClick={() => setMobileOpen(false)}
               >
@@ -217,7 +217,7 @@ export default function Header({
                     href="/services"
                     className={cn(
                       "flex-1 rounded-xl px-3 py-3 text-[16px] font-medium",
-                      isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                      isDark ? "hover:bg-white/8" : "hover:bg-[#F0F2F5]",
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
@@ -232,7 +232,7 @@ export default function Header({
                     }
                     className={cn(
                       "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition",
-                      isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                      isDark ? "hover:bg-white/8" : "hover:bg-[#F0F2F5]",
                     )}
                   >
                     <ChevronDown
@@ -253,7 +253,7 @@ export default function Header({
                         href={link.href}
                         className={cn(
                           "block rounded-xl px-3 py-2.5 text-[15px] font-medium",
-                          isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                          isDark ? "hover:bg-white/8" : "hover:bg-[#F0F2F5]",
                         )}
                         onClick={() => setMobileOpen(false)}
                       >
@@ -270,7 +270,7 @@ export default function Header({
                   href={item.href}
                   className={cn(
                     "rounded-xl px-3 py-3 text-[16px] font-medium",
-                    isDark ? "hover:bg-white/8" : "hover:bg-[#F4F7FB]",
+                    isDark ? "hover:bg-white/8" : "hover:bg-[#F0F2F5]",
                   )}
                   onClick={() => setMobileOpen(false)}
                 >

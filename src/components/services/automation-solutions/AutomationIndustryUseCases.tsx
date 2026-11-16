@@ -116,14 +116,14 @@ function UseCaseCard({
         <h3
           className={
             large
-              ? "max-w-[420px] text-[28px] font-semibold leading-[1.05] tracking-[-0.04em] text-[#111111]"
-              : "text-[22px] font-semibold leading-[1.08] tracking-[-0.03em] text-[#111111]"
+              ? "max-w-[420px] text-[28px] font-semibold leading-[1.05] tracking-[-0.04em] text-[#14243D]"
+              : "text-[22px] font-semibold leading-[1.08] tracking-[-0.03em] text-[#14243D]"
           }
         >
           {item.title}
         </h3>
 
-        <p className="mt-4 text-[15px] leading-7 text-[#667085]">
+        <p className="mt-4 text-[15px] leading-7 text-[#566173]">
           {item.description}
         </p>
       </div>

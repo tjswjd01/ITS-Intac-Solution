@@ -40,7 +40,7 @@ function SparkleBackground() {
 
 export default function MobileRefurbishmentHero() {
   return (
-    <section className="relative overflow-hidden bg-[#050816] pt-28 pb-12 md:pt-36 md:pb-14 lg:pb-16">
+    <section className="relative overflow-hidden bg-[#14243D] pt-28 pb-12 md:pt-36 md:pb-14 lg:pb-16">
       <SparkleBackground />
 
       <div
@@ -58,7 +58,7 @@ export default function MobileRefurbishmentHero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
-            className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-blue-200/75"
+            className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#C8D1DC]"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-blue-300/70" aria-hidden />
             Mobile Refurbishment
@@ -71,7 +71,7 @@ export default function MobileRefurbishmentHero() {
             className="mt-4 max-w-[780px] text-[clamp(32px,3.75vw,57px)] font-medium leading-[1.04] tracking-[-0.045em] text-white"
           >
             Mobile device refurbishment and reverse logistics{" "}
-            <span className="bg-gradient-to-r from-[#bfdbfe] via-[#60a5fa] to-[#a5f3fc] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#bfdbfe] via-[#A5B5C5] to-[#EDF1F5] bg-clip-text text-transparent">
               for carriers and OEMs.
             </span>
           </motion.h1>
@@ -102,11 +102,11 @@ export default function MobileRefurbishmentHero() {
                 key={kpi.label}
                 className="rounded-2xl border border-white/10 bg-white/[0.05] p-3.5 shadow-[0_4px_24px_rgba(0,0,0,0.12)] backdrop-blur-md transition-colors duration-300 hover:border-white/[0.14] hover:bg-white/[0.07]"
               >
-                <div className="mb-2.5 flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-blue-200/90">
+                <div className="mb-2.5 flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-[#C8D1DC]">
                   <Icon className="h-4 w-4" aria-hidden />
                 </div>
 
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-200/65">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C8D1DC]">
                   {kpi.label}
                 </p>
 

@@ -56,10 +56,10 @@ export default function CareersBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.5, ease: entranceEase }}
-          className="inline-flex items-center text-[11px] font-bold uppercase tracking-[0.18em] text-[#173F7A]"
+          className="inline-flex items-center text-[11px] font-bold uppercase tracking-[0.18em] text-its-coral-ink"
         >
           <span
-            className="mr-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#173F7A]"
+            className="mr-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#14243D]"
             aria-hidden
           />
           Careers at ITS
@@ -71,7 +71,7 @@ export default function CareersBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.55, delay: 0.08, ease: entranceEase }}
-          className="mt-5 max-w-[760px] text-center text-[30px] font-bold leading-[1.15] tracking-[-0.03em] text-[#0F172A] md:text-[36px] lg:text-[42px]"
+          className="mt-5 max-w-[760px] text-center text-[30px] font-bold leading-[1.15] tracking-[-0.03em] text-[#14243D] md:text-[36px] lg:text-[42px]"
         >
           <span className="block">Grow with a team built for</span>
           <span className="mt-1 block">
@@ -84,7 +84,7 @@ export default function CareersBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.55, delay: 0.16, ease: entranceEase }}
-          className="mt-5 max-w-[620px] text-[16px] leading-[1.7] text-[#64748B]"
+          className="mt-5 max-w-[620px] text-[16px] leading-[1.7] text-[#566173]"
         >
           Join ITS and be part of a workplace focused on teamwork,
           accountability, and long-term growth.
@@ -99,7 +99,7 @@ export default function CareersBanner() {
         >
           <Link
             href="#open-positions"
-            className="inline-flex items-center rounded-full bg-[#173F7A] px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0F2F5F]"
+            className="inline-flex items-center rounded-full bg-[#14243D] px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#0F2F5F]"
           >
             View Open Positions
           </Link>

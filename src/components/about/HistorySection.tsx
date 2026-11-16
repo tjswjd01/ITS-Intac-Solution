@@ -4,115 +4,14 @@ import Image from "next/image";
 import { motion, type Variants, useInView } from "framer-motion";
 import { useRef } from "react";
 
-type TimelineItem = {
-  year: string;
-  title: string;
-  description: string;
-  variant: "text" | "card" | "wide";
-  placement?: "above" | "below";
-  image?: string;
-  accentDot?: boolean;
-  highlightWords?: string[];
-};
+import { Eyebrow } from "@/components/site/primitives";
+import { journey, journeyBottom, journeyTop, type Milestone } from "@/content/about";
+import { cn } from "@/lib/utils";
 
-const largeImageYears = ["2022", "2025"];
+/** Height of the strip that holds each dot; the line runs through its middle. */
+const CONNECTOR_H = 40;
 
-const TIMELINE_CONTENT_H = 240;
-const TIMELINE_CONNECTOR_H = 40;
-const TIMELINE_LINE_TOP = 260;
-const TIMELINE_ROW_H_TOP = 360;
-const TIMELINE_ROW_H_BOTTOM = 320;
-const MILESTONE_WIDTH = "w-full max-w-[200px]";
-const CARD_HEIGHT_PX = 190;
-
-const topItems: TimelineItem[] = [
-  {
-    year: "2015",
-    title: "ITS Company Founded",
-    description: "Created headquarters in Dallas, TX.",
-    variant: "text",
-  },
-  {
-    year: "2016",
-    title: "Partnership with MQL",
-    highlightWords: ["MQL"],
-    description:
-      "Network performance testing, drive test, and automation test solutions for R&D.",
-    variant: "card",
-    image: "/images/placeholder-photo.svg",
-    accentDot: true,
-  },
-  {
-    year: "2018",
-    title: "Market Research",
-    description:
-      "Conducted AI speaker market research, packaging coordination, and refurbish QA support for commercial inspection programs.",
-    variant: "text",
-  },
-  {
-    year: "2019",
-    title: "Partnership with Samsung SDS",
-    highlightWords: ["Samsung"],
-    description:
-      "Participated in sourcing logistics, SW engineering, and asset coordinator workforce.",
-    variant: "card",
-    image: "/images/placeholder-photo.svg",
-    accentDot: true,
-  },
-  {
-    year: "2020",
-    title: "Operational Expansion",
-    description:
-      "Strengthened workforce operations and expanded support across multiple regions.",
-    variant: "text",
-  },
-];
-
-const bottomItems: TimelineItem[] = [
-  {
-    year: "2021",
-    title: "Process & System Enhancement",
-    description:
-      "Implemented process improvements and digital tools to drive efficiency and quality.",
-    variant: "text",
-  },
-  {
-    year: "2022",
-    title: "Mobile Refurbishing Production Center",
-    highlightWords: ["Refurbishing"],
-    description:
-      "Refurbished over 350K units of certified mobile phones for US carriers such as AT&T, T-Mobile, Verizon, and more.",
-    variant: "card",
-    image: "/images/its-2022.png",
-    accentDot: true,
-  },
-  {
-    year: "2023",
-    title: "Samsung Packaging Production Center",
-    highlightWords: ["Packaging"],
-    description:
-      "Operated commercial packaging lines supporting over 1 million mobile devices and accessories for major US carriers.",
-    variant: "text",
-  },
-  {
-    year: "2024",
-    title: "Service & Capability Growth",
-    description:
-      "Expanded logistics, technical support, and automation services to meet growing client demands.",
-    variant: "text",
-  },
-  {
-    year: "2025",
-    title: "Integrated Operational Solutions",
-    highlightWords: ["Operational"],
-    description:
-      "Expanding into automation solutions and integrated workforce systems. Delivering smarter, data-driven operations across industries.",
-    variant: "wide",
-    image: "/images/its-2025.png",
-  },
-];
-
-const allItems = [...topItems, ...bottomItems];
+const allItems = [...journeyTop, ...journeyBottom];
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -138,86 +37,73 @@ export default function HistorySection() {
   return (
     <section
       ref={sectionRef}
-      className="section-shell overflow-hidden bg-[#FAFAF8]"
+      className="overflow-hidden bg-white py-16 md:py-24"
       aria-labelledby="history-heading"
     >
       <div className="layout-container">
         <motion.div
-          className="mx-auto max-w-3xl text-center"
+          className="mx-auto max-w-[640px] text-center"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <motion.p
-            className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-500"
-            variants={itemVariants}
-          >
-            <span className="h-2 w-2 rounded-full bg-neutral-400" aria-hidden />
-            OUR JOURNEY
-          </motion.p>
-
+          <motion.div variants={itemVariants}>
+            <Eyebrow index={2} className="justify-center">
+              Our Journey
+            </Eyebrow>
+          </motion.div>
           <motion.h2
             id="history-heading"
-            className="mt-6 text-[clamp(1.85rem,3vw,2.65rem)] font-medium leading-[1.12] tracking-[-0.04em] text-black"
+            className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-[1.12] tracking-[-0.03em] text-its-navy"
             variants={itemVariants}
           >
-            Operational{" "}
-            <span className="text-[#235CFF]">Growth</span> Through Experience
+            {journey.title}
           </motion.h2>
 
           <motion.p
-            className="mx-auto mt-6 max-w-2xl text-base leading-[1.85] text-neutral-500 md:text-[17px]"
+            className="mt-4 text-[16.5px] leading-[1.7] text-its-slate-ink"
             variants={itemVariants}
           >
-            From our founding to becoming a trusted operational partner, ITS has
-            continuously expanded our capabilities, people, and infrastructure to
-            deliver greater value to our clients.
+            {journey.copy}
           </motion.p>
         </motion.div>
 
+        {/* Desktop: two rows, each with its milestones sitting on a line. */}
         <motion.div
           className="hidden lg:block"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <div className="mt-20">
-            <TimelineRow items={topItems} rowHeight={TIMELINE_ROW_H_TOP} />
+          <div className="mt-14">
+            <TimelineRow items={journeyTop} />
           </div>
 
-          <div className="-mt-12">
-            <TimelineRow
-              items={bottomItems}
-              rowHeight={TIMELINE_ROW_H_BOTTOM}
-            />
+          <div className="mt-12">
+            <TimelineRow items={journeyBottom} />
           </div>
         </motion.div>
 
+        {/* Phones and tablets: one vertical list. */}
         <motion.ol
-          className="relative mt-12 space-y-10 lg:hidden"
+          className="relative mx-auto mt-10 max-w-[560px] space-y-9 lg:hidden"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <div
-            className="absolute bottom-4 left-[7px] top-2 w-px bg-neutral-300"
-            aria-hidden
-          />
+          <div className="absolute bottom-4 left-[6px] top-2 w-px bg-its-line" aria-hidden />
 
           {allItems.map((item) => (
-            <motion.li
-              key={item.year}
-              className="relative pl-8"
-              variants={itemVariants}
-            >
+            <motion.li key={item.year} className="relative pl-8" variants={itemVariants}>
               <span
-                className={`absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full border-2 border-[#FAFAF8] ${
-                  item.accentDot ? "bg-[#235CFF]" : "bg-neutral-400"
-                }`}
+                className={cn(
+                  "absolute left-0 top-1.5 h-[13px] w-[13px] rounded-full border-2 border-white",
+                  item.current ? "bg-its-navy" : "bg-its-dusty",
+                )}
                 aria-hidden
               />
 
-              <TimelineContent item={item} />
+              <TimelineContent item={item} align="left" />
             </motion.li>
           ))}
         </motion.ol>
@@ -226,216 +112,91 @@ export default function HistorySection() {
   );
 }
 
-function TimelineRow({
-  items,
-  rowHeight,
-}: {
-  items: TimelineItem[];
-  rowHeight: number;
-}) {
-  const belowContentH =
-    rowHeight - TIMELINE_LINE_TOP - TIMELINE_CONNECTOR_H / 2;
-
+function TimelineRow({ items }: { items: Milestone[] }) {
   return (
-    <div
-      className="relative grid grid-cols-5 gap-6 xl:gap-8"
-      style={{ height: rowHeight }}
+    <ol
+      className="relative grid gap-6 xl:gap-10"
+      style={{ gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))` }}
     >
-      <div
-        className="pointer-events-none absolute inset-x-0 h-px bg-black/10"
-        style={{ top: TIMELINE_LINE_TOP }}
+      <li
+        className="pointer-events-none absolute inset-x-0 h-px bg-its-line"
+        style={{ bottom: CONNECTOR_H / 2 }}
         aria-hidden
       />
 
-      {items.map((item) => {
-        const isBelow = item.placement === "below";
-
-        return (
-          <div
-            key={item.year}
-            className="relative flex min-w-0 flex-col items-center"
-            style={{ height: rowHeight }}
-          >
-            {!isBelow ? (
-              <div
-                className="flex w-full items-end justify-center px-1"
-                style={{ height: TIMELINE_CONTENT_H }}
-              >
-                <TimelineContent item={item} />
-              </div>
-            ) : (
-              <div style={{ height: TIMELINE_CONTENT_H }} aria-hidden />
-            )}
-
-            <TimelineConnector accentDot={item.accentDot} />
-
-            {isBelow ? (
-              <div
-                className="flex w-full items-start justify-center px-1"
-                style={{ height: belowContentH }}
-              >
-                <TimelineContent item={item} align="start" />
-              </div>
-            ) : null}
-          </div>
-        );
-      })}
-    </div>
+      {items.map((item) => (
+        <motion.li
+          key={item.year}
+          className="relative flex min-w-0 flex-col items-center justify-end"
+          variants={itemVariants}
+        >
+          <TimelineContent item={item} align="center" />
+          <TimelineConnector current={item.current} />
+        </motion.li>
+      ))}
+    </ol>
   );
 }
 
-function TimelineConnector({ accentDot }: { accentDot?: boolean }) {
+function TimelineConnector({ current }: { current?: boolean }) {
   return (
-    <div
-      className="relative z-10 w-full"
-      style={{ height: TIMELINE_CONNECTOR_H }}
-    >
+    <div className="relative z-10 mt-4 w-full" style={{ height: CONNECTOR_H }}>
       <span
-        className="absolute left-1/2 top-1/2 h-full w-px -translate-x-1/2 -translate-y-1/2 bg-black/10"
-        aria-hidden
-      />
-
-      <span
-        className={`absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full ${
-          accentDot ? "bg-[#235CFF]" : "bg-neutral-400"
-        }`}
+        className={cn(
+          "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ring-4 ring-white",
+          current ? "h-3 w-3 bg-its-navy" : "h-2.5 w-2.5 bg-its-dusty",
+        )}
         aria-hidden
       />
     </div>
   );
 }
 
-function renderHighlightedTitle(title: string, highlightWords?: string[]) {
-  const keyword = highlightWords?.[0];
+function TimelineContent({ item, align }: { item: Milestone; align: "center" | "left" }) {
+  const centered = align === "center";
 
-  if (!keyword) {
-    return title;
-  }
+  const text = (
+    <>
+      <p
+        className={cn(
+          "inline-flex rounded-full px-3 py-1 text-[13px] font-semibold leading-none",
+          item.current ? "bg-its-navy text-white" : "bg-its-dusty-soft text-its-navy",
+        )}
+      >
+        {item.year}
+      </p>
 
-  const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const pattern = new RegExp(`\\b(${escaped})\\b`);
-  const parts = title.split(pattern);
+      <h3 className="mt-3 text-[16px] font-semibold leading-[1.3] tracking-[-0.02em] text-its-navy">
+        {item.title}
+      </h3>
 
-  return parts.map((part, index) =>
-    part === keyword ? (
-      <span key={`${part}-${index}`} className="text-[#355CFF]">
-        {part}
-      </span>
-    ) : (
-      <span key={`${part}-${index}`}>{part}</span>
-    ),
+      <p className="mt-2 text-[14px] leading-[1.6] text-its-slate-ink">{item.description}</p>
+    </>
   );
-}
 
-function TimelineContent({
-  item,
-  align = "end",
-}: {
-  item: TimelineItem;
-  align?: "end" | "start";
-}) {
-  const justify = align === "start" ? "justify-start" : "justify-end";
-
-  const imageHeightClass = largeImageYears.includes(item.year)
-    ? "h-[96px]"
-    : "h-[48px]";
-
-  if (item.variant === "text") {
+  if (!item.image) {
     return (
-      <div
-        className={`${MILESTONE_WIDTH} text-center`}
-        style={{ height: align === "start" ? "auto" : CARD_HEIGHT_PX }}
-      >
-        <div className={`flex h-full flex-col ${justify}`}>
-          <p className="text-sm font-semibold text-black">{item.year}</p>
-
-          <h3 className="mt-2 text-[15px] font-semibold leading-snug tracking-[-0.02em] text-black">
-            {renderHighlightedTitle(item.title, item.highlightWords)}
-          </h3>
-
-          <p className="mt-2 text-xs leading-6 text-neutral-500">
-            {item.description}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  if (item.variant === "wide") {
-    return (
-      <article
-        className={`${MILESTONE_WIDTH} overflow-hidden rounded-[22px] border border-black/10 bg-white p-3.5 shadow-sm xl:max-w-[220px]`}
-        style={{ height: CARD_HEIGHT_PX }}
-      >
-        <div className="flex h-full flex-col">
-          <p className="text-sm font-semibold text-black">{item.year}</p>
-
-          <h3 className="mt-1 text-[13px] font-semibold leading-snug tracking-[-0.02em] text-black">
-            {renderHighlightedTitle(item.title, item.highlightWords)}
-          </h3>
-
-          <p className="mt-1 line-clamp-2 text-[11px] leading-5 text-neutral-500">
-            {item.description}
-          </p>
-
-          {item.image ? (
-            <MilestoneImage
-              src={item.image}
-              alt={item.title}
-              className={`mt-2 ${imageHeightClass} w-full shrink-0`}
-            />
-          ) : null}
-        </div>
-      </article>
+      <div className={cn("w-full", centered && "max-w-[270px] text-center")}>{text}</div>
     );
   }
 
   return (
     <article
-      className={`${MILESTONE_WIDTH} flex flex-col overflow-hidden rounded-[22px] border border-black/10 bg-white p-3.5 shadow-sm`}
-      style={{ height: CARD_HEIGHT_PX }}
+      className={cn(
+        "w-full overflow-hidden rounded-[20px] border border-its-line bg-white",
+        centered && "max-w-[300px] text-center",
+      )}
     >
-      <p className="text-sm font-semibold text-black">{item.year}</p>
-
-      <h3 className="mt-1.5 text-[14px] font-semibold leading-snug tracking-[-0.02em] text-black">
-        {renderHighlightedTitle(item.title, item.highlightWords)}
-      </h3>
-
-      <p className="mt-1.5 line-clamp-3 text-[11px] leading-5 text-neutral-500">
-        {item.description}
-      </p>
-
-      {item.image ? (
-        <MilestoneImage
+      <div className="relative h-[120px] w-full bg-its-dusty-soft">
+        <Image
           src={item.image}
-          alt={item.title}
-          className={`mt-auto ${imageHeightClass} w-full shrink-0`}
+          alt={item.imageAlt ?? ""}
+          fill
+          className="object-cover"
+          sizes="(min-width: 1024px) 300px, 560px"
         />
-      ) : null}
+      </div>
+      <div className="px-4 pb-5 pt-4">{text}</div>
     </article>
-  );
-}
-
-function MilestoneImage({
-  src,
-  alt,
-  className = "",
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative overflow-hidden rounded-xl bg-neutral-100 ${className}`}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
-        sizes="200px"
-      />
-    </div>
   );
 }

@@ -481,7 +481,7 @@ const DEFAULT_EXPANDED = "01";
 function DetailColumn({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <h4 className="text-[14px] font-semibold text-[#0B0F14]">{title}</h4>
+      <h4 className="text-[14px] font-semibold text-[#14243D]">{title}</h4>
       <ul className="mt-3 space-y-2">
         {items.map((item) => (
           <li
@@ -489,7 +489,7 @@ function DetailColumn({ title, items }: { title: string; items: string[] }) {
             className="flex items-start gap-2 text-[13px] leading-[1.55] text-neutral-600"
           >
             <span
-              className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#0A3A86]"
+              className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#14243D]"
               aria-hidden
             />
             {item}
@@ -506,11 +506,11 @@ function ServiceDetailPanel({ service }: { service: ServiceDetail }) {
   return (
     <div className="relative min-h-[480px] bg-[#F4F7FD] p-6 md:p-8 lg:p-10">
       <div className="max-w-[82%]">
-        <h3 className="text-[clamp(24px,2.2vw,32px)] font-semibold tracking-[-0.03em] text-[#0A3A86]">
+        <h3 className="text-[clamp(24px,2.2vw,32px)] font-semibold tracking-[-0.03em] text-[#14243D]">
           {service.title}
         </h3>
 
-        <p className="mt-3 text-[15px] font-medium leading-[1.6] text-[#0B0F14]">
+        <p className="mt-3 text-[15px] font-medium leading-[1.6] text-[#14243D]">
           {service.summary}
         </p>
 
@@ -534,7 +534,7 @@ function ServiceDetailPanel({ service }: { service: ServiceDetail }) {
 
         <Link
           href={service.href}
-          className="mt-8 inline-flex text-[13px] font-medium text-[#0A3A86] transition hover:text-[#062A56]"
+          className="mt-8 inline-flex text-[13px] font-medium text-[#14243D] transition hover:text-[#14243D]"
         >
           Learn more about {service.title} →
         </Link>
@@ -589,15 +589,15 @@ export default function HoverServicesSlider() {
   };
 
   return (
-    <section id="service-capabilities" className="section-shell bg-[#FAFAF8]">
+    <section id="service-capabilities" className="section-shell bg-[#F5F6F8]">
       <div className="layout-container">
         <div className="mb-12">
-          <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-            <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
+          <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+            <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
             Service Capabilities
           </p>
 
-          <h2 className="section-title mt-5 max-w-[760px] text-[#0B0F14]">
+          <h2 className="section-title mt-5 max-w-[760px] text-[#14243D]">
             Capabilities across device refurbishment, QA and logistics.
           </h2>
         </div>
@@ -619,15 +619,15 @@ export default function HoverServicesSlider() {
                       className="flex w-full items-center gap-3 px-3 py-4 text-left transition hover:bg-[#F7F9FC]"
                       aria-expanded={isExpanded}
                     >
-                      <span className="text-xs font-semibold tracking-[0.16em] text-[#0A3A86]">
+                      <span className="text-xs font-semibold tracking-[0.16em] text-[#14243D]">
                         {category.number}
                       </span>
-                      <span className="flex-1 text-[15px] font-semibold text-[#0B0F14]">
+                      <span className="flex-1 text-[15px] font-semibold text-[#14243D]">
                         {category.title}
                       </span>
                       <ChevronDown
                         className={cn(
-                          "h-4 w-4 text-[#0A3A86] transition-transform duration-300",
+                          "h-4 w-4 text-[#14243D] transition-transform duration-300",
                           isExpanded && "rotate-180",
                         )}
                         aria-hidden
@@ -652,8 +652,8 @@ export default function HoverServicesSlider() {
                                 className={cn(
                                   "w-full rounded-lg px-3 py-2.5 pl-10 text-left text-[14px] transition-colors",
                                   isActive
-                                    ? "bg-[#F4F7FD] font-medium text-[#0A3A86]"
-                                    : "text-neutral-600 hover:bg-[#F7F9FC] hover:text-[#0B0F14]",
+                                    ? "bg-[#F4F7FD] font-medium text-[#14243D]"
+                                    : "text-neutral-600 hover:bg-[#F7F9FC] hover:text-[#14243D]",
                                 )}
                               >
                                 {service.title}

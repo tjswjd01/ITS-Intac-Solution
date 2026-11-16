@@ -156,16 +156,16 @@ export default function IndustrySupportAreas() {
                   <div className="flex gap-3">
                     <span
                       className={cn(
-                        "mt-[7px] h-2 w-3 shrink-0 rounded-full bg-[#D1D5DB] transition-all duration-300",
-                        "group-hover:w-5 group-hover:bg-[#0A3A86]",
+                        "mt-[7px] h-2 w-3 shrink-0 rounded-full bg-[#C9D2DC] transition-all duration-300",
+                        "group-hover:w-5 group-hover:bg-[#14243D]",
                       )}
                       aria-hidden
                     />
                     <div className="min-w-0">
-                      <p className="text-[15px] font-semibold leading-snug tracking-[-0.02em] text-[#0B0F14] transition-colors duration-300 group-hover:text-[#0A3A86] md:text-[16px]">
+                      <p className="text-[15px] font-semibold leading-snug tracking-[-0.02em] text-[#14243D] transition-colors duration-300 group-hover:text-[#14243D] md:text-[16px]">
                         {item.title}
                       </p>
-                      <p className="mt-1.5 text-[13px] leading-[1.65] text-[#64748B] md:text-[14px]">
+                      <p className="mt-1.5 text-[13px] leading-[1.65] text-[#566173] md:text-[14px]">
                         {item.description}
                       </p>
                     </div>

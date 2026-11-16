@@ -6,12 +6,12 @@ const config: Config = {
     extend: {
       colors: {
         ink: "#0B0F14",
-        navy: "#062A56",
-        "navy-dark": "#021F45",
-        "navy-accent": "#0B3D91",
-        muted: "#6B7280",
-        surface: "#FAFAF8",
-        border: "#E5E7EB",
+        navy: "#14243D", // legacy alias of its-navy
+        "navy-dark": "#0F1B2E",
+        "navy-accent": "#1D3252",
+        muted: "#566173",
+        surface: "#F5F6F8",
+        border: "#E3E5E8",
         // Home redesign palette (Nov 2026). Additive: existing tokens above are unchanged.
         its: {
           navy: "#14243D", // headings, primary CTAs, the single dark module
@@ -23,11 +23,17 @@ const config: Config = {
           "dusty-soft": "#EDF1F5", // icon tiles
           mint: "#8FAAA5", // decorative rules and dots only
           "mint-ink": "#4F6F69", // eyebrow text (5.1:1 on off-white)
-          coral: "#D97868", // rare accent, under 3% of the page
+          coral: "#D97868", // the one highlight per section, under 3% of the page
+          "coral-ink": "#B4523F", // coral text and numbered eyebrows (5.3:1 on white)
+          "coral-soft": "#FBECE8", // highlighted card background
           line: "#E3E5E8", // card borders
           periwinkle: "#5A74C9", // Direct Hire accent: primary button, step highlight (white text 4.9:1)
           "periwinkle-soft": "#E9EEFA", // periwinkle tint for tiles and chips
           "periwinkle-ink": "#3F57A6", // periwinkle text on light surfaces (6.3:1)
+          // Direct Hire palette (additive). See DESIGN.md, "Direct Hire".
+          charcoal: "#252D35", // the one mid-page dark section and dark tiles
+          warm: "#E7EAED", // mid-tone gray bands and tiles
+          "soft-slate": "#AAB4BF", // lines, icons and secondary text on dark
         },
       },
       boxShadow: {

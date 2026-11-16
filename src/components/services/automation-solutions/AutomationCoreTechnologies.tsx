@@ -105,7 +105,7 @@ export default function AutomationCoreTechnologies() {
           {/* Left — copy + technology list */}
           <div className="flex w-full min-w-0 flex-col lg:max-w-[520px]">
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/55">
-              <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
+              <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
               Core Technologies
             </p>
 
@@ -134,7 +134,7 @@ export default function AutomationCoreTechnologies() {
                       className={cn(
                         "group flex w-full items-center gap-4 rounded-xl border px-4 py-3.5 text-left transition-all duration-300",
                         isActive
-                          ? "border-[#0A3A86]/50 bg-[#0A3A86]/15 shadow-[0_8px_32px_rgba(10,58,134,0.2)]"
+                          ? "border-[#14243D]/50 bg-[#14243D]/15 shadow-[0_8px_32px_rgba(10,58,134,0.2)]"
                           : "border-white/[0.06] bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04]",
                       )}
                     >

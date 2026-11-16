@@ -208,12 +208,12 @@ function Eyebrow({
   return (
     <p
       className={`flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] ${
-        dark ? "text-white/80" : "text-[#0A3A86]"
+        dark ? "text-white/80" : "text-[#14243D]"
       }`}
     >
       <span
         className={`h-2 w-2 rounded-full ${
-          dark ? "bg-[#7DD3FC]" : "bg-[#0A3A86]"
+          dark ? "bg-[#7DD3FC]" : "bg-[#14243D]"
         }`}
       />
       {children}
@@ -231,12 +231,12 @@ function StepBadge({
   return (
     <span
       className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-transparent text-[12px] font-bold ${
-        dark ? "text-white" : "text-[#0A3A86]"
+        dark ? "text-white" : "text-[#14243D]"
       }`}
       style={{
         backgroundImage: dark
-          ? "linear-gradient(#08111C,#08111C),linear-gradient(135deg,#60A5FA,#A78BFA,#22D3EE)"
-          : "linear-gradient(#fff,#fff),linear-gradient(135deg,#60A5FA,#A78BFA,#22D3EE)",
+          ? "linear-gradient(#08111C,#08111C),linear-gradient(135deg,#A5B5C5,#D97868,#8FAAA5)"
+          : "linear-gradient(#fff,#fff),linear-gradient(135deg,#A5B5C5,#D97868,#8FAAA5)",
         backgroundClip: "padding-box,border-box",
         backgroundOrigin: "border-box",
       }}
@@ -262,7 +262,7 @@ function BulletList({
             dark ? "text-white/65" : "text-[#526173]"
           }`}
         >
-          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#60A5FA]" />
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#A5B5C5]" />
           {item}
         </li>
       ))}
@@ -273,7 +273,7 @@ function BulletList({
 function TimelineConnector() {
   return (
     <div
-      className="h-7 w-px bg-gradient-to-b from-[#60A5FA]/80 via-[#A78BFA]/50 to-[#60A5FA]/30"
+      className="h-7 w-px bg-gradient-to-b from-[#A5B5C5]/80 via-[#D97868]/50 to-[#A5B5C5]/30"
       aria-hidden
     />
   );
@@ -299,10 +299,10 @@ function TimelineBulletList({
       {bullets.map((bullet) => (
         <li
           key={bullet}
-          className="flex items-start gap-1.5 text-[10px] leading-[1.45] text-[#64748B]"
+          className="flex items-start gap-1.5 text-[10px] leading-[1.45] text-[#566173]"
         >
           <span
-            className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-[#60A5FA]"
+            className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-[#A5B5C5]"
             aria-hidden
           />
           {bullet}
@@ -330,7 +330,7 @@ function TimelineImageCard({
       ) : null}
 
       {showTitle ? (
-        <h4 className="mt-2.5 text-[12px] font-semibold tracking-[-0.02em] text-[#0B0F14]">
+        <h4 className="mt-2.5 text-[12px] font-semibold tracking-[-0.02em] text-[#14243D]">
           {step.title}
         </h4>
       ) : null}
@@ -376,7 +376,7 @@ function DesktopTimelineColumn({ step }: { step: ReceivingTimelineStep }) {
         {isLabelAbove ? (
           <>
             <TimelineConnector />
-            <div className="w-full max-w-[148px] rounded-[14px] border border-black/[0.06] bg-[#FAFBFC] px-3 py-2.5">
+            <div className="w-full max-w-[148px] rounded-[14px] border border-black/[0.06] bg-[#F5F6F8] px-3 py-2.5">
               <TimelineBulletList bullets={step.bullets} compact />
             </div>
           </>
@@ -410,7 +410,7 @@ function ReceivingDesktopTimeline() {
         style={{
           top: `${badgeRailOffset}px`,
           background:
-            "linear-gradient(90deg, #60A5FA 0%, #818CF8 30%, #A78BFA 55%, #22D3EE 85%, #34D399 100%)",
+            "linear-gradient(90deg, #A5B5C5 0%, #818CF8 30%, #D97868 55%, #8FAAA5 85%, #34D399 100%)",
         }}
         aria-hidden
       />
@@ -437,7 +437,7 @@ function MobileTimelineStep({
         <StepBadge number={step.number} />
         {!isLast ? (
           <div
-            className="mt-2 w-px flex-1 min-h-[32px] bg-gradient-to-b from-[#60A5FA] via-[#A78BFA] to-[#22D3EE]"
+            className="mt-2 w-px flex-1 min-h-[32px] bg-gradient-to-b from-[#A5B5C5] via-[#D97868] to-[#8FAAA5]"
             aria-hidden
           />
         ) : null}
@@ -452,7 +452,7 @@ function MobileTimelineStep({
           />
         ) : null}
 
-        <h3 className="text-[15px] font-semibold tracking-[-0.02em] text-[#0B0F14]">
+        <h3 className="text-[15px] font-semibold tracking-[-0.02em] text-[#14243D]">
           {step.title}
         </h3>
 
@@ -492,14 +492,14 @@ function ReceivingInboundLine() {
           ))}
         </div>
 
-        <div className="mt-16 grid gap-4 rounded-[28px] border border-black/[0.08] bg-[#FAFBFC] p-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-16 grid gap-4 rounded-[28px] border border-black/[0.08] bg-[#F5F6F8] p-4 md:grid-cols-2 xl:grid-cols-4">
           {capabilities.map(([title, description, Icon]) => (
             <div key={title} className="flex gap-4 p-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[#0A3A86] shadow-sm">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[#14243D] shadow-sm">
                 <Icon className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="text-[14px] font-semibold text-[#0A3A86]">
+                <h4 className="text-[14px] font-semibold text-[#14243D]">
                   {title}
                 </h4>
                 <p className="mt-1 text-[12px] leading-[1.55] text-[#526173]">
@@ -538,7 +538,7 @@ function RBNodeContent({
           key={item}
           className="flex gap-2 text-[12px] leading-[1.45] text-white/65"
         >
-          <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#60A5FA]" />
+          <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#A5B5C5]" />
           {item}
         </li>
       ))}
@@ -550,7 +550,7 @@ function RBNodeContent({
           key={item}
           className="flex items-start justify-center gap-2 text-[12px] leading-[1.45] text-white/65"
         >
-          <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#60A5FA]" />
+          <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#A5B5C5]" />
           <span className="text-center">{item}</span>
         </li>
       ))}
@@ -638,10 +638,10 @@ function RBSerpentinePath() {
           x2="100%"
           y2="100%"
         >
-          <stop offset="0%" stopColor="#60A5FA" />
+          <stop offset="0%" stopColor="#A5B5C5" />
           <stop offset="32%" stopColor="#818CF8" />
-          <stop offset="52%" stopColor="#A78BFA" />
-          <stop offset="75%" stopColor="#22D3EE" />
+          <stop offset="52%" stopColor="#D97868" />
+          <stop offset="75%" stopColor="#8FAAA5" />
           <stop offset="100%" stopColor="#34D399" />
         </linearGradient>
 
@@ -696,7 +696,7 @@ function MobileRBRepairStep({
         <StepBadge number={step.number} dark />
         {!isLast ? (
           <div
-            className="mt-2 min-h-[32px] w-px flex-1 bg-gradient-to-b from-[#60A5FA] via-[#A78BFA] to-[#22D3EE]"
+            className="mt-2 min-h-[32px] w-px flex-1 bg-gradient-to-b from-[#A5B5C5] via-[#D97868] to-[#8FAAA5]"
             aria-hidden
           />
         ) : null}
@@ -794,7 +794,7 @@ function RBRepairTimeline() {
 
 function RBRepairProcess() {
   return (
-    <section className="relative overflow-hidden bg-[#070D14] py-24 text-white">
+    <section className="relative overflow-hidden bg-[#14243D] py-24 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(59,130,246,0.16),transparent_38%),radial-gradient(circle_at_20%_80%,rgba(34,211,238,0.12),transparent_36%)]" />
 
       <div className="layout-container relative">

@@ -1,12 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
-import { Eyebrow, outlineButtonClassName } from "@/components/site/primitives";
+import { Eyebrow, navyButtonClassName, outlineButtonClassName } from "@/components/site/primitives";
 import { ctaV3 } from "@/content/directHire";
 
-import { periwinkleButtonClassName } from "./DirectHireHeroLight";
 
-/** Closing "Let's talk" card: white on white band, periwinkle button,
+/** Closing "Let's talk" card: white on white band, navy button,
  *  three plain points instead of a form (the site has no form backend yet). */
 export default function DirectHireCtaLight() {
   return (
@@ -23,7 +22,7 @@ export default function DirectHireCtaLight() {
             </h2>
             <p className="mt-4 max-w-[480px] text-[16.5px] leading-[1.7] text-its-slate-ink">{ctaV3.copy}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href={ctaV3.primary.href} className={periwinkleButtonClassName}>
+              <Link href={ctaV3.primary.href} className={navyButtonClassName}>
                 {ctaV3.primary.label}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
@@ -35,7 +34,7 @@ export default function DirectHireCtaLight() {
           <ul className="space-y-3">
             {ctaV3.points.map((pt) => (
               <li key={pt} className="flex items-center gap-3 rounded-2xl border border-its-line bg-white px-5 py-4 text-[15px] font-medium text-its-navy">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-its-periwinkle-soft text-its-periwinkle-ink">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-its-coral-soft text-its-coral-ink">
                   <Check className="h-3.5 w-3.5" strokeWidth={2.4} aria-hidden />
                 </span>
                 {pt}

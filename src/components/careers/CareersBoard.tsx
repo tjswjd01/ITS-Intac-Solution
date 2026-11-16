@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  Banknote,
   Briefcase,
   Coins,
   Cog,
@@ -18,15 +19,17 @@ import { useMemo, useRef, useState } from "react";
 
 import { Eyebrow, navyButtonClassName } from "@/components/site/primitives";
 import {
-  SHOW_SAMPLE_NOTICE,
   categoryLabel,
   jobCategories,
-  jobs,
   quickFilters,
+  type JobCard,
   type JobCategoryCode,
+  type JobStats,
 } from "@/content/jobs";
 
+import { accents, type AccentName } from "./careerAccents";
 import CareersIllustration from "./CareersIllustration";
+import CareersStats from "./CareersStats";
 
 const categoryIcons: Record<JobCategoryCode, LucideIcon> = {
   engineering: Cog,
@@ -37,18 +40,46 @@ const categoryIcons: Record<JobCategoryCode, LucideIcon> = {
   "manufacturing-operations": Factory,
 };
 
+const categoryAccents: Record<JobCategoryCode, AccentName> = {
+  engineering: "dusty",
+  "it-software": "slate",
+  "finance-accounting": "teal",
+  "hr-administration": "coral",
+  "logistics-warehouse": "slate",
+  "manufacturing-operations": "teal",
+};
+
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-its-navy";
 
-const locations = Array.from(new Set(jobs.map((job) => job.location))).sort();
+/** Tint for a job that fits none of the six categories. */
+const fallbackAccent: AccentName = "slate";
+
+type Props = {
+  /** Open jobs from Paycor, already filtered to verified-open roles. */
+  jobs: JobCard[];
+  /** Overview numbers computed on the server from the same `jobs`. */
+  stats: JobStats;
+  /** When the listings were last loaded from Paycor. Null means the job
+   *  source could not be reached, so no listings are shown. */
+  updatedLabel: string | null;
+  /** Paycor's own job list, offered as a fallback when listings are down. */
+  paycorCareersUrl: string;
+};
 
 /** Hero search, category browser and job cards. All three read the same
  *  `jobs` data, so a search, a category and the cards can never disagree. */
-export default function CareersBoard() {
+export default function CareersBoard({ jobs, stats, updatedLabel, paycorCareersUrl }: Props) {
+  const available = updatedLabel !== null;
   const [keyword, setKeyword] = useState("");
   const [location, setLocation] = useState("");
   const [category, setCategory] = useState<JobCategoryCode | "">("");
   const resultsRef = useRef<HTMLElement>(null);
+
+  const locations = useMemo(
+    () => Array.from(new Set(jobs.map((job) => job.location).filter(Boolean))).sort(),
+    [jobs],
+  );
 
   const results = useMemo(() => {
     const q = keyword.trim().toLowerCase();
@@ -56,14 +87,22 @@ export default function CareersBoard() {
       (job) =>
         (!category || job.category === category) &&
         (!location || job.location === location) &&
-        (!q ||
-          `${job.title} ${job.summary} ${job.location} ${categoryLabel(job.category)}`
-            .toLowerCase()
-            .includes(q)),
+        (!q || `${job.title} ${job.location} ${job.categoryDisplay}`.toLowerCase().includes(q)),
     );
-  }, [keyword, location, category]);
+  }, [jobs, keyword, location, category]);
 
   const isFiltered = Boolean(keyword || location || category);
+
+  // The hero's small "open roles" card, from the same numbers as the overview.
+  const highlights = useMemo(
+    () =>
+      jobCategories
+        .map((c) => ({ label: c.label, count: stats.byCategory[c.code] }))
+        .filter((c) => c.count > 0)
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 3),
+    [stats],
+  );
 
   const showResults = () =>
     resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -77,9 +116,9 @@ export default function CareersBoard() {
   return (
     <>
       {/* Hero and search */}
-      <section className="bg-its-offwhite pb-12 pt-28 md:pb-16 md:pt-36">
+      <section className="bg-its-offwhite pb-10 pt-28 md:pb-14 md:pt-36">
         <div className="layout-container">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-12">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-16">
             <div>
               <Eyebrow rule>Careers at ITS</Eyebrow>
               <h1 className="mt-5 text-[clamp(2.3rem,4.8vw,3.75rem)] font-semibold leading-[1.04] tracking-[-0.035em] text-its-navy">
@@ -160,13 +199,15 @@ export default function CareersBoard() {
               </div>
             </div>
 
-            <CareersIllustration />
+            <CareersIllustration highlights={highlights} />
           </div>
         </div>
       </section>
 
+      <CareersStats stats={stats} available={available} />
+
       {/* Categories */}
-      <section aria-labelledby="categories-heading" className="bg-white py-14 md:py-20">
+      <section aria-labelledby="categories-heading" className="bg-white py-16 md:py-24">
         <div className="layout-container">
           <div className="text-center">
             <h2
@@ -180,10 +221,12 @@ export default function CareersBoard() {
             </p>
           </div>
 
-          <ul className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {jobCategories.map((item) => {
               const Icon = categoryIcons[item.code];
               const active = category === item.code;
+              const tone = accents[categoryAccents[item.code]];
+              const count = stats.byCategory[item.code];
               return (
                 <li key={item.code}>
                   <button
@@ -193,14 +236,17 @@ export default function CareersBoard() {
                       setCategory(active ? "" : item.code);
                       showResults();
                     }}
-                    className={`group flex w-full items-center gap-4 rounded-2xl border px-5 py-4 text-left transition-colors ${focusRing} ${
+                    className={`group flex w-full items-center gap-4 rounded-2xl border px-5 py-5 text-left transition-colors ${focusRing} ${
                       active
                         ? "border-its-navy bg-its-offwhite"
                         : "border-its-line bg-white hover:border-[#C9CFD8] hover:bg-its-offwhite"
                     }`}
                   >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-its-dusty-soft text-[#6E8196]">
-                      <Icon className="h-[18px] w-[18px]" strokeWidth={1.6} aria-hidden />
+                    <span
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px]"
+                      style={{ backgroundColor: tone.bg, color: tone.fg }}
+                    >
+                      <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden />
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-[16px] font-semibold tracking-[-0.01em] text-its-navy">
@@ -209,6 +255,11 @@ export default function CareersBoard() {
                       <span className="mt-0.5 block text-[13.5px] leading-[1.5] text-its-slate-ink">
                         {item.description}
                       </span>
+                      {available ? (
+                        <span className="mt-1.5 block text-[12.5px] font-medium" style={{ color: tone.fg }}>
+                          {count} open {count === 1 ? "position" : "positions"}
+                        </span>
+                      ) : null}
                     </span>
                     <ArrowRight
                       className="h-4 w-4 shrink-0 text-its-slate transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none"
@@ -227,7 +278,7 @@ export default function CareersBoard() {
         ref={resultsRef}
         id="open-positions"
         aria-labelledby="positions-heading"
-        className="scroll-mt-24 bg-its-offwhite py-14 md:py-20"
+        className="scroll-mt-24 bg-its-offwhite py-16 md:py-24"
       >
         <div className="layout-container">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
@@ -238,13 +289,18 @@ export default function CareersBoard() {
               >
                 Latest Open Positions
               </h2>
-              <p aria-live="polite" className="mt-2 text-[15px] text-its-slate-ink">
-                {results.length} {results.length === 1 ? "position" : "positions"}
-                {isFiltered ? " match your search" : ""}
-                {category ? ` in ${categoryLabel(category)}` : ""}
-              </p>
+              {available ? (
+                <>
+                  <p aria-live="polite" className="mt-2 text-[15px] text-its-slate-ink">
+                    {results.length} {results.length === 1 ? "position" : "positions"}
+                    {isFiltered ? (results.length === 1 ? " matches your search" : " match your search") : ""}
+                    {category ? ` in ${categoryLabel(category)}` : ""}
+                  </p>
+                  <p className="mt-1 text-[13.5px] text-its-slate-ink">Listings updated {updatedLabel}</p>
+                </>
+              ) : null}
             </div>
-            {isFiltered ? (
+            {available && isFiltered ? (
               <button
                 type="button"
                 onClick={clear}
@@ -255,39 +311,55 @@ export default function CareersBoard() {
             ) : null}
           </div>
 
-          {SHOW_SAMPLE_NOTICE ? (
-            <p className="mt-5 rounded-xl border border-dashed border-[#C9CFD8] bg-white px-4 py-3 text-[14px] leading-[1.55] text-its-slate-ink">
-              <strong className="font-semibold text-its-navy">Design template.</strong>{" "}
-              The listings below are samples for layout review, not real
-              openings. Live positions will replace them once the job source is
-              connected.
-            </p>
-          ) : null}
-
-          {results.length === 0 ? (
+          {!available ? (
+            <div role="status" className="mt-6 rounded-2xl border border-its-line bg-white px-6 py-10 text-center">
+              <p className="text-[17px] font-semibold text-its-navy">
+                Job listings are temporarily unavailable.
+              </p>
+              <p className="mx-auto mt-2 max-w-[560px] text-[15px] leading-[1.6] text-its-slate-ink">
+                We could not load the current openings from our recruiting
+                system, so none are shown here. Please try again shortly, or
+                view the openings on{" "}
+                <a
+                  href={paycorCareersUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`font-semibold text-its-navy underline decoration-its-mint decoration-2 underline-offset-4 ${focusRing}`}
+                >
+                  our Paycor careers page
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+                .
+              </p>
+            </div>
+          ) : results.length === 0 ? (
             <div className="mt-6 rounded-2xl border border-its-line bg-white px-6 py-10 text-center">
               <p className="text-[17px] font-semibold text-its-navy">
-                No open positions match your search.
+                {jobs.length === 0
+                  ? "There are no open positions right now."
+                  : "No open positions match your search."}
               </p>
               <p className="mt-2 text-[15px] text-its-slate-ink">
-                Try a different keyword or category, or submit your resume below
-                and we will keep you in mind.
+                {jobs.length === 0
+                  ? "Submit your resume below and we will keep you in mind."
+                  : "Try a different keyword or category, or submit your resume below and we will keep you in mind."}
               </p>
             </div>
           ) : (
-            <ul className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-7 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {results.map((job) => (
                 <li key={job.id}>
                   <article className="flex h-full flex-col rounded-2xl border border-its-line bg-white p-6">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-full bg-its-dusty-soft px-3 py-1 text-[12.5px] font-medium text-its-navy">
-                        {categoryLabel(job.category)}
+                      <span
+                        className="rounded-full px-3 py-1 text-[12.5px] font-medium"
+                        style={{
+                          backgroundColor: accents[job.category ? categoryAccents[job.category] : fallbackAccent].bg,
+                          color: accents[job.category ? categoryAccents[job.category] : fallbackAccent].fg,
+                        }}
+                      >
+                        {job.categoryDisplay}
                       </span>
-                      {job.sample ? (
-                        <span className="rounded-full border border-dashed border-[#B4BDC8] px-2.5 py-1 text-[12px] font-medium text-its-slate-ink">
-                          Sample
-                        </span>
-                      ) : null}
                     </div>
                     <h3 className="mt-4 text-[19px] font-semibold leading-[1.25] tracking-[-0.02em] text-its-navy">
                       <Link href={`/careers/${job.slug}`} className={`hover:underline ${focusRing}`}>
@@ -295,25 +367,32 @@ export default function CareersBoard() {
                       </Link>
                     </h3>
                     <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-[14px] text-its-slate-ink">
-                      <span className="inline-flex items-center gap-1.5">
-                        <MapPin className="h-4 w-4" aria-hidden />
-                        {job.location}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <Briefcase className="h-4 w-4" aria-hidden />
-                        {job.employmentType}
-                      </span>
+                      {job.location ? (
+                        <span className="inline-flex items-center gap-1.5">
+                          <MapPin className="h-4 w-4" aria-hidden />
+                          {job.location}
+                        </span>
+                      ) : null}
+                      {job.employmentType ? (
+                        <span className="inline-flex items-center gap-1.5">
+                          <Briefcase className="h-4 w-4" aria-hidden />
+                          {job.employmentType}
+                        </span>
+                      ) : null}
                     </p>
-                    <p className="mt-3 text-[14.5px] leading-[1.6] text-its-slate-ink">
-                      {job.summary}
-                    </p>
+                    {job.pay ? (
+                      <p className="mt-3 inline-flex items-center gap-1.5 text-[14.5px] font-medium text-its-navy">
+                        <Banknote className="h-4 w-4 text-its-slate" aria-hidden />
+                        {job.pay.text}
+                      </p>
+                    ) : null}
                     <div className="mt-auto flex items-center justify-between pt-5">
                       <Link
                         href={`/careers/${job.slug}`}
                         className={`inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-its-navy ${focusRing}`}
                       >
                         View Details
-                        <ArrowRight className="h-4 w-4 text-its-coral" aria-hidden />
+                        <ArrowRight className="h-4 w-4 text-its-slate" aria-hidden />
                       </Link>
                     </div>
                   </article>

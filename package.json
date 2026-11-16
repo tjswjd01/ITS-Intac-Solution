@@ -6,7 +6,8 @@
     "dev": "WATCHPACK_POLLING=true next dev --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --test src/lib/paycor/adapter.test.mjs src/lib/contact/submission.test.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
@@ -19,6 +20,7 @@
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.16.0",
     "next": "16.2.6",
+    "nodemailer": "^10.5.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-is": "^19.2.6",

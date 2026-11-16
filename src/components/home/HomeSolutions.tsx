@@ -3,10 +3,11 @@ import Link from "next/link";
 import { ArrowRight, Bot, Globe, Layers, Settings, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import { Eyebrow, SectionTitle, outlineButtonClassName } from "@/components/site/primitives";
+import { accentAt, accents } from "@/components/site/accents";
+import { Eyebrow, SectionTitle, StatementBand, outlineButtonClassName } from "@/components/site/primitives";
 import Reveal from "@/components/site/Reveal";
 
-import { solutions, solutionsIntro, type SolutionKey } from "./homeContent";
+import { solutions, solutionsIntro, type SolutionKey, statements } from "./homeContent";
 
 const icons: Record<SolutionKey, LucideIcon> = {
   "direct-hire": Users,
@@ -22,7 +23,7 @@ export default function HomeSolutions() {
       <div className="layout-container">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[680px]">
-            <Eyebrow>{solutionsIntro.eyebrow}</Eyebrow>
+            <Eyebrow index={1}>{solutionsIntro.eyebrow}</Eyebrow>
             <SectionTitle className="mt-3 text-[clamp(1.6rem,2.6vw,2.2rem)]">
               <span id="solutions-heading">{solutionsIntro.title}</span>
             </SectionTitle>
@@ -56,7 +57,10 @@ export default function HomeSolutions() {
                       />
                     </span>
                     <span className="relative flex flex-1 flex-col px-5 pb-5 pt-8">
-                      <span className="absolute -top-5 left-5 flex h-10 w-10 items-center justify-center rounded-xl border border-its-line bg-white text-[#6E8196]">
+                      <span
+                        className="absolute -top-5 left-5 flex h-10 w-10 items-center justify-center rounded-xl border border-white shadow-[0_6px_16px_rgba(20,36,61,0.08)]"
+                        style={{ backgroundColor: accents[accentAt(index)].bg, color: accents[accentAt(index)].fg }}
+                      >
                         <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                       </span>
                       <span className="text-[17px] font-semibold leading-[1.25] tracking-[-0.02em] text-its-navy">
@@ -78,6 +82,10 @@ export default function HomeSolutions() {
             );
           })}
         </ul>
+
+        <StatementBand className="mt-8" highlight={statements.solutions.highlight}>
+          {statements.solutions.text}
+        </StatementBand>
       </div>
     </section>
   );

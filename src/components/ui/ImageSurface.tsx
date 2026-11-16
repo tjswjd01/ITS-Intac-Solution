@@ -26,7 +26,7 @@ export default function ImageSurface({
         style={src ? { backgroundImage: `url("${src}")` } : undefined}
       />
 
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(2,31,69,0.12))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(13,24,40,0.12))]" />
 
       {overlayClassName ? (
         <div className={`absolute inset-0 ${overlayClassName}`} />

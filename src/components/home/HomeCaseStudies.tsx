@@ -36,7 +36,7 @@ export default function HomeCaseStudies() {
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-its-mint-ink">
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-its-slate">
                       {item.tag}
                     </p>
                     <h3 className="mt-3 text-[18px] font-semibold leading-[1.25] tracking-[-0.02em] text-its-navy">

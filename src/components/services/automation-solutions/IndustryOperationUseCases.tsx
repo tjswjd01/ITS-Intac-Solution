@@ -43,7 +43,7 @@ const useCases = [
 
 export default function IndustryOperationUseCases() {
   return (
-    <section id="industry-use-cases" className="section-shell border-t border-black/[0.06] bg-[#FAFAF8]">
+    <section id="industry-use-cases" className="section-shell border-t border-black/[0.06] bg-[#F5F6F8]">
       <div className="layout-container">
         <OperationsSectionHeader
           eyebrow="Industry Use Cases"
@@ -64,10 +64,10 @@ export default function IndustryOperationUseCases() {
               />
 
               <div className="flex flex-col justify-center p-6 md:p-7">
-                <h3 className="text-[20px] font-semibold tracking-[-0.03em] text-[#0B0F14]">
+                <h3 className="text-[20px] font-semibold tracking-[-0.03em] text-[#14243D]">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-[1.7] text-[#64748B]">
+                <p className="mt-3 text-[14px] leading-[1.7] text-[#566173]">
                   {item.description}
                 </p>
               </div>

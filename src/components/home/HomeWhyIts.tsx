@@ -2,9 +2,10 @@ import Image from "next/image";
 import { Building2, Cog, Cpu, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import { Eyebrow, SectionTitle } from "@/components/site/primitives";
+import { accentAt } from "@/components/site/accents";
+import { Eyebrow, IconTile, SectionTitle, StatementBand } from "@/components/site/primitives";
 
-import { whyIts } from "./homeContent";
+import { statements, whyIts } from "./homeContent";
 
 const icons: Record<(typeof whyIts.points)[number]["key"], LucideIcon> = {
   engineering: Cog,
@@ -29,7 +30,7 @@ export default function HomeWhyIts() {
           </div>
 
           <div>
-            <Eyebrow>{whyIts.eyebrow}</Eyebrow>
+            <Eyebrow index={2}>{whyIts.eyebrow}</Eyebrow>
             <SectionTitle className="mt-3 text-[clamp(1.6rem,2.6vw,2.2rem)]">
               <span id="why-its-heading">{whyIts.title}</span>
             </SectionTitle>
@@ -38,13 +39,11 @@ export default function HomeWhyIts() {
             </p>
 
             <ul className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2">
-              {whyIts.points.map((point) => {
+              {whyIts.points.map((point, index) => {
                 const Icon = icons[point.key];
                 return (
                   <li key={point.key} className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-its-line bg-white text-[#6E8196]">
-                      <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
-                    </span>
+                    <IconTile icon={Icon} accent={accentAt(index)} size="lg" />
                     <div>
                       <h3 className="text-[16.5px] font-semibold tracking-[-0.01em] text-its-navy">
                         {point.title}
@@ -59,6 +58,10 @@ export default function HomeWhyIts() {
             </ul>
           </div>
         </div>
+
+        <StatementBand className="mt-12" highlight={statements.whyIts.highlight}>
+          {statements.whyIts.text}
+        </StatementBand>
       </div>
     </section>
   );

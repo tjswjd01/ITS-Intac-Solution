@@ -12,12 +12,12 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useState } from "react";
 
-const NAVY = "#0F172A";
-const ACCENT = "#0A3A86";
-const BODY = "#6B7280";
-const HEADING = "#0B0F14";
+const NAVY = "#14243D";
+const ACCENT = "#B4523F";
+const BODY = "#566173";
+const HEADING = "#14243D";
 const LINE = "#CBD5E1";
-const BORDER = "#E5E7EB";
+const BORDER = "#E3E5E8";
 
 type MediaItem = {
   type: "image" | "video";
@@ -294,7 +294,7 @@ function GalleryMedia({
 
 export default function FieldOperationsGallery() {
   return (
-    <section className="section-shell bg-[#FAFAF8]">
+    <section className="section-shell bg-[#F5F6F8]">
       <div className="layout-container">
         <div className="mx-auto max-w-3xl text-center">
           <p
@@ -309,7 +309,7 @@ export default function FieldOperationsGallery() {
             Field Operations
           </p>
 
-          <h2 className="section-title mx-auto mt-5 max-w-[760px] text-[#0B0F14]">
+          <h2 className="section-title mx-auto mt-5 max-w-[760px] text-[#14243D]">
             How a Device Program Comes Together
           </h2>
 

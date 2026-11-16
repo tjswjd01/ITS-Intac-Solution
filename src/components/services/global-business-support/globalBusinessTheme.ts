@@ -1,9 +1,9 @@
-export const GBS_ACCENT = "#3A5560";
-export const GBS_ACCENT_HOVER = "#2F4750";
-export const GBS_CONNECTOR = "rgba(58, 85, 96, 0.28)";
-export const GBS_ACCENT_SHADOW = "rgba(58, 85, 96, 0.18)";
-export const GBS_HEADING = "#111827";
-export const GBS_BODY = "#6B7280";
+export const GBS_ACCENT = "#14243D";
+export const GBS_ACCENT_HOVER = "#1D3252";
+export const GBS_CONNECTOR = "rgba(20, 36, 61, 0.28)";
+export const GBS_ACCENT_SHADOW = "rgba(20, 36, 61, 0.18)";
+export const GBS_HEADING = "#14243D";
+export const GBS_BODY = "#566173";
 export const GBS_DIAGRAM_LABEL = "#374151";
-export const GBS_BORDER = "#E5E7EB";
-export const GBS_LIGHT_BG = "#FAFAFA";
+export const GBS_BORDER = "#E3E5E8";
+export const GBS_LIGHT_BG = "#F5F6F8";

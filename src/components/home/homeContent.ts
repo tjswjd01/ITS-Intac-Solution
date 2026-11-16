@@ -94,6 +94,18 @@ export const solutions: {
 
 // TODO(owner): wording to be finalized by the owner. No figures are shown
 // until the exact numbers and labels are approved.
+/** One-sentence section closers, from the proposal deck. TODO(owner): edit. */
+export const statements = {
+  solutions: {
+    text: "From core hires to flexible staffing and integrated site operations,",
+    highlight: "one partner for every workforce need.",
+  },
+  whyIts: {
+    text: "We understand the technology and the floor, so we judge",
+    highlight: "fit, quality, delivery and efficiency together.",
+  },
+};
+
 export const proof = {
   lead: "Proven Operational Execution",
   items: [

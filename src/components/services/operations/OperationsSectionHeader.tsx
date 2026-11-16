@@ -18,8 +18,8 @@ const eyebrowToneStyles: Record<
   EyebrowTone,
   { text: string; dot: string }
 > = {
-  navy: { text: "text-[#0A3A86]", dot: "bg-[#0A3A86]" },
-  black: { text: "text-[#111111]", dot: "bg-[#111111]" },
+  navy: { text: "text-its-coral-ink", dot: "bg-its-coral" },
+  black: { text: "text-its-coral-ink", dot: "bg-its-coral" },
 };
 
 export default function OperationsSectionHeader({

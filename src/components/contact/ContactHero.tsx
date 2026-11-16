@@ -1,43 +1,98 @@
+import { Eyebrow } from "@/components/site/primitives";
+import { contactHero } from "@/content/contact";
+
+/** Points and links of the line drawing on the right of the banner. */
+const nodes = {
+  a: [96, 262],
+  b: [198, 158],
+  c: [296, 236],
+  d: [352, 108],
+  e: [446, 198],
+  f: [508, 84],
+  g: [572, 172],
+  h: [612, 288],
+  i: [474, 306],
+  j: [246, 66],
+  k: [372, 330],
+} as const;
+
+type NodeId = keyof typeof nodes;
+
+const links: [NodeId, NodeId][] = [
+  ["a", "b"],
+  ["b", "c"],
+  ["b", "j"],
+  ["j", "d"],
+  ["c", "d"],
+  ["c", "e"],
+  ["c", "k"],
+  ["d", "e"],
+  ["d", "f"],
+  ["e", "g"],
+  ["f", "g"],
+  ["e", "i"],
+  ["g", "h"],
+  ["i", "h"],
+  ["k", "i"],
+];
+
+const hubs: NodeId[] = ["d", "e", "c"];
+
+/** Original line drawing of connected points; decorative only. */
+function ConnectionLines() {
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-y-0 right-0 hidden w-[56%] [mask-image:linear-gradient(90deg,transparent_0%,black_42%)] md:block"
+    >
+      <svg
+        viewBox="0 0 640 380"
+        preserveAspectRatio="xMaxYMid slice"
+        className="h-full w-full"
+        fill="none"
+      >
+        <g stroke="#A5B5C5" strokeOpacity="0.3" strokeWidth="1">
+          {links.map(([from, to]) => (
+            <line
+              key={`${from}-${to}`}
+              x1={nodes[from][0]}
+              y1={nodes[from][1]}
+              x2={nodes[to][0]}
+              y2={nodes[to][1]}
+            />
+          ))}
+        </g>
+        <g stroke="#A5B5C5" strokeOpacity="0.35" strokeWidth="1">
+          {hubs.map((id) => (
+            <circle key={id} cx={nodes[id][0]} cy={nodes[id][1]} r="11" />
+          ))}
+        </g>
+        <g fill="#A5B5C5" fillOpacity="0.75">
+          {(Object.keys(nodes) as NodeId[]).map((id) => (
+            <circle key={id} cx={nodes[id][0]} cy={nodes[id][1]} r="3" />
+          ))}
+        </g>
+      </svg>
+    </div>
+  );
+}
+
 export default function ContactHero() {
   return (
-    <section className="relative overflow-visible">
-      <div className="relative h-[320px] md:h-[400px] lg:h-[480px]">
-        <img
-          src="/images/its-hero-bg.png"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center"
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 bg-[rgba(8,31,61,0.82)]"
-          aria-hidden
-        />
+    <section className="relative overflow-hidden bg-its-navy">
+      <ConnectionLines />
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 pt-16 text-center sm:px-6 md:pt-20 lg:pt-24">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/75">
-            Contact
-          </p>
-          <h1 className="mt-3 text-[clamp(2rem,5vw,2.75rem)] font-semibold leading-tight tracking-[-0.03em] text-white">
-            Contact Us
+      <div className="layout-container relative z-10 pb-14 pt-32 md:pb-20 md:pt-40">
+        <div className="max-w-[600px]">
+          <Eyebrow rule onDark>
+            {contactHero.label}
+          </Eyebrow>
+          <h1 className="mt-5 text-[clamp(2.2rem,4.6vw,3.6rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-white">
+            {contactHero.headline}
           </h1>
-          <p className="mt-4 max-w-[640px] text-[15px] leading-[1.75] text-white md:text-[16px]">
-            Whether you are exploring workforce support, automation programs,
-            partnerships, or career opportunities, our team is ready to help.
+          <p className="mt-6 max-w-[480px] text-[17px] leading-[1.7] text-[#D3DAE3]">
+            {contactHero.copy}
           </p>
-        </div>
-
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1]">
-          <svg
-            viewBox="0 0 1440 88"
-            preserveAspectRatio="none"
-            className="block h-[52px] w-full md:h-[64px] lg:h-[72px]"
-            aria-hidden
-          >
-            <path
-              fill="#FAFAF8"
-              d="M0,52 C320,88 640,18 960,52 C1120,68 1280,72 1440,48 L1440,88 L0,88 Z"
-            />
-          </svg>
         </div>
       </div>
     </section>

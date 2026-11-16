@@ -230,13 +230,13 @@ export default function WhereAutomationCanBeApplied() {
                     "flex w-full items-center gap-4 rounded-xl border px-4 py-3.5 text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14243D] motion-reduce:transition-none",
                     isActive
                       ? "border-[#14243D]/25 bg-[#14243D]/[0.06] shadow-[0_8px_28px_rgba(10,58,134,0.1)]"
-                      : "border-transparent bg-[#FAFAF8] hover:border-black/[0.08] hover:bg-[#F3F4F6]",
+                      : "border-transparent bg-[#F5F6F8] hover:border-black/[0.08] hover:bg-[#F0F2F5]",
                   )}
                 >
                   <span
                     className={cn(
                       "w-8 shrink-0 font-mono text-[12px] font-semibold tracking-[0.12em]",
-                      isActive ? "text-[#14243D]" : "text-[#9CA3AF]",
+                      isActive ? "text-[#14243D]" : "text-[#758194]",
                     )}
                   >
                     {item.id}
@@ -244,7 +244,7 @@ export default function WhereAutomationCanBeApplied() {
                   <span
                     className={cn(
                       "text-[15px] font-medium tracking-[-0.02em]",
-                      isActive ? "text-[#111111]" : "text-[#4B5563]",
+                      isActive ? "text-[#14243D]" : "text-[#566173]",
                     )}
                   >
                     {item.title}
@@ -255,7 +255,7 @@ export default function WhereAutomationCanBeApplied() {
           </nav>
 
           {/* Right — image-led detail (fills remaining container width) */}
-          <div className="min-w-0 w-full overflow-hidden rounded-[24px] border border-black/[0.08] bg-[#FAFAF8] shadow-[0_16px_48px_rgba(15,23,42,0.06)]">
+          <div className="min-w-0 w-full overflow-hidden rounded-[24px] border border-black/[0.08] bg-[#F5F6F8] shadow-[0_16px_48px_rgba(15,23,42,0.06)]">
             <div className="grid lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1.05fr)]">
               {/* Image ~59% */}
               <ApplicationImagePanel key={active.id} area={active} />
@@ -265,22 +265,22 @@ export default function WhereAutomationCanBeApplied() {
                 <p className="font-mono text-[11px] font-semibold tracking-[0.14em] text-[#14243D]">
                   {active.id}
                 </p>
-                <h3 className="mt-3 text-[clamp(22px,2.2vw,28px)] font-semibold leading-[1.12] tracking-[-0.03em] text-[#111111]">
+                <h3 className="mt-3 text-[clamp(22px,2.2vw,28px)] font-semibold leading-[1.12] tracking-[-0.03em] text-[#14243D]">
                   {active.title}
                 </h3>
-                <p className="mt-4 text-[15px] leading-[1.75] text-[#4B5563]">
+                <p className="mt-4 text-[15px] leading-[1.75] text-[#566173]">
                   {active.description}
                 </p>
 
                 <div className="mt-8 border-t border-black/[0.06] pt-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6B7280]">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#566173]">
                     Key Functions
                   </p>
                   <ul className="mt-3 space-y-2.5">
                     {active.keyFunctions.map((fn) => (
                       <li
                         key={fn}
-                        className="flex items-start gap-2.5 text-[14px] leading-snug text-[#4B5563]"
+                        className="flex items-start gap-2.5 text-[14px] leading-snug text-[#566173]"
                       >
                         <span
                           className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#14243D]"

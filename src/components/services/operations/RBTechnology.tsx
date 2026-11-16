@@ -89,11 +89,11 @@ function TechnologyCard({
       </div>
 
       <div className="p-6">
-        <h3 className="text-[20px] font-semibold tracking-[-0.03em] text-[#0B0F14]">
+        <h3 className="text-[20px] font-semibold tracking-[-0.03em] text-[#14243D]">
           {item.title}
         </h3>
 
-        <p className="mt-2 max-w-[520px] text-[14px] leading-[1.65] text-[#64748B]">
+        <p className="mt-2 max-w-[520px] text-[14px] leading-[1.65] text-[#566173]">
           {item.description}
         </p>
       </div>
@@ -103,7 +103,7 @@ function TechnologyCard({
 
 export default function RBTechnology() {
   return (
-    <section className="section-shell border-t border-black/[0.06] bg-[#FAFAF8]">
+    <section className="section-shell border-t border-black/[0.06] bg-[#F5F6F8]">
       <div className="layout-container">
         <OperationsSectionHeader
           eyebrow="RB Technology"

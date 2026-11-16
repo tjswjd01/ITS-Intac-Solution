@@ -12,7 +12,7 @@ export default function GlobalBusinessCTA() {
   return (
     <section
       id="global-business-cta"
-      className="border-t border-[#E5E7EB] py-16 md:py-20 lg:py-24"
+      className="border-t border-[#E3E5E8] py-16 md:py-20 lg:py-24"
       style={{ backgroundColor: GBS_ACCENT }}
     >
       <div className="mx-auto w-full min-w-0 max-w-[1280px] px-5 sm:px-6 lg:px-8">
@@ -34,7 +34,7 @@ export default function GlobalBusinessCTA() {
 
           <Link
             href="/contact"
-            className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-7 py-3 text-[15px] font-medium text-[#3A5560] shadow-[0_12px_32px_rgba(0,0,0,0.12)] transition duration-300 hover:-translate-y-px hover:bg-[#F8FAFC] hover:text-[#2F4750]"
+            className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-7 py-3 text-[15px] font-medium text-[#14243D] shadow-[0_12px_32px_rgba(0,0,0,0.12)] transition duration-300 hover:-translate-y-px hover:bg-[#F8FAFC] hover:text-[#1D3252]"
           >
             Schedule a Consultation
             <MoveRight className="h-4 w-4" aria-hidden />

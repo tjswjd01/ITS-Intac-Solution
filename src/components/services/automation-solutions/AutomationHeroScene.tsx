@@ -187,7 +187,7 @@ function StatusScreen() {
     ctx.fillText("SYSTEM STATUS", cx, 36);
 
     ctx.font = "700 26px system-ui, sans-serif";
-    ctx.fillStyle = uiComplete ? "#3dff9a" : "#7eb8ff";
+    ctx.fillStyle = uiComplete ? "#D97868" : "#7eb8ff";
     const statusWord = uiComplete ? "COMPLETE" : "RUNNING";
     ctx.fillText(statusWord, cx, 76);
 
@@ -205,7 +205,7 @@ function StatusScreen() {
       ctx.fillStyle = `rgba(61, 255, 154, ${checkPulse})`;
       ctx.fill();
 
-      ctx.strokeStyle = "#3dff9a";
+      ctx.strokeStyle = "#D97868";
       ctx.lineWidth = 3;
       ctx.beginPath();
       ctx.moveTo(SCREEN_PAD_X + 4, 140);
@@ -215,7 +215,7 @@ function StatusScreen() {
 
       ctx.textAlign = "left";
       ctx.font = "700 14px system-ui, sans-serif";
-      ctx.fillStyle = "#3dff9a";
+      ctx.fillStyle = "#D97868";
       ctx.fillText("INSPECTION COMPLETE", SCREEN_PAD_X + 30, 146);
 
       const rows = ["Screen", "Camera", "Buttons", "Battery", "Sensors"];
@@ -225,7 +225,7 @@ function StatusScreen() {
         ctx.font = "500 13px system-ui, sans-serif";
         ctx.textAlign = "left";
         ctx.fillText(label, SCREEN_PAD_X, y);
-        ctx.fillStyle = "#3dff9a";
+        ctx.fillStyle = "#D97868";
         ctx.textAlign = "right";
         ctx.fillText("OK", canvas.width - SCREEN_PAD_X, y);
       });

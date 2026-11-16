@@ -29,8 +29,8 @@ export default function NEMOPlatform() {
       <div className="layout-container">
         <div className="relative z-10 grid items-start gap-6 md:grid-cols-[0.95fr_1.05fr] md:gap-12">
           <div>
-            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-              <span className="h-2 w-2 rounded-full bg-[#0A3A86]" />
+            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+              <span className="h-2 w-2 rounded-full bg-its-coral" />
               Workforce Platform
             </p>
 
@@ -49,10 +49,10 @@ export default function NEMOPlatform() {
         <div className="relative mt-10 overflow-hidden rounded-[24px] border border-black/[0.06] bg-[#F6F8FA] p-3 shadow-[0_20px_70px_rgba(15,23,42,0.08)] lg:mt-14 lg:hidden">
           <div className="rounded-[20px] border border-black/[0.06] bg-white p-4 shadow-[0_12px_40px_rgba(15,23,42,0.08)] sm:p-5">
             <div className="border-b border-black/[0.06] pb-4">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0A3A86]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-its-coral-ink">
                 NEMO Dashboard
               </p>
-              <h3 className="mt-1 text-[17px] font-semibold leading-snug tracking-[-0.03em] text-[#0B0F14] sm:text-[20px]">
+              <h3 className="mt-1 text-[17px] font-semibold leading-snug tracking-[-0.03em] text-[#14243D] sm:text-[20px]">
                 Workforce Operations Overview
               </h3>
             </div>
@@ -65,20 +65,20 @@ export default function NEMOPlatform() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="flex items-center justify-between rounded-[14px] border border-black/[0.06] bg-[#FAFBFC] px-4 py-3"
+                  className="flex items-center justify-between rounded-[14px] border border-black/[0.06] bg-[#F5F6F8] px-4 py-3"
                 >
-                  <p className="text-[12px] font-medium text-[#64748B]">{label}</p>
-                  <p className="text-[20px] font-semibold tracking-[-0.04em] text-[#0B0F14]">
+                  <p className="text-[12px] font-medium text-[#566173]">{label}</p>
+                  <p className="text-[20px] font-semibold tracking-[-0.04em] text-[#14243D]">
                     {value}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-4 rounded-[14px] border border-black/[0.06] bg-[#FAFBFC] p-4">
+            <div className="mt-4 rounded-[14px] border border-black/[0.06] bg-[#F5F6F8] p-4">
               <div className="flex items-center justify-between">
-                <p className="text-[12px] font-semibold text-[#0B0F14]">Daily Activity</p>
-                <span className="rounded-full bg-[#E8F0FF] px-2.5 py-1 text-[10px] font-semibold text-[#0A3A86]">
+                <p className="text-[12px] font-semibold text-[#14243D]">Daily Activity</p>
+                <span className="rounded-full bg-[#E8F0FF] px-2.5 py-1 text-[10px] font-semibold text-[#14243D]">
                   Live
                 </span>
               </div>
@@ -86,7 +86,7 @@ export default function NEMOPlatform() {
                 {[42, 64, 48, 78, 58, 88, 72, 94, 69].map((height, index) => (
                   <span
                     key={index}
-                    className="flex-1 rounded-t-full bg-[#0A3A86]/80"
+                    className="flex-1 rounded-t-full bg-[#14243D]/80"
                     style={{ height: `${height}%` }}
                   />
                 ))}
@@ -104,10 +104,10 @@ export default function NEMOPlatform() {
             <div className="absolute left-[5%] top-[10%] h-[74%] w-[90%] rounded-[24px] border border-white/80 bg-white/80 p-5 shadow-[0_22px_70px_rgba(15,23,42,0.16)] backdrop-blur">
               <div className="flex items-center justify-between border-b border-black/[0.06] pb-4">
                 <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0A3A86]">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-its-coral-ink">
                     NEMO Dashboard
                   </p>
-                  <h3 className="mt-1 text-[20px] font-semibold tracking-[-0.03em] text-[#0B0F14]">
+                  <h3 className="mt-1 text-[20px] font-semibold tracking-[-0.03em] text-[#14243D]">
                     Workforce Operations Overview
                   </h3>
                 </div>
@@ -115,17 +115,17 @@ export default function NEMOPlatform() {
                 <div className="hidden gap-2 sm:flex">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#D9DEE7]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#D9DEE7]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#0A3A86]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#14243D]" />
                 </div>
               </div>
 
               <div className="mt-5 grid h-[68%] gap-4 md:grid-cols-[1.1fr_0.9fr]">
-                <div className="rounded-[18px] border border-black/[0.06] bg-[#FAFBFC] p-4">
+                <div className="rounded-[18px] border border-black/[0.06] bg-[#F5F6F8] p-4">
                   <div className="flex items-center justify-between">
-                    <p className="text-[12px] font-semibold text-[#0B0F14]">
+                    <p className="text-[12px] font-semibold text-[#14243D]">
                       Daily Activity
                     </p>
-                    <span className="rounded-full bg-[#E8F0FF] px-2.5 py-1 text-[10px] font-semibold text-[#0A3A86]">
+                    <span className="rounded-full bg-[#E8F0FF] px-2.5 py-1 text-[10px] font-semibold text-[#14243D]">
                       Live
                     </span>
                   </div>
@@ -134,7 +134,7 @@ export default function NEMOPlatform() {
                     {[42, 64, 48, 78, 58, 88, 72, 94, 69].map((height, index) => (
                       <span
                         key={index}
-                        className="flex-1 rounded-t-full bg-[#0A3A86]/80"
+                        className="flex-1 rounded-t-full bg-[#14243D]/80"
                         style={{ height: `${height}%` }}
                       />
                     ))}
@@ -151,10 +151,10 @@ export default function NEMOPlatform() {
                       key={label}
                       className="rounded-[18px] border border-black/[0.06] bg-white p-4"
                     >
-                      <p className="text-[11px] font-medium text-[#64748B]">
+                      <p className="text-[11px] font-medium text-[#566173]">
                         {label}
                       </p>
-                      <p className="mt-1 text-[24px] font-semibold tracking-[-0.04em] text-[#0B0F14]">
+                      <p className="mt-1 text-[24px] font-semibold tracking-[-0.04em] text-[#14243D]">
                         {value}
                       </p>
                     </div>
@@ -174,12 +174,12 @@ export default function NEMOPlatform() {
             return (
               <div key={item.title} className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Icon className="h-4 w-4 text-[#0A3A86]" />
-                  <h3 className="text-[14px] font-semibold tracking-[-0.02em] text-[#0B0F14]">
+                  <Icon className="h-4 w-4 text-[#14243D]" />
+                  <h3 className="text-[14px] font-semibold tracking-[-0.02em] text-[#14243D]">
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-[13px] leading-[1.6] text-[#64748B]">
+                <p className="text-[13px] leading-[1.6] text-[#566173]">
                   {item.description}
                 </p>
               </div>

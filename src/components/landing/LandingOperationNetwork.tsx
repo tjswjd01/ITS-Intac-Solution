@@ -4,12 +4,12 @@ import Globe from "../ui/Globe";
 
 export default function LandingOperationNetwork() {
   return (
-    <section className="section-shell bg-[#FAFAF8] pt-0">
+    <section className="section-shell bg-[#F5F6F8] pt-0">
       <div className="layout-container">
         <div className="grid items-center gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-12">
           <div>
-            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-              <span className="h-2 w-2 rounded-full bg-[#0A3A86]" />
+            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+              <span className="h-2 w-2 rounded-full bg-its-coral" />
               Nationwide Service Coverage
             </p>
 

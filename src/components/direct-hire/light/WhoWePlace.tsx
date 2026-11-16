@@ -17,7 +17,7 @@ export default function WhoWePlace() {
     <section id="specializations" aria-labelledby="placement-heading" className="bg-white py-16 md:py-24">
       <div className="layout-container">
         <div className="max-w-[640px]">
-          <Eyebrow rule>{placement.label}</Eyebrow>
+          <Eyebrow rule index={1}>{placement.label}</Eyebrow>
           <h2
             id="placement-heading"
             className="mt-5 text-[clamp(1.9rem,3.4vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.035em] text-its-navy"
@@ -41,14 +41,14 @@ export default function WhoWePlace() {
                   <div className="flex items-center justify-between">
                     <span
                       className={`text-[11.5px] font-semibold uppercase tracking-[0.14em] ${
-                        featured ? "text-[#AFC0E6]" : "text-its-periwinkle-ink"
+                        featured ? "text-[#AFC0E6]" : "text-its-coral-ink"
                       }`}
                     >
                       {tier.tag}
                     </span>
                     <span
                       className={`flex h-9 w-9 items-center justify-center rounded-[10px] ${
-                        featured ? "bg-white/10 text-white" : "bg-white text-its-periwinkle-ink"
+                        featured ? "bg-white/10 text-white" : "bg-white text-its-coral-ink"
                       }`}
                     >
                       <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden />
@@ -60,7 +60,7 @@ export default function WhoWePlace() {
                   <ul className={`mt-4 space-y-2 text-[15px] leading-[1.55] ${featured ? "text-[#CBD3E6]" : "text-its-slate-ink"}`}>
                     {tier.roles.map((role) => (
                       <li key={role} className="flex gap-2.5">
-                        <span className={`mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full ${featured ? "bg-[#AFC0E6]" : "bg-its-periwinkle"}`} />
+                        <span className={`mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full ${featured ? "bg-[#AFC0E6]" : "bg-its-coral"}`} />
                         {role}
                       </li>
                     ))}
@@ -90,7 +90,7 @@ export default function WhoWePlace() {
           </ul>
           <a
             href="#process"
-            className="inline-flex shrink-0 items-center gap-1.5 text-[14.5px] font-semibold text-its-periwinkle-ink hover:underline"
+            className="inline-flex shrink-0 items-center gap-1.5 text-[14.5px] font-semibold text-its-coral-ink hover:underline"
           >
             See how we recruit
             <ArrowRight className="h-4 w-4" aria-hidden />

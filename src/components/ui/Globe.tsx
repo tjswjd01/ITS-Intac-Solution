@@ -207,7 +207,7 @@ export default function Globe({ className }: GlobeProps) {
           className={`globe-marker-label globe-marker-label--${location.id}`}
         >
           <span
-            className={`inline-flex items-center rounded-lg bg-[#0B0F14] px-2.5 py-1 text-[11px] font-semibold leading-none text-white shadow-[0_8px_20px_rgba(15,23,42,0.18)] ${
+            className={`inline-flex items-center rounded-lg bg-[#14243D] px-2.5 py-1 text-[11px] font-semibold leading-none text-white shadow-[0_8px_20px_rgba(15,23,42,0.18)] ${
               location.isHq
                 ? "px-3 py-1.5 text-[12px] font-bold tracking-[0.08em]"
                 : ""

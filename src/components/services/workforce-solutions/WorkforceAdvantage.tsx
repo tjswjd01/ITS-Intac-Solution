@@ -10,6 +10,9 @@ import {
   Zap,
 } from "lucide-react";
 
+import { accentAt, accents } from "@/components/site/accents";
+import { StatementBand } from "@/components/site/primitives";
+
 import OperationsSectionHeader from "../operations/OperationsSectionHeader";
 
 const advantages = [
@@ -55,7 +58,7 @@ export default function WorkforceAdvantage() {
   return (
     <section
       id="workforce-advantage"
-      className="section-shell border-t border-black/[0.06] bg-[#FAFAF8]"
+      className="section-shell border-t border-black/[0.06] bg-[#F5F6F8]"
     >
       <div className="layout-container">
         <OperationsSectionHeader
@@ -79,21 +82,29 @@ export default function WorkforceAdvantage() {
                 transition={{ duration: 0.45, delay: index * 0.05 }}
                 className="premium-card premium-hover flex h-full flex-col p-6 md:p-7"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#E5E7EB] bg-white">
-                  <Icon className="h-5 w-5 text-[#0A3A86]" strokeWidth={1.75} />
+                <div
+                  className="flex h-11 w-11 items-center justify-center rounded-2xl"
+                  style={{ backgroundColor: accents[accentAt(index)].bg, color: accents[accentAt(index)].fg }}
+                >
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
                 </div>
 
-                <h3 className="mt-5 text-[17px] font-semibold tracking-[-0.03em] text-[#0B0F14]">
+                <h3 className="mt-5 text-[17px] font-semibold tracking-[-0.03em] text-[#14243D]">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-[14px] leading-[1.7] text-[#64748B]">
+                <p className="mt-3 text-[14px] leading-[1.7] text-[#566173]">
                   {item.description}
                 </p>
               </motion.article>
             );
           })}
         </div>
+
+        {/* From the deck's workforce-stability slide. TODO(owner): edit. */}
+        <StatementBand className="mt-10" highlight="for productivity, quality and operational stability.">
+          Verified technical talent and a flexible workforce model,
+        </StatementBand>
       </div>
     </section>
   );

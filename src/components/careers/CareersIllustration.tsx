@@ -1,78 +1,104 @@
+import { Check } from "lucide-react";
+
+import { accents } from "./careerAccents";
+
+type Highlight = { label: string; count: number };
+
 /**
- * Original hero illustration: a job-platform screen built from simple shapes.
- * No people and no photographs, so it cannot be mistaken for real ITS staff.
- * The two floating cards drift slowly and stay still under reduced motion.
+ * Original hero illustration: layered colour panels with recruiting UI cards
+ * (a candidate card with an initials avatar, a match checklist and a small
+ * open-roles card). No people and no photographs, so it cannot be mistaken
+ * for real ITS staff. The open-roles card shows real counts from the jobs
+ * data. Floating cards drift slowly and stay still under reduced motion.
  */
-export default function CareersIllustration() {
+export default function CareersIllustration({ highlights = [] }: { highlights?: Highlight[] }) {
   return (
-    <div className="relative mx-auto w-full max-w-[540px]" aria-hidden>
-      <div className="absolute -right-4 top-6 h-[78%] w-[78%] rounded-[48px] bg-[#E3EAE8]" />
+    <div className="relative mx-auto aspect-[10/9] w-full max-w-[520px]" aria-hidden>
+      {/* layered panels */}
+      <div className="absolute left-[14%] top-[6%] h-[84%] w-[70%] rotate-[9deg] rounded-[36px] bg-its-navy" />
+      <div className="absolute left-[12%] top-[7%] h-[84%] w-[70%] rotate-[4deg] rounded-[36px]" style={{ backgroundColor: "#8FA3C4" }} />
+      <div className="absolute left-[10%] top-[8%] h-[84%] w-[70%] rounded-[36px] border border-its-line bg-white shadow-[0_18px_40px_rgba(20,36,61,0.08)]" />
 
-      <svg viewBox="0 0 540 420" className="relative w-full" role="presentation">
-        {/* browser window */}
-        <rect x="40" y="36" width="400" height="300" rx="22" fill="#FFFFFF" stroke="#D9DEE4" strokeWidth="1.5" />
-        <rect x="40" y="36" width="400" height="44" rx="22" fill="#F1F3F3" />
-        <rect x="40" y="62" width="400" height="18" fill="#F1F3F3" />
-        <circle cx="66" cy="58" r="5" fill="#C9D2DC" />
-        <circle cx="84" cy="58" r="5" fill="#C9D2DC" />
-        <circle cx="102" cy="58" r="5" fill="#C9D2DC" />
-        <rect x="150" y="50" width="180" height="16" rx="8" fill="#FFFFFF" stroke="#D9DEE4" />
+      {/* candidate card content */}
+      <div className="absolute left-[10%] top-[8%] flex h-[84%] w-[70%] flex-col px-[7%] py-[8%]">
+        <div className="flex items-center gap-3">
+          <span
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-[15px] font-semibold"
+            style={{ backgroundColor: accents.teal.bg, color: accents.teal.fg }}
+          >
+            AB
+          </span>
+          <div className="min-w-0 flex-1">
+            <div className="h-2.5 w-[62%] rounded-full bg-its-navy/80" />
+            <div className="mt-2 h-2 w-[44%] rounded-full bg-[#C9D2DC]" />
+          </div>
+        </div>
 
-        {/* search row */}
-        <rect x="66" y="100" width="258" height="34" rx="17" fill="#F7F6F3" stroke="#D9DEE4" />
-        <circle cx="86" cy="117" r="6" fill="none" stroke="#A5B5C5" strokeWidth="2" />
-        <path d="M90.5 121.5l4 4" stroke="#A5B5C5" strokeWidth="2" strokeLinecap="round" />
-        <rect x="102" y="113" width="96" height="8" rx="4" fill="#C9D2DC" />
-        <rect x="334" y="100" width="80" height="34" rx="17" fill="#14243D" />
-        <rect x="352" y="113" width="44" height="8" rx="4" fill="#FFFFFF" opacity="0.85" />
+        <div className="mt-[9%] flex flex-wrap gap-1.5">
+          {(["dusty", "teal", "slate", "coral"] as const).map((name, index) => (
+            <span
+              key={name}
+              className="h-5 rounded-full"
+              style={{ width: [58, 44, 66, 40][index], backgroundColor: accents[name].bg }}
+            />
+          ))}
+        </div>
 
-        {/* job rows */}
-        {[0, 1, 2].map((row) => (
-          <g key={row} transform={`translate(0 ${row * 58})`}>
-            <rect x="66" y="152" width="348" height="46" rx="12" fill="#FFFFFF" stroke="#E3E5E8" />
-            <rect x="80" y="164" width="22" height="22" rx="6" fill="#EDF1F5" />
-            <rect x="114" y="165" width={[150, 118, 168][row]} height="8" rx="4" fill="#14243D" opacity="0.82" />
-            <rect x="114" y="179" width={[96, 132, 84][row]} height="6" rx="3" fill="#C9D2DC" />
-            <rect x="350" y="167" width="50" height="16" rx="8" fill="#EDF1F5" />
-          </g>
-        ))}
-      </svg>
+        <div className="mt-[9%] space-y-2.5">
+          {[86, 70, 78, 54].map((width, index) => (
+            <div key={index} className="h-2 rounded-full bg-[#E3E8EE]" style={{ width: `${width}%` }} />
+          ))}
+        </div>
 
-      {/* floating checklist card */}
-      <div className="absolute right-0 top-[8%] w-[42%] rounded-2xl border border-its-line bg-white p-4 shadow-[0_14px_34px_rgba(20,36,61,0.08)] motion-safe:animate-floatChart">
+        <div className="mt-auto flex items-center justify-between rounded-2xl bg-its-offwhite px-4 py-3">
+          <div className="h-2 w-[40%] rounded-full bg-[#C9D2DC]" />
+          <span className="h-7 w-[34%] rounded-full bg-its-navy" />
+        </div>
+      </div>
+
+      {/* floating match checklist */}
+      <div className="absolute right-0 top-[4%] w-[40%] rounded-2xl border border-its-line bg-white p-3.5 shadow-[0_14px_34px_rgba(20,36,61,0.09)] motion-safe:animate-floatChart">
         {[0, 1, 2].map((row) => (
           <div key={row} className="flex items-center gap-2.5 py-1.5">
             <span
-              className={
+              className="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full"
+              style={
                 row < 2
-                  ? "flex h-4 w-4 shrink-0 items-center justify-center rounded bg-its-coral"
-                  : "h-4 w-4 shrink-0 rounded border border-its-dusty"
+                  ? { backgroundColor: accents.teal.fg, color: "#fff" }
+                  : { border: "1.5px solid #C9D2DC" }
               }
             >
-              {row < 2 ? (
-                <svg viewBox="0 0 12 12" className="h-2.5 w-2.5">
-                  <path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              ) : null}
+              {row < 2 ? <Check className="h-3 w-3" strokeWidth={2.6} /> : null}
             </span>
-            <span className="h-1.5 rounded-full bg-its-dusty" style={{ width: `${[78, 60, 70][row]}%` }} />
+            <span className="h-1.5 rounded-full bg-[#C9D2DC]" style={{ width: `${[74, 58, 66][row]}%` }} />
           </div>
         ))}
       </div>
 
-      {/* floating chart card */}
-      <div className="absolute bottom-[4%] right-[6%] w-[36%] rounded-2xl border border-its-line bg-white p-4 shadow-[0_14px_34px_rgba(20,36,61,0.08)] motion-safe:animate-floatChart [animation-delay:-3s]">
-        <div className="h-1.5 w-1/2 rounded-full bg-its-dusty" />
-        <div className="mt-3 flex h-14 items-end gap-2">
-          {[40, 62, 52, 84].map((height, index) => (
-            <span
-              key={index}
-              className={index === 3 ? "flex-1 rounded-t bg-its-navy" : "flex-1 rounded-t bg-its-dusty"}
-              style={{ height: `${height}%` }}
-            />
-          ))}
+      {/* floating open-roles card: real counts from the jobs data */}
+      {highlights.length > 0 ? (
+        <div className="absolute bottom-[3%] right-0 w-[46%] rounded-2xl border border-its-line bg-white p-3.5 shadow-[0_14px_34px_rgba(20,36,61,0.09)] motion-safe:animate-floatChart [animation-delay:-3s]">
+          {highlights.slice(0, 3).map((item, index) => {
+            const tone = accents[(["dusty", "coral", "slate"] as const)[index]];
+            return (
+              <div key={item.label} className="flex items-center gap-2.5 py-1">
+                <span
+                  className="flex h-7 min-w-7 items-center justify-center rounded-lg px-1.5 text-[13px] font-semibold tabular-nums"
+                  style={{ backgroundColor: tone.bg, color: tone.fg }}
+                >
+                  {item.count}
+                </span>
+                <span className="truncate text-[11.5px] font-medium leading-tight text-its-navy">
+                  {item.label}
+                </span>
+              </div>
+            );
+          })}
         </div>
-      </div>
+      ) : null}
+
+      {/* small accent dot */}
+      <span className="absolute left-[3%] top-[30%] h-3 w-3 rounded-full bg-its-coral" />
     </div>
   );
 }

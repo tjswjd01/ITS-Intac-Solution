@@ -14,10 +14,10 @@ import {
   GBS_BORDER,
 } from "@/components/services/global-business-support/globalBusinessTheme";
 
-const NAVY = "#0F172A";
+const NAVY = "#14243D";
 const ICON_SLATE = "#334155";
-const ICON_BG = "#F3F4F6";
-const TIMELINE_LINE = "#E5E7EB";
+const ICON_BG = "#F0F2F5";
+const TIMELINE_LINE = "#E3E5E8";
 
 const stats = [
   { value: "20+", label: "Years Experience" },

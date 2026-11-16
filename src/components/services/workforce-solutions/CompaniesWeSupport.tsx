@@ -15,12 +15,12 @@ export default function CompaniesWeSupport() {
   return (
     <section
       id="companies-we-support"
-      className="section-shell border-t border-black/[0.06] bg-[#FAFAF8]"
+      className="section-shell border-t border-black/[0.06] bg-white"
     >
       <div className="layout-container">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#111111]">
-            <span className="h-2 w-2 rounded-full bg-[#111111]" aria-hidden />
+          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+            <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
             Companies We Support
           </p>
 

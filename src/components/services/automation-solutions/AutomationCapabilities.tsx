@@ -2,6 +2,8 @@ import { Bot, Cog, Search, Workflow, Wrench } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 import Reveal from "@/components/site/Reveal";
+import { accentAt, accents } from "@/components/site/accents";
+import { Eyebrow } from "@/components/site/primitives";
 
 import { automationCapabilities } from "./automationContent";
 
@@ -19,9 +21,7 @@ export default function AutomationCapabilities() {
       <div className="layout-container">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-its-mint-ink">
-              {automationCapabilities.label}
-            </p>
+            <Eyebrow index={1}>{automationCapabilities.label}</Eyebrow>
             <h2
               id="capabilities-heading"
               className="mt-4 max-w-[560px] text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-[1.12] tracking-[-0.03em] text-its-navy"
@@ -37,11 +37,20 @@ export default function AutomationCapabilities() {
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {automationCapabilities.cards.map((card, index) => {
             const Icon = icons[card.key];
+            const highlight = card.key === "amr";
+            const tone = highlight ? accents.coral : accents[accentAt(index)];
             return (
               <li key={card.key}>
                 <Reveal delay={index * 0.04} className="h-full">
-                  <div className="flex h-full flex-col rounded-[18px] border border-its-line bg-its-offwhite p-6 transition-colors hover:border-[#C9CFD8]">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-its-dusty-soft text-[#5B7590]">
+                  <div
+                    className={`flex h-full flex-col rounded-[18px] border p-6 transition-colors ${
+                      highlight ? "border-its-coral bg-its-coral-soft" : "border-its-line bg-its-offwhite hover:border-[#C9CFD8]"
+                    }`}
+                  >
+                    <span
+                      className="flex h-10 w-10 items-center justify-center rounded-[10px]"
+                      style={{ backgroundColor: highlight ? "#FFFFFF" : tone.bg, color: tone.fg }}
+                    >
                       <Icon className="h-5 w-5" strokeWidth={1.6} aria-hidden />
                     </span>
                     <h3 className="mt-5 text-[17px] font-semibold leading-[1.25] tracking-[-0.02em] text-its-navy">

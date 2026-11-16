@@ -22,7 +22,7 @@ function HeroWireGlobe({ paused }: { paused: boolean }) {
     <mesh ref={globeRef}>
       <sphereGeometry args={[1.6, 96, 96]} />
       <meshBasicMaterial
-        color="#111111"
+        color="#14243D"
         transparent
         opacity={0.025}
         wireframe
@@ -75,9 +75,9 @@ export default function GlobalBusinessSupportHero() {
             initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: entranceEase }}
-            className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#4B5563]"
+            className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#566173]"
           >
-            <span className="h-2 w-2 rounded-full bg-[#4B5563]" />
+            <span className="h-2 w-2 rounded-full bg-[#566173]" />
             Global Business Support
           </motion.p>
 
@@ -121,7 +121,7 @@ export default function GlobalBusinessSupportHero() {
                 font-bold
                 leading-[0.94]
                 tracking-[-0.055em]
-                text-[#111111]
+                text-[#14243D]
                 text-[clamp(2rem,10vw,3rem)]
                 lg:text-[clamp(2.8rem,4.4vw,4.65rem)]
               "
@@ -178,7 +178,7 @@ export default function GlobalBusinessSupportHero() {
           >
             ITS supports Korean and global companies expanding operations in the
             United States through{" "}
-            <span className="rounded-sm bg-[#E5E5E5] px-2 py-0.5 font-semibold text-[#111111]">
+            <span className="rounded-sm bg-[#E5E5E5] px-2 py-0.5 font-semibold text-[#14243D]">
               workforce setup
             </span>
             , administrative support, operational coordination, and local

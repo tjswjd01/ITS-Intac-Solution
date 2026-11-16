@@ -56,7 +56,7 @@ function RelatedServiceCard({
           }}
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F14]/75 via-[#0B0F14]/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#14243D]/75 via-[#14243D]/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
 
         <div className="absolute bottom-0 left-0 w-full p-6 transition-opacity duration-500 group-hover:opacity-0">
           <h3 className="text-[22px] font-semibold leading-[1.15] tracking-[-0.03em] text-white">
@@ -66,13 +66,13 @@ function RelatedServiceCard({
       </div>
 
       <div className="absolute bottom-0 left-0 flex h-0 w-full flex-col justify-center bg-white/95 px-6 backdrop-blur-sm transition-all duration-500 group-hover:h-1/2 group-hover:opacity-100 opacity-0">
-        <h3 className="text-[20px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#0B0F14]">
+        <h3 className="text-[20px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#14243D]">
           {title}
         </h3>
-        <p className="mt-3 text-[14px] leading-[1.65] text-[#64748B]">
+        <p className="mt-3 text-[14px] leading-[1.65] text-[#566173]">
           {description}
         </p>
-        <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-[#0A3A86] transition-transform duration-300 group-hover:gap-3">
+        <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-[#14243D] transition-transform duration-300 group-hover:gap-3">
           Learn More
           <ArrowRight className="h-4 w-4" aria-hidden />
         </span>
@@ -86,8 +86,8 @@ export default function RelatedServices() {
     <section className="section-shell border-t border-black/[0.08] bg-white">
       <div className="layout-container">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-            <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
+          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+            <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
             Explore More Services
           </p>
 

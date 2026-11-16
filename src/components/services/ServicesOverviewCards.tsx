@@ -16,6 +16,9 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+import { accentAt, accents, type AccentName } from "@/components/site/accents";
+import { Eyebrow, StatementBand } from "@/components/site/primitives";
+
 type SubService = {
   title: string;
   description: string;
@@ -221,16 +224,17 @@ function CategoryCardImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-function CategoryOverviewCard({ card }: { card: CategoryCard }) {
+function CategoryOverviewCard({ card, accent }: { card: CategoryCard; accent: AccentName }) {
+  const tone = accents[accent];
   return (
-    <article className="flex min-h-[340px] overflow-hidden rounded-[20px] border border-black/10 bg-white shadow-[0_8px_32px_rgba(15,23,42,0.05)]">
+    <article className="flex min-h-[340px] overflow-hidden rounded-[20px] border border-its-line bg-white shadow-[0_8px_32px_rgba(15,23,42,0.05)]">
       <div className="flex min-w-0 flex-1 flex-col p-5 md:p-6">
         <div className="flex items-start gap-3">
-          <span className="text-[28px] font-semibold leading-none tracking-[-0.04em] text-[#0A3A86] md:text-[30px]">
+          <span className="text-[28px] font-semibold leading-none tracking-[-0.04em] text-its-coral-ink md:text-[30px]">
             {card.number}
           </span>
           <div>
-            <h3 className="text-[21px] font-semibold tracking-[-0.03em] text-[#0B0F14] md:text-[22px]">
+            <h3 className="text-[21px] font-semibold tracking-[-0.03em] text-[#14243D] md:text-[22px]">
               {card.title}
             </h3>
             <p className="mt-1.5 text-[13px] leading-[1.6] text-neutral-500">
@@ -248,16 +252,15 @@ function CategoryOverviewCard({ card }: { card: CategoryCard }) {
                 key={service.title}
                 className="flex items-start gap-2.5 py-2.5"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF3FA]">
-                  <Icon
-                    className="h-3.5 w-3.5 text-[#0A3A86]"
-                    strokeWidth={1.75}
-                    aria-hidden
-                  />
+                <span
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
+                  style={{ backgroundColor: tone.bg, color: tone.fg }}
+                >
+                  <Icon className="h-3.5 w-3.5" strokeWidth={1.75} aria-hidden />
                 </span>
 
                 <p className="min-w-0 text-[13px] leading-[1.45] text-neutral-500">
-                  <span className="font-semibold text-[#0B0F14]">
+                  <span className="font-semibold text-[#14243D]">
                     {service.title}
                   </span>
                   {" — "}
@@ -270,7 +273,7 @@ function CategoryOverviewCard({ card }: { card: CategoryCard }) {
 
         <Link
           href={card.href}
-          className="mt-4 inline-flex items-center gap-1 text-[13px] font-medium text-[#0A3A86] transition hover:text-[#062A56]"
+          className="mt-4 inline-flex items-center gap-1 text-[13px] font-medium text-[#14243D] transition hover:text-[#14243D]"
         >
           {card.exploreLabel}
           <span aria-hidden>→</span>
@@ -290,13 +293,12 @@ function CategoryOverviewCard({ card }: { card: CategoryCard }) {
 
 export default function ServicesOverviewCards() {
   return (
-    <section className="section-shell bg-[#FAFAF8]">
+    <section className="section-shell bg-[#F5F6F8]">
       <div className="layout-container">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-            <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
+          <Eyebrow index={1} className="justify-center">
             Service Overview
-          </p>
+          </Eyebrow>
 
           <h2 className="section-title mx-auto mt-5 max-w-[760px]">
             Five solutions, from a single hire to a fully managed operation.
@@ -310,10 +312,14 @@ export default function ServicesOverviewCards() {
         </div>
 
         <div className="mx-auto mt-12 grid max-w-[1180px] gap-5 lg:grid-cols-2 lg:[&>*:last-child:nth-child(odd)]:col-span-2">
-          {categoryCards.map((card) => (
-            <CategoryOverviewCard key={card.number} card={card} />
+          {categoryCards.map((card, index) => (
+            <CategoryOverviewCard key={card.number} card={card} accent={accentAt(index)} />
           ))}
         </div>
+
+        <StatementBand className="mt-8" highlight="one partner for every workforce need.">
+          From core hires to flexible staffing and integrated site operations,
+        </StatementBand>
 
         <div className="mt-10 flex justify-center">
           <Link href="#service-capabilities" className="btn-secondary">

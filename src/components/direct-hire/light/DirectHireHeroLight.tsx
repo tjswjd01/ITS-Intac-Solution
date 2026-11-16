@@ -1,16 +1,13 @@
 import Link from "next/link";
 import { ArrowRight, Cog, Globe, UserCheck, type LucideIcon } from "lucide-react";
 
-import { Eyebrow } from "@/components/site/primitives";
+import { Eyebrow, navyButtonClassName } from "@/components/site/primitives";
 import { heroV3, strengthsV3 } from "@/content/directHire";
 
 import ShortlistIllustration from "./ShortlistIllustration";
 
-export const periwinkleButtonClassName =
-  "inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-its-periwinkle px-6 py-3 text-[15px] font-medium text-white transition-colors duration-200 hover:bg-its-periwinkle-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-its-periwinkle";
-
 export const quietLinkClassName =
-  "inline-flex min-h-12 items-center gap-2 px-2 text-[15px] font-semibold text-its-navy underline decoration-its-periwinkle decoration-2 underline-offset-[6px] transition-colors hover:text-its-periwinkle-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-its-navy";
+  "inline-flex min-h-12 items-center gap-2 px-2 text-[15px] font-semibold text-its-navy underline decoration-its-coral decoration-2 underline-offset-[6px] transition-colors hover:text-its-coral-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-its-navy";
 
 const icons: Record<(typeof strengthsV3)[number]["key"], LucideIcon> = {
   engineering: Cog,
@@ -33,7 +30,7 @@ export default function DirectHireHeroLight() {
             </h1>
             <p className="mt-7 max-w-[520px] text-[17.5px] leading-[1.7] text-its-slate-ink">{heroV3.copy}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href={heroV3.primary.href} className={periwinkleButtonClassName}>
+              <Link href={heroV3.primary.href} className={navyButtonClassName}>
                 {heroV3.primary.label}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
@@ -54,7 +51,7 @@ export default function DirectHireHeroLight() {
             const Icon = icons[item.key];
             return (
               <li key={item.key} className="flex items-start gap-4 py-6 md:px-8 md:py-7 md:first:pl-0 md:last:pr-0">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-its-periwinkle-soft text-its-periwinkle-ink">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-its-coral-soft text-its-coral-ink">
                   <Icon className="h-4 w-4" strokeWidth={1.7} aria-hidden />
                 </span>
                 <div>

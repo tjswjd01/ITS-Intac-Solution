@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import Header from "../../components/Header";
-import ContactHero from "../../components/contact/ContactHero";
-import ContactInfoCards from "../../components/contact/ContactInfoCards";
-import ContactSection from "../../components/contact/ContactSection";
+
+import ContactForm from "@/components/contact/ContactForm";
+import ContactHero from "@/components/contact/ContactHero";
+import ContactInfoStrip from "@/components/contact/ContactInfoStrip";
+import ContactProcess from "@/components/contact/ContactProcess";
+import Header from "@/components/Header";
+import Reveal from "@/components/site/Reveal";
+import { isDeliveryConfigured } from "@/lib/contact/delivery";
 
 export const metadata: Metadata = {
   title: "Contact Our Team",
@@ -11,13 +15,24 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
+// The footer comes from the root layout, so it is not repeated here.
 export default function ContactPage() {
   return (
     <main className="page-shell">
       <Header variant="dark" />
       <ContactHero />
-      <ContactInfoCards />
-      <ContactSection />
+      <ContactInfoStrip />
+
+      <section className="bg-its-offwhite pb-16 pt-5 md:pb-24">
+        <div className="layout-container grid gap-5 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+          <Reveal className="h-full">
+            <ContactForm deliveryReady={isDeliveryConfigured()} />
+          </Reveal>
+          <Reveal className="h-full" delay={0.08}>
+            <ContactProcess />
+          </Reveal>
+        </div>
+      </section>
     </main>
   );
 }

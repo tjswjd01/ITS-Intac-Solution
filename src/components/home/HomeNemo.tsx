@@ -56,7 +56,7 @@ export default function HomeNemo() {
       <div className="layout-container">
         <div className="grid items-center gap-8 rounded-[24px] bg-its-navy px-6 py-8 sm:px-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)_auto] lg:gap-10 lg:px-12 lg:py-9">
           <div>
-            <Eyebrow onDark>{nemo.eyebrow}</Eyebrow>
+            <Eyebrow onDark index={4}>{nemo.eyebrow}</Eyebrow>
             <h2
               id="nemo-heading"
               className="mt-3 max-w-[420px] text-[clamp(1.5rem,2.4vw,2rem)] font-semibold leading-[1.15] tracking-[-0.03em] text-white"

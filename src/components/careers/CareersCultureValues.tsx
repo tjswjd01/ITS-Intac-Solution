@@ -66,23 +66,23 @@ const tiles: CultureTile[] = [
 const variantStyles = {
   professional: {
     card: "bg-[#E9E5DF]",
-    title: "text-[#0F172A]",
-    description: "text-[#64748B]",
+    title: "text-[#14243D]",
+    description: "text-[#566173]",
   },
   collaboration: {
     card: "bg-[#F8FAFC]",
-    title: "text-[#0B0F14]",
-    description: "text-[#64748B]",
+    title: "text-[#14243D]",
+    description: "text-[#566173]",
   },
   integrity: {
-    card: "border border-[#E5E7EB] bg-white",
-    title: "text-[#0B0F14]",
-    description: "text-[#64748B]",
+    card: "border border-[#E3E5E8] bg-white",
+    title: "text-[#14243D]",
+    description: "text-[#566173]",
   },
   growth: {
     card: "bg-[#E7EEF8]",
-    title: "text-[#173F7A]",
-    description: "text-[#64748B]",
+    title: "text-[#14243D]",
+    description: "text-[#566173]",
   },
 } as const;
 
@@ -138,13 +138,13 @@ export default function CareersCultureValues() {
   return (
     <section
       id="culture-values"
-      className="border-t border-[#E5E7EB]/80 bg-white py-16 md:py-20 lg:py-24"
+      className="border-t border-[#E3E5E8]/80 bg-white py-16 md:py-20 lg:py-24"
     >
       <div className="layout-container">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="inline-flex items-center justify-center text-[11px] font-semibold uppercase tracking-[0.18em] text-[#173F7A]">
+          <p className="inline-flex items-center justify-center text-[11px] font-semibold uppercase tracking-[0.18em] text-its-coral-ink">
             <span
-              className="mr-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#173F7A]"
+              className="mr-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#14243D]"
               aria-hidden
             />
             Culture & Values
@@ -152,7 +152,7 @@ export default function CareersCultureValues() {
           <h2 className="section-title mx-auto mt-5 max-w-[720px]">
             Our Culture & Values
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-[1.75] text-[#64748B] md:text-base">
+          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-[1.75] text-[#566173] md:text-base">
             The principles that guide our teams, support our people, and shape
             how we deliver operational excellence every day.
           </p>

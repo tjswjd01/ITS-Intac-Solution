@@ -12,7 +12,7 @@ export default function LandingWhoWeAre() {
               <span>Who We Are</span>
             </div>
 
-            <h2 className="mt-7 text-[clamp(28px,2.25vw,38px)] font-[500] leading-[1.1] tracking-[-0.04em] text-[#0B0F14]">
+            <h2 className="mt-7 text-[clamp(28px,2.25vw,38px)] font-[500] leading-[1.1] tracking-[-0.04em] text-[#14243D]">
               More Than a Vendor.
               <span className="block">Your Device &amp; Workforce</span>
               <span className="block text-[#8B93A1]">
@@ -59,7 +59,7 @@ export default function LandingWhoWeAre() {
             </div>
 
             {/* VIDEO CARD */}
-            <div className="relative min-h-[310px] overflow-hidden rounded-[30px] bg-[#E8ECF1] shadow-[0_24px_60px_rgba(15,23,42,0.12)]">
+            <div className="relative min-h-[310px] overflow-hidden rounded-[30px] bg-[#EDF1F5] shadow-[0_24px_60px_rgba(15,23,42,0.12)]">
               <video
                 autoPlay
                 muted
@@ -73,20 +73,20 @@ export default function LandingWhoWeAre() {
 
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(5,10,18,0.34),rgba(5,10,18,0.04)_58%)]" />
 
-              <div className="absolute left-6 top-6 rounded-full bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#27303C] backdrop-blur">
+              <div className="absolute left-6 top-6 rounded-full bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-its-coral-ink backdrop-blur">
                 Automated Operations
               </div>
             </div>
 
             {/* QUALITY ASSURANCE CARD */}
-            <div className="relative min-h-[210px] overflow-hidden rounded-[28px] bg-[#E8ECF1] shadow-[0_20px_44px_rgba(15,23,42,0.1)]">
+            <div className="relative min-h-[210px] overflow-hidden rounded-[28px] bg-[#EDF1F5] shadow-[0_20px_44px_rgba(15,23,42,0.1)]">
               <img
                 src="/images/its-qa.png"
                 alt="ITS quality assurance and device testing"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(5,10,18,0.28),transparent_62%)]" />
-              <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#27303C] backdrop-blur">
+              <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-its-coral-ink backdrop-blur">
                 Quality Assurance
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function LandingWhoWeAre() {
                   ✓
                 </div>
 
-                <p className="text-[1.45rem] font-[500] leading-[1.05] tracking-[-0.04em] text-[#0B0F14]">
+                <p className="text-[1.45rem] font-[500] leading-[1.05] tracking-[-0.04em] text-[#14243D]">
                   10M+ devices
                   <span className="block">processed with</span>
                   <span className="block">precision and care.</span>
@@ -107,14 +107,14 @@ export default function LandingWhoWeAre() {
               </div>
 
               {/* REFURBISHMENT CARD */}
-              <div className="relative min-h-[210px] overflow-hidden rounded-[28px] bg-[#E8ECF1] shadow-[0_20px_44px_rgba(15,23,42,0.1)]">
+              <div className="relative min-h-[210px] overflow-hidden rounded-[28px] bg-[#EDF1F5] shadow-[0_20px_44px_rgba(15,23,42,0.1)]">
                 <img
                   src="/images/its-refurbish.png"
                   alt="ITS device refurbishment operation"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(5,10,18,0.28),transparent_62%)]" />
-                <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#27303C] backdrop-blur">
+                <div className="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-its-coral-ink backdrop-blur">
                   Device Refurbishment
                 </div>
               </div>

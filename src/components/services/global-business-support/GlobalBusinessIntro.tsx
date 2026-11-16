@@ -123,7 +123,7 @@ function OperationalHubDiagram() {
             aria-hidden
           />
           <ArrowRight
-            className="absolute -right-1 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-[#3A5560]/60"
+            className="absolute -right-1 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-[#14243D]/60"
             aria-hidden
           />
         </div>
@@ -139,7 +139,7 @@ function OperationalHubDiagram() {
       </div>
 
       <div
-        className="mx-auto w-fit rounded-xl bg-[#3A5560] px-6 py-3.5 text-center shadow-[0_12px_30px_rgba(0,0,0,0.08)]"
+        className="mx-auto w-fit rounded-xl bg-[#14243D] px-6 py-3.5 text-center shadow-[0_12px_30px_rgba(0,0,0,0.08)]"
       >
         <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white">
           ITS Dallas Team

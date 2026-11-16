@@ -103,14 +103,14 @@ export default function ServicesNavDropdown({
     "text-[15px] font-medium transition",
     isDark
       ? "text-white/85 hover:text-white"
-      : "text-[#0B0F14] hover:text-[#0B3D91]",
+      : "text-[#14243D] hover:text-[#14243D]",
   );
 
   const chevronButtonClassName = cn(
     "inline-flex items-center justify-center rounded-md p-0.5 transition",
     isDark
       ? "text-white/85 hover:text-white"
-      : "text-[#0B0F14] hover:text-[#0B3D91]",
+      : "text-[#14243D] hover:text-[#14243D]",
   );
 
   return (
@@ -149,10 +149,10 @@ export default function ServicesNavDropdown({
                   setOpen(false);
                 }}
               >
-                <span className="block text-[14px] font-medium leading-snug text-[#0B0F14] transition group-hover:text-[#0A3A86]">
+                <span className="block text-[14px] font-medium leading-snug text-[#14243D] transition group-hover:text-[#14243D]">
                   {link.label}
                 </span>
-                <span className="mt-1 block text-[12px] leading-[1.5] text-[#64748B]">
+                <span className="mt-1 block text-[12px] leading-[1.5] text-[#566173]">
                   {link.subtext}
                 </span>
               </Link>

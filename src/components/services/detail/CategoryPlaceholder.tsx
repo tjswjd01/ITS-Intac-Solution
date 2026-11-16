@@ -10,10 +10,10 @@ export default function CategoryPlaceholder({
   description,
 }: CategoryPlaceholderProps) {
   return (
-    <section className="section-shell bg-[#FAFAF8] pt-32 md:pt-40">
+    <section className="section-shell bg-[#F5F6F8] pt-32 md:pt-40">
       <div className="layout-container">
-        <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-          <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
+        <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+          <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
           {eyebrow}
         </p>
 

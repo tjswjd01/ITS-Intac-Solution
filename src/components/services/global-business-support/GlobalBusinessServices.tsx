@@ -87,7 +87,7 @@ function SupportCardItem({
       className="group overflow-hidden rounded-3xl border bg-white shadow-[0_8px_24px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)]"
       style={{ borderColor: GBS_BORDER }}
     >
-      <div className="relative h-[200px] overflow-hidden rounded-t-3xl bg-[#F3F4F6]">
+      <div className="relative h-[200px] overflow-hidden rounded-t-3xl bg-[#F0F2F5]">
         <Image
           src={imageSrc}
           alt={card.title}
@@ -133,7 +133,7 @@ export default function GlobalBusinessServices() {
   return (
     <section
       id="what-we-support"
-      className="border-t border-[#E5E7EB] bg-white py-16 md:py-20 lg:py-24"
+      className="border-t border-[#E3E5E8] bg-[#F5F6F8] py-16 md:py-20 lg:py-24"
     >
       <div className="mx-auto w-full min-w-0 max-w-[1280px] px-5 sm:px-6 lg:px-8">
         <GlobalSectionHeader

@@ -111,6 +111,8 @@ export const automationEquipment = {
   intro:
     "Equipment ITS designed and built for its own refurbishment line, developed and refined through daily operation before being standardized.",
   note: "Shown: equipment in use on the ITS mobile-device refurbishment line.",
+  // From the deck: process developed in-house, then standardized. TODO(owner): edit.
+  statement: ["Developed on our own line and proven in daily operation,", "before it is standardized for yours."],
   items: [
     {
       key: "grader",

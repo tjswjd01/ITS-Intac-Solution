@@ -42,11 +42,11 @@ export default function LandingWhatWeDo() {
           {/* LEFT */}
           <div>
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#5F6B7A]">
-              <span className="h-2 w-2 rounded-full bg-[#062A56]" />
+              <span className="h-2 w-2 rounded-full bg-its-coral" />
               What We Do
             </p>
 
-            <h2 className="mt-6 max-w-[520px] text-[clamp(30px,2.5vw,42px)] font-[500] leading-[1.08] tracking-[-0.04em] text-[#0B0F14]">
+            <h2 className="mt-6 max-w-[520px] text-[clamp(30px,2.5vw,42px)] font-[500] leading-[1.08] tracking-[-0.04em] text-[#14243D]">
               Device &amp; Workforce Services
               <br />
               <span className="text-[#8B929D]">Built to Scale.</span>
@@ -54,7 +54,7 @@ export default function LandingWhatWeDo() {
           </div>
 
           {/* RIGHT */}
-          <p className="max-w-[620px] text-[16px] leading-[1.75] text-[#4B5563] lg:pt-10">
+          <p className="max-w-[620px] text-[16px] leading-[1.75] text-[#566173] lg:pt-10">
             From device lifecycle support to workforce operations and automation,
             ITS provides practical solutions for teams that need reliable
             execution, structured management, and scalable growth.
@@ -85,11 +85,11 @@ export default function LandingWhatWeDo() {
 
               {/* RIGHT SIDE */}
               <div>
-                <h3 className="text-[18px] font-[520] leading-[1.2] tracking-[-0.03em] text-[#0B0F14]">
+                <h3 className="text-[18px] font-[520] leading-[1.2] tracking-[-0.03em] text-[#14243D]">
                   {service.title}
                 </h3>
 
-                <p className="mt-2 max-w-[840px] text-[14.5px] leading-[1.65] text-[#4B5563]">
+                <p className="mt-2 max-w-[840px] text-[14.5px] leading-[1.65] text-[#566173]">
                   {service.description}
                 </p>
               </div>

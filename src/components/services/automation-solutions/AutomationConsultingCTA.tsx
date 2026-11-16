@@ -4,7 +4,7 @@ export default function AutomationConsultingCTA() {
   return (
     <section
       id="contact-consultation"
-      className="section-shell border-t border-black/[0.06] bg-[#0A3A86]"
+      className="section-shell border-t border-black/[0.06] bg-[#14243D]"
     >
       <div className="layout-container">
         <div className="mx-auto max-w-3xl text-center">
@@ -24,7 +24,7 @@ export default function AutomationConsultingCTA() {
           <div className="mt-8">
             <Link
               href="/contact"
-              className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/20 bg-white px-6 py-3 text-[14px] font-semibold text-[#0A3A86] shadow-[0_14px_30px_rgba(0,0,0,0.12)] transition hover:bg-white/95"
+              className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/20 bg-white px-6 py-3 text-[14px] font-semibold text-[#14243D] shadow-[0_14px_30px_rgba(0,0,0,0.12)] transition hover:bg-white/95"
             >
               Get In Touch
             </Link>

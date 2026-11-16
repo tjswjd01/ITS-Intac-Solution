@@ -28,7 +28,7 @@ export default function AutomationFeaturedAmr() {
           </div>
 
           <div>
-            <Eyebrow>{automationFeatured.label}</Eyebrow>
+            <Eyebrow index={3}>{automationFeatured.label}</Eyebrow>
             <SectionTitle className="mt-4">
               <span id="amr-heading">{automationFeatured.heading}</span>
             </SectionTitle>

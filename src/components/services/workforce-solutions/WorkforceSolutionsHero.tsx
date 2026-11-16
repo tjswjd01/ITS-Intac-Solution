@@ -44,18 +44,18 @@ export default function WorkforceSolutionsHero() {
 
       <div className="layout-container relative z-10 w-full min-w-0">
         <div className="mx-auto flex w-full min-w-0 max-w-5xl flex-col items-center justify-center text-center lg:max-w-6xl">
-          <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-            <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
+          <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+            <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
             Beyond staffing. Managed workforce operations.
           </p>
 
           <h1 className="mt-6 w-full">
-            <span className="block text-[clamp(1.5rem,5.5vw,2.75rem)] font-medium leading-[1.2] tracking-[-0.04em] text-[#0B0F14] lg:whitespace-nowrap">
+            <span className="block text-[clamp(1.5rem,5.5vw,2.75rem)] font-medium leading-[1.2] tracking-[-0.04em] text-[#14243D] lg:whitespace-nowrap">
               Warehouse staffing and managed workforce solutions.
             </span>
 
             <span
-              className="relative mx-auto mt-5 flex min-h-[1.3em] w-full max-w-xl items-center justify-center overflow-hidden px-2 pb-1 text-[clamp(2rem,10vw,4.75rem)] font-bold leading-[1.15] tracking-[-0.04em] text-[#021f45] md:mt-6"
+              className="relative mx-auto mt-5 flex min-h-[1.3em] w-full max-w-xl items-center justify-center overflow-hidden px-2 pb-1 text-[clamp(2rem,10vw,4.75rem)] font-bold leading-[1.15] tracking-[-0.04em] text-[#1D3252] md:mt-6"
               aria-live="polite"
             >
               {words.map((word, index) => (
@@ -79,7 +79,7 @@ export default function WorkforceSolutionsHero() {
             </span>
           </h1>
 
-          <p className="mt-8 max-w-3xl text-base leading-[1.7] text-[#6B7280] md:mt-10 md:max-w-[52rem] md:text-[17px] md:leading-[1.75] lg:max-w-[58rem]">
+          <p className="mt-8 max-w-3xl text-base leading-[1.7] text-[#566173] md:mt-10 md:max-w-[52rem] md:text-[17px] md:leading-[1.75] lg:max-w-[58rem]">
             ITS provides workforce solutions that go beyond basic staffing,
             combining HR oversight, operational coordination, attendance
             visibility, payroll support, and field management into one
@@ -89,7 +89,7 @@ export default function WorkforceSolutionsHero() {
             <div className="mt-8 flex justify-center px-2 sm:mt-10">
               <Button
                 href="/contact"
-                className="h-12 w-full max-w-sm gap-2 rounded-full bg-[#062A56] px-7 text-[15px] text-white hover:bg-[#021f45] sm:w-auto"
+                className="h-12 w-full max-w-sm gap-2 rounded-full bg-[#14243D] px-7 text-[15px] text-white hover:bg-[#1D3252] sm:w-auto"
               >
               Request Workforce Support
               <MoveRight className="h-4 w-4" aria-hidden />

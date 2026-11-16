@@ -27,7 +27,7 @@ export default function ServiceIntroSection({
   background = "gray",
   withTopDivider = false,
 }: ServiceIntroSectionProps) {
-  const bgClass = background === "gray" ? "bg-[#FAFAF8]" : "bg-white";
+  const bgClass = background === "gray" ? "bg-[#F5F6F8]" : "bg-white";
 
   return (
     <section
@@ -41,22 +41,22 @@ export default function ServiceIntroSection({
             <div className="overflow-hidden rounded-[20px] border border-black/[0.08] bg-white shadow-[0_10px_32px_rgba(15,23,42,0.06)]">
               <div className="relative border-b border-black/[0.08] bg-[#FAFCFF] px-4 py-3">
                 <div
-                  className="absolute inset-y-0 left-0 w-1 bg-[#0A3A86]"
+                  className="absolute inset-y-0 left-0 w-1 bg-[#14243D]"
                   aria-hidden
                 />
-                <p className="pl-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0A3A86]">
+                <p className="pl-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-its-coral-ink">
                   Key Advantages
                 </p>
               </div>
 
               <div className="relative h-[400px] overflow-hidden">
                 <div
-                  className="pointer-events-none absolute bottom-6 left-[22px] top-6 z-0 w-px bg-gradient-to-b from-transparent via-[#0A3A86]/25 to-transparent"
+                  className="pointer-events-none absolute bottom-6 left-[22px] top-6 z-0 w-px bg-gradient-to-b from-transparent via-[#14243D]/25 to-transparent"
                   aria-hidden
                 />
 
                 <div
-                  className="pointer-events-none absolute inset-x-3 top-1/2 z-[15] h-[72px] -translate-y-1/2 rounded-xl bg-[#0A3A86]/[0.05] ring-1 ring-[#0A3A86]/10"
+                  className="pointer-events-none absolute inset-x-3 top-1/2 z-[15] h-[72px] -translate-y-1/2 rounded-xl bg-[#14243D]/[0.05] ring-1 ring-[#14243D]/10"
                   aria-hidden
                 />
 
@@ -78,11 +78,11 @@ export default function ServiceIntroSection({
                         key={`${item.title}-${index}`}
                         className="flex items-center gap-3 px-4 py-3"
                       >
-                        <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#0A3A86]/25 bg-[#EEF3FA] text-[#0A3A86] shadow-[0_0_0_3px_#ffffff]">
+                        <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#14243D]/25 bg-[#EDF1F5] text-[#14243D] shadow-[0_0_0_3px_#ffffff]">
                           <Icon className="h-4 w-4" strokeWidth={2} aria-hidden />
                         </div>
 
-                        <h3 className="min-w-0 text-[13px] font-semibold tracking-[-0.02em] text-[#0A3A86]">
+                        <h3 className="min-w-0 text-[13px] font-semibold tracking-[-0.02em] text-[#14243D]">
                           {item.title}
                         </h3>
                       </div>
@@ -97,16 +97,16 @@ export default function ServiceIntroSection({
           </div>
 
           <div>
-            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A3A86]">
-              <span className="h-2 w-2 rounded-full bg-[#0A3A86]" aria-hidden />
+            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+              <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
               {eyebrow}
             </p>
 
-            <h2 className="mt-5 max-w-[720px] text-[clamp(32px,3.2vw,52px)] font-medium leading-[1.05] tracking-[-0.04em] text-[#0B0F14]">
+            <h2 className="mt-5 max-w-[720px] text-[clamp(32px,3.2vw,52px)] font-medium leading-[1.05] tracking-[-0.04em] text-[#14243D]">
               {heading}
             </h2>
 
-            <p className="mt-6 max-w-[680px] text-[17px] leading-[1.75] text-[#475569]">
+            <p className="mt-6 max-w-[680px] text-[17px] leading-[1.75] text-[#566173]">
               {description}
             </p>
 
@@ -114,7 +114,7 @@ export default function ServiceIntroSection({
               {capabilityPills.map((pill) => (
                 <span
                   key={pill}
-                  className="inline-flex h-10 items-center rounded-full bg-[#0A3A86] px-4 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#083066] md:text-[14px]"
+                  className="inline-flex h-10 items-center rounded-full bg-[#14243D] px-4 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-[#083066] md:text-[14px]"
                 >
                   {pill}
                 </span>

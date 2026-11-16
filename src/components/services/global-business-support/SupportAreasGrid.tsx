@@ -48,7 +48,7 @@ export default function SupportAreasGrid() {
   return (
     <section
       id="support-areas"
-      className="border-t border-[#E5E7EB] bg-[#FAFAFA] py-16 md:py-20 lg:py-24"
+      className="border-t border-[#E3E5E8] bg-[#F5F6F8] py-16 md:py-20 lg:py-24"
     >
       <div className="mx-auto w-full min-w-0 max-w-[1280px] px-5 sm:px-6 lg:px-8">
         <GlobalSectionHeader
@@ -65,9 +65,9 @@ export default function SupportAreasGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, delay: index * 0.04 }}
-              className="overflow-hidden rounded-3xl border border-[#E5E7EB] bg-white shadow-[0_4px_20px_rgba(15,23,42,0.04)]"
+              className="overflow-hidden rounded-3xl border border-[#E3E5E8] bg-white shadow-[0_4px_20px_rgba(15,23,42,0.04)]"
             >
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F3F4F6]">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F0F2F5]">
                 <Image
                   src={area.image}
                   alt={area.title}
@@ -78,10 +78,10 @@ export default function SupportAreasGrid() {
               </div>
 
               <div className="p-6 md:p-7">
-                <h3 className="text-[17px] font-semibold tracking-[-0.03em] text-[#111827]">
+                <h3 className="text-[17px] font-semibold tracking-[-0.03em] text-[#14243D]">
                   {area.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-[1.8] text-[#6B7280]">
+                <p className="mt-3 text-[14px] leading-[1.8] text-[#566173]">
                   {area.description}
                 </p>
               </div>

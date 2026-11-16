@@ -33,7 +33,7 @@ function FooterColumn({
 }) {
   return (
     <div className={className}>
-      <h3 className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#111111]">
+      <h3 className="text-[13px] font-semibold uppercase tracking-[0.18em] text-its-coral-ink">
         {title}
       </h3>
       <ul className="mt-5 space-y-3.5">
@@ -41,7 +41,7 @@ function FooterColumn({
           <li key={link.label}>
             <Link
               href={link.href}
-              className="text-[15px] leading-snug text-[#6B7280] transition-colors duration-200 hover:text-[#111111]"
+              className="text-[15px] leading-snug text-[#566173] transition-colors duration-200 hover:text-[#14243D]"
             >
               {link.label}
             </Link>
@@ -56,12 +56,12 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#FFFFFF] text-[#111111]">
+    <footer className="relative bg-[#FFFFFF] text-[#14243D]">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px overflow-hidden"
         aria-hidden
       >
-        <div className="absolute inset-0 bg-[#E5E7EB]" />
+        <div className="absolute inset-0 bg-[#E3E5E8]" />
         <div className="absolute inset-y-0 w-1/2 animate-footer-shine bg-[linear-gradient(90deg,transparent_0%,rgba(10,58,134,0.14)_35%,rgba(17,17,17,0.55)_50%,rgba(10,58,134,0.14)_65%,transparent_100%)] shadow-[0_0_20px_rgba(10,58,134,0.22),0_0_8px_rgba(17,17,17,0.12)]" />
       </div>
 
@@ -77,7 +77,7 @@ export default function Footer() {
                 className="h-9 w-auto"
               />
             </Link>
-            <p className="mt-6 text-[15px] leading-[1.75] text-[#6B7280] md:text-base md:leading-8">
+            <p className="mt-6 text-[15px] leading-[1.75] text-[#566173] md:text-base md:leading-8">
               ITS provides direct hire, staffing, managed operations,
               automation and U.S. market entry support.
             </p>
@@ -86,24 +86,24 @@ export default function Footer() {
           <FooterColumn
             title="Company"
             links={companyLinks}
-            className="border-t border-[#E5E7EB] pt-10 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"
+            className="border-t border-[#E3E5E8] pt-10 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"
           />
 
           <FooterColumn
             title="Solutions"
             links={serviceLinks}
-            className="border-t border-[#E5E7EB] pt-10 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"
+            className="border-t border-[#E3E5E8] pt-10 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"
           />
 
           <FooterColumn
             title="Contact"
             links={contactLinks}
-            className="border-t border-[#E5E7EB] pt-10 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"
+            className="border-t border-[#E3E5E8] pt-10 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0"
           />
         </div>
 
-        <div className="mt-12 border-t border-[#E5E7EB] pt-8 md:mt-14 md:pt-9">
-          <p className="text-sm text-[#6B7280]">
+        <div className="mt-12 border-t border-[#E3E5E8] pt-8 md:mt-14 md:pt-9">
+          <p className="text-sm text-[#566173]">
             © {year} ITS Intac Solution. All rights reserved.
           </p>
         </div>

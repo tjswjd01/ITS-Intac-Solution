@@ -95,7 +95,7 @@ export default function InsightsBoard() {
                         <span className="mt-1 block text-[14px] leading-[1.6] text-its-slate-ink">
                           {insightsPage.topics.descriptions[topic.code]}
                         </span>
-                        <span className="mt-2 inline-flex items-center gap-1 text-[13px] font-semibold text-its-mint-ink">
+                        <span className="mt-2 inline-flex items-center gap-1 text-[13px] font-semibold text-its-coral-ink">
                           {count} {count === 1 ? "article" : "articles"}
                           <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden />
                         </span>

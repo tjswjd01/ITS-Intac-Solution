@@ -27,7 +27,7 @@ function WireframeGlobe({
       <mesh>
         <sphereGeometry args={[GLOBE_RADIUS, 64, 64]} />
         <meshBasicMaterial
-          color="#111111"
+          color="#14243D"
           transparent
           opacity={0.025}
           wireframe
@@ -62,11 +62,11 @@ class WireframeGlobeErrorBoundary extends Component<
 function CssGlobeFallback() {
   return (
     <div
-      className="relative h-[360px] w-[360px] translate-y-[4%] rounded-full border border-[#111111]/[0.04] sm:h-[460px] sm:w-[460px] lg:h-[540px] lg:w-[540px]"
+      className="relative h-[360px] w-[360px] translate-y-[4%] rounded-full border border-[#14243D]/[0.04] sm:h-[460px] sm:w-[460px] lg:h-[540px] lg:w-[540px]"
       aria-hidden
     >
-      <div className="absolute inset-[14%] rounded-full border border-[#111111]/[0.03]" />
-      <div className="absolute inset-[28%] rounded-full border border-[#111111]/[0.025]" />
+      <div className="absolute inset-[14%] rounded-full border border-[#14243D]/[0.03]" />
+      <div className="absolute inset-[28%] rounded-full border border-[#14243D]/[0.025]" />
     </div>
   );
 }

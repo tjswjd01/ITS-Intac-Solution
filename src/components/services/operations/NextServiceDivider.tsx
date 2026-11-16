@@ -3,7 +3,7 @@ export default function NextServiceDivider() {
     <section className="border-y border-black/[0.06] bg-white py-16 md:py-20">
       <div className="layout-container">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#64748B]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#566173]">
             Next Service
           </p>
 

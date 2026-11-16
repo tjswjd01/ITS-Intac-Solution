@@ -51,7 +51,7 @@ export default function ArticleCard({ article }: { article: Article }) {
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-its-line bg-white transition-colors hover:border-[#C9CFD8]">
       <ArticleCover article={article} className="aspect-[16/9]" />
       <div className="flex flex-1 flex-col p-6">
-        <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-its-mint-ink">
+        <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-its-slate">
           {insightCategoryLabel(article.category)}
         </p>
         <h3 className="mt-3 text-[18px] font-semibold leading-[1.3] tracking-[-0.02em] text-its-navy">

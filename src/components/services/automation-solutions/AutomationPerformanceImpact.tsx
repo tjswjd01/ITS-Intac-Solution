@@ -107,15 +107,15 @@ function PercentStat({
       transition={{ duration: 0.45, delay, ease: [0.22, 1, 0.36, 1] }}
       className={cn("py-2 sm:py-0", className)}
     >
-      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9CA3AF]">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#758194]">
         Up to
       </p>
-      <p className="mt-1 flex items-baseline gap-0.5 text-[clamp(36px,4vw,52px)] font-semibold leading-none tracking-[-0.04em] text-[#111111] tabular-nums">
+      <p className="mt-1 flex items-baseline gap-0.5 text-[clamp(36px,4vw,52px)] font-semibold leading-none tracking-[-0.04em] text-[#14243D] tabular-nums">
         <span>{count}</span>
         <span className="text-[clamp(28px,3.2vw,44px)]">%</span>
       </p>
-      <p className="mt-4 text-[15px] font-semibold leading-snug text-[#111111]">{label}</p>
-      <p className="mt-2 text-[13px] leading-relaxed text-[#667085]">{description}</p>
+      <p className="mt-4 text-[15px] font-semibold leading-snug text-[#14243D]">{label}</p>
+      <p className="mt-2 text-[13px] leading-relaxed text-[#566173]">{description}</p>
     </motion.div>
   );
 }
@@ -147,13 +147,13 @@ function HighlightStat({
       <p
         className={cn(
           "text-[clamp(32px,3.6vw,48px)] font-semibold leading-none tracking-[-0.04em]",
-          isInView ? "realtime-shiny-text" : "text-[#0A3A86]",
+          isInView ? "realtime-shiny-text" : "text-[#14243D]",
         )}
       >
         {display}
       </p>
-      <p className="mt-4 text-[15px] font-semibold leading-snug text-[#111111]">{label}</p>
-      <p className="mt-2 text-[13px] leading-relaxed text-[#667085]">{description}</p>
+      <p className="mt-4 text-[15px] font-semibold leading-snug text-[#14243D]">{label}</p>
+      <p className="mt-2 text-[13px] leading-relaxed text-[#566173]">{description}</p>
     </motion.div>
   );
 }
@@ -210,7 +210,7 @@ export default function AutomationPerformanceImpact() {
               description="When automation is applied to the right operational bottlenecks, teams can improve consistency, reduce repetitive work, and gain clearer visibility into performance."
               descriptionClassName="max-w-[42rem]"
             />
-            <p className="mt-4 max-w-[42rem] text-[12px] leading-relaxed text-[#9CA3AF]">
+            <p className="mt-4 max-w-[42rem] text-[12px] leading-relaxed text-[#758194]">
               Figures represent potential improvement ranges, not guaranteed outcomes.
               Results vary by workflow, volume, and implementation scope.
             </p>

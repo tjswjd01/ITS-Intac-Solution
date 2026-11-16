@@ -58,7 +58,7 @@ export default function CareersOpportunities() {
   return (
     <section
       id="open-positions"
-      className="section-shell border-t border-[#E5E7EB]/80 bg-[#FAFAF8]"
+      className="section-shell border-t border-[#E3E5E8]/80 bg-[#F5F6F8]"
     >
       <div className="layout-container">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -71,18 +71,18 @@ export default function CareersOpportunities() {
 
           <Link
             href="#open-positions"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#062A56] transition hover:text-[#0B3D91]"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#14243D] transition hover:text-[#14243D]"
           >
             View All Positions
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
         </div>
 
-        <div className="mt-10 hidden overflow-hidden rounded-[24px] border border-[#DCE7F7] bg-white shadow-[0_16px_48px_rgba(6,42,86,0.07)] md:block">
+        <div className="mt-10 hidden overflow-hidden rounded-[24px] border border-[#E3E5E8] bg-white shadow-[0_16px_48px_rgba(20,36,61,0.07)] md:block">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[760px] border-collapse text-left">
               <thead>
-                <tr className="bg-[#062A56]">
+                <tr className="bg-[#14243D]">
                   {tableColumns.map((column) => (
                     <th
                       key={column}
@@ -104,26 +104,26 @@ export default function CareersOpportunities() {
                     className={cn(
                       "transition hover:bg-[#F8FAFC]",
                       index !== openPositions.length - 1 &&
-                        "border-b border-[#E5E7EB]",
+                        "border-b border-[#E3E5E8]",
                     )}
                   >
-                    <td className="px-6 py-5 text-[15px] font-semibold text-[#0B0F14]">
+                    <td className="px-6 py-5 text-[15px] font-semibold text-[#14243D]">
                       {job.position}
                     </td>
-                    <td className="px-5 py-5 text-sm text-[#64748B]">
+                    <td className="px-5 py-5 text-sm text-[#566173]">
                       {job.location}
                     </td>
-                    <td className="px-5 py-5 text-sm text-[#64748B]">
+                    <td className="px-5 py-5 text-sm text-[#566173]">
                       {job.department}
                     </td>
-                    <td className="px-5 py-5 text-sm text-[#64748B]">
+                    <td className="px-5 py-5 text-sm text-[#566173]">
                       {job.type}
                     </td>
-                    <td className="px-5 py-5 text-sm text-[#64748B]">
+                    <td className="px-5 py-5 text-sm text-[#566173]">
                       {job.posted}
                     </td>
                     <td className="px-4 py-5 text-right">
-                      <span className="inline-flex text-[#062A56]">
+                      <span className="inline-flex text-[#14243D]">
                         <ArrowRight className="h-5 w-5" aria-hidden />
                       </span>
                     </td>
@@ -138,39 +138,39 @@ export default function CareersOpportunities() {
           {openPositions.map((job) => (
             <article
               key={job.id}
-              className="rounded-[20px] border border-[#DCE7F7] bg-white p-5 shadow-[0_12px_32px_rgba(6,42,86,0.06)]"
+              className="rounded-[20px] border border-[#E3E5E8] bg-white p-5 shadow-[0_12px_32px_rgba(20,36,61,0.06)]"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-[17px] font-semibold text-[#0B0F14]">
+                  <h3 className="text-[17px] font-semibold text-[#14243D]">
                     {job.position}
                   </h3>
-                  <p className="mt-2 text-sm text-[#64748B]">{job.location}</p>
+                  <p className="mt-2 text-sm text-[#566173]">{job.location}</p>
                 </div>
                 <ArrowRight
-                  className="mt-1 h-5 w-5 shrink-0 text-[#062A56]"
+                  className="mt-1 h-5 w-5 shrink-0 text-[#14243D]"
                   aria-hidden
                 />
               </div>
 
               <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
                 <div>
-                  <dt className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#94A3B8]">
+                  <dt className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#758194]">
                     Department
                   </dt>
-                  <dd className="mt-1 text-[#475569]">{job.department}</dd>
+                  <dd className="mt-1 text-[#566173]">{job.department}</dd>
                 </div>
                 <div>
-                  <dt className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#94A3B8]">
+                  <dt className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#758194]">
                     Type
                   </dt>
-                  <dd className="mt-1 text-[#475569]">{job.type}</dd>
+                  <dd className="mt-1 text-[#566173]">{job.type}</dd>
                 </div>
                 <div className="col-span-2">
-                  <dt className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#94A3B8]">
+                  <dt className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#758194]">
                     Posted
                   </dt>
-                  <dd className="mt-1 text-[#475569]">{job.posted}</dd>
+                  <dd className="mt-1 text-[#566173]">{job.posted}</dd>
                 </div>
               </dl>
             </article>

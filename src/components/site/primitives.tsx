@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
+
+import { accents, type AccentName } from "./accents";
 
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-its-navy";
@@ -31,29 +33,84 @@ export function Eyebrow({
   children,
   rule = false,
   onDark = false,
+  index,
   className,
 }: {
   children: ReactNode;
   rule?: boolean;
   onDark?: boolean;
+  /** Section number, shown before the label like the proposal deck: "01". */
+  index?: number | string;
   className?: string;
 }) {
   return (
     <p
       className={cn(
         "flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.16em]",
-        onDark ? "text-[#B9CDC9]" : "text-its-mint-ink",
+        onDark ? "text-[#F2B4A6]" : "text-its-coral-ink",
         className,
       )}
     >
+      {index !== undefined ? (
+        <span className="tabular-nums" aria-hidden>
+          {typeof index === "number" ? String(index).padStart(2, "0") : index}
+        </span>
+      ) : null}
       <span>{children}</span>
       {rule ? (
         <span
           aria-hidden
-          className={cn("h-px w-14", onDark ? "bg-[#B9CDC9]/60" : "bg-its-mint")}
+          className={cn("h-px w-14", onDark ? "bg-[#F2B4A6]/60" : "bg-its-coral/70")}
         />
       ) : null}
     </p>
+  );
+}
+
+/** Navy statement band: one sentence that closes a section, with the key
+ *  phrase in light coral. Mirrors the bottom band on the proposal deck. */
+export function StatementBand({
+  children,
+  highlight,
+  className,
+}: {
+  children: ReactNode;
+  /** The phrase to set in coral; rendered after `children`. */
+  highlight?: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={cn("rounded-[20px] bg-its-navy px-7 py-6 text-center sm:px-10 md:py-7", className)}>
+      <p className="text-[clamp(1.1rem,1.8vw,1.4rem)] font-semibold leading-[1.4] tracking-[-0.02em] text-white">
+        {children}
+        {highlight ? <span className="text-[#F2B4A6]"> {highlight}</span> : null}
+      </p>
+    </div>
+  );
+}
+
+/** Small tinted icon tile. Pass a lucide icon component. */
+export function IconTile({
+  icon: Icon,
+  accent = "dusty",
+  size = "md",
+  className,
+}: {
+  icon: LucideIcon;
+  accent?: AccentName;
+  size?: "sm" | "md" | "lg";
+  className?: string;
+}) {
+  const tone = accents[accent];
+  const box = size === "sm" ? "h-8 w-8 rounded-[9px]" : size === "lg" ? "h-11 w-11 rounded-[12px]" : "h-9 w-9 rounded-[10px]";
+  const glyph = size === "sm" ? "h-3.5 w-3.5" : size === "lg" ? "h-5 w-5" : "h-4 w-4";
+  return (
+    <span
+      className={cn("flex shrink-0 items-center justify-center", box, className)}
+      style={{ backgroundColor: tone.bg, color: tone.fg }}
+    >
+      <Icon className={glyph} strokeWidth={1.7} aria-hidden />
+    </span>
   );
 }
 

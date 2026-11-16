@@ -167,9 +167,9 @@ export default function RadialOrbitalTimeline({
   const getStatusStyles = (status: TimelineItem["status"]): string => {
     switch (status) {
       case "completed":
-        return "border-white/40 bg-[#0A3A86] text-white";
+        return "border-white/40 bg-[#14243D] text-white";
       case "in-progress":
-        return "border-white bg-white text-[#0A3A86]";
+        return "border-white bg-white text-[#14243D]";
       case "pending":
       default:
         return "border-white/30 bg-white/5 text-white/80";
@@ -211,7 +211,7 @@ export default function RadialOrbitalTimeline({
             transformOrigin: "center center",
           }}
         >
-          <div className="absolute z-10 flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-[#0A3A86]/30 backdrop-blur-sm">
+          <div className="absolute z-10 flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-[#14243D]/30 backdrop-blur-sm">
             <div className="absolute h-20 w-20 animate-ping rounded-full border border-white/10 opacity-40" />
             <div
               className="absolute h-24 w-24 rounded-full border border-white/[0.06] opacity-30"
@@ -228,7 +228,7 @@ export default function RadialOrbitalTimeline({
             style={{ width: outerRing, height: outerRing }}
           />
           <div
-            className="absolute rounded-full border border-[#0A3A86]/20"
+            className="absolute rounded-full border border-[#14243D]/20"
             style={{ width: innerRing, height: innerRing }}
           />
 
@@ -276,9 +276,9 @@ export default function RadialOrbitalTimeline({
                   className={cn(
                     "flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300",
                     isExpanded
-                      ? "scale-150 border-white bg-white text-[#0A3A86] shadow-lg shadow-white/20"
+                      ? "scale-150 border-white bg-white text-[#14243D] shadow-lg shadow-white/20"
                       : isRelated
-                        ? "animate-pulse border-white bg-white/40 text-[#0A3A86]"
+                        ? "animate-pulse border-white bg-white/40 text-[#14243D]"
                         : "border-white/35 bg-[#0B1220] text-white",
                   )}
                 >
@@ -326,7 +326,7 @@ export default function RadialOrbitalTimeline({
                         </div>
                         <div className="h-1 w-full overflow-hidden rounded-full bg-white/10">
                           <div
-                            className="h-full bg-gradient-to-r from-[#0A3A86] via-[#3b5f9a] to-white/70"
+                            className="h-full bg-gradient-to-r from-[#14243D] via-[#3b5f9a] to-white/70"
                             style={{ width: `${item.energy}%` }}
                           />
                         </div>

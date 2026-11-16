@@ -28,7 +28,33 @@ Rules:
 - Primary buttons are navy. Coral is never a button or a large surface.
 - No electric blue, no loud gradients, no bright mint.
 - At most one navy block per page besides a closing banner.
+  Direct Hire is the approved exception, described below.
 - Text must reach 4.5:1 contrast. Use the `-ink` shades for text.
+
+### Direct Hire: editorial contrast
+
+The owner asked for more contrast on Direct Hire (Nov 2026). That page alone
+balances dark, mid and light surfaces, and no two neighboring sections share a
+background.
+
+| Token | Value | Role |
+|---|---|---|
+| `its-charcoal` | `#252D35` | The one dark section mid-page, dark statement tiles |
+| `its-warm` | `#E7EAED` | Mid-gray bands and tiles |
+| `its-soft-slate` | `#AAB4BF` | Lines, icons and labels on dark surfaces |
+
+- Order: navy hero, off-white, mid-gray, white, off-white, charcoal, white,
+  mid-gray. Full-width dark appears twice only: the hero and one charcoal
+  section. Other navy is contained: one column, one card, the closing card.
+- The hero visual is `PartnershipGraphic`, a code-drawn ring pattern set into
+  the background. Replace it only with an approved ITS photo.
+- Layouts vary by section: ruled index, flowchart, matrix, mixed-size tiles,
+  phase columns, statement list. Avoid rows of identical cards.
+- Coral stays tiny: one point in the hero, one status dot, and the initial of
+  each Why ITS word (`#C8614F`, large type only).
+- Shadows are allowed on raised panels here, up to
+  `0 26px 60px rgba(20,36,61,0.24)` for navy and `0.08` for white.
+- Use these tokens on other pages only with the owner's approval.
 
 ## Typography
 

@@ -50,25 +50,25 @@ function WorkforceTopicCard({
   const number = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="relative flex h-[340px] w-full flex-col overflow-hidden rounded-[28px] border border-black/[0.05] bg-[#F3F3F1] p-8 shadow-[0_18px_50px_rgba(15,23,42,0.07)]">
+    <article className="relative flex h-[340px] w-full flex-col overflow-hidden rounded-[28px] border border-black/[0.05] bg-[#F0F2F5] p-8 shadow-[0_18px_50px_rgba(15,23,42,0.07)]">
       <div
-        className="pointer-events-none absolute -right-4 top-0 h-36 w-36 rounded-full bg-[#818CF8]/35 blur-3xl"
+        className="pointer-events-none absolute -right-4 top-0 h-36 w-36 rounded-full bg-[#A5B5C5]/35 blur-3xl"
         aria-hidden
       />
 
       <div className="relative flex items-start justify-between gap-6">
-        <h3 className="max-w-[68%] text-[22px] font-semibold leading-[1.2] tracking-[-0.03em] text-[#0B0F14]">
+        <h3 className="max-w-[68%] text-[22px] font-semibold leading-[1.2] tracking-[-0.03em] text-[#14243D]">
           {item.title}
         </h3>
         <span
           aria-hidden
-          className="relative shrink-0 text-[56px] font-semibold leading-none tracking-[-0.05em] text-[#818CF8]"
+          className="relative shrink-0 text-[56px] font-semibold leading-none tracking-[-0.05em] text-[#A5B5C5]"
         >
           {number}
         </span>
       </div>
 
-      <p className="relative mt-auto text-[15px] leading-[1.75] text-[#64748B]">
+      <p className="relative mt-auto text-[15px] leading-[1.75] text-[#566173]">
         {item.description}
       </p>
     </article>
@@ -89,7 +89,7 @@ export default function WorkforceManagement() {
 
           <ContainerScroll className="relative hidden w-full lg:block">
             <div
-              className="pointer-events-none absolute -right-10 top-10 h-[500px] w-[500px] rounded-full bg-[#818CF8]/15 blur-[100px]"
+              className="pointer-events-none absolute -right-10 top-10 h-[500px] w-[500px] rounded-full bg-[#A5B5C5]/15 blur-[100px]"
               aria-hidden
             />
 

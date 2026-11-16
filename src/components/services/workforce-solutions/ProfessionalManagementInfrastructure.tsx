@@ -118,29 +118,29 @@ function ManagementFeatureCard({
       )}
     >
       <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F14]/[0.04] to-[#0B0F14]/[0.01] opacity-100 [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#14243D]/[0.04] to-[#14243D]/[0.01] opacity-100 [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]">
           <GridPattern
             width={20}
             height={20}
             x={-12}
             y={4}
             squares={item.pattern}
-            className="absolute inset-0 h-full w-full fill-[#0B0F14]/[0.05] stroke-[#0B0F14]/[0.12] mix-blend-overlay"
+            className="absolute inset-0 h-full w-full fill-[#14243D]/[0.05] stroke-[#14243D]/[0.12] mix-blend-overlay"
           />
         </div>
       </div>
 
       <Icon
-        className="relative z-10 h-6 w-6 text-[#0A3A86]"
+        className="relative z-10 h-6 w-6 text-[#14243D]"
         strokeWidth={1.5}
         aria-hidden
       />
 
-      <h3 className="relative z-10 mt-8 text-[15px] font-semibold tracking-[-0.02em] text-[#0B0F14] md:text-base">
+      <h3 className="relative z-10 mt-8 text-[15px] font-semibold tracking-[-0.02em] text-[#14243D] md:text-base">
         {item.title}
       </h3>
 
-      <p className="relative z-10 mt-2 text-[13px] font-normal leading-[1.65] text-[#64748B] md:text-sm">
+      <p className="relative z-10 mt-2 text-[13px] font-normal leading-[1.65] text-[#566173] md:text-sm">
         {item.description}
       </p>
     </div>
@@ -163,8 +163,8 @@ export default function ProfessionalManagementInfrastructure() {
 
       <div className="layout-container relative z-10">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#111111]">
-            <span className="h-2 w-2 rounded-full bg-[#111111]" aria-hidden />
+          <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">
+            <span className="h-2 w-2 rounded-full bg-its-coral" aria-hidden />
             Professional Management Infrastructure
           </p>
 
