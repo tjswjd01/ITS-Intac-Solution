@@ -3,10 +3,12 @@ import Link from "next/link";
 import { ArrowRight, Bot, Cpu, Factory, Truck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+import { accentAt, accents } from "@/components/site/accents";
 import Header from "@/components/Header";
 import {
   CtaBanner,
   PageHero,
+  StatementBand,
   navyButtonClassName,
 } from "@/components/site/primitives";
 
@@ -115,7 +117,7 @@ export default function IndustriesPage() {
       <section aria-label="Industries" className="bg-white py-16 md:py-24">
         <div className="layout-container">
           <ul className="grid gap-5 md:grid-cols-2">
-            {industries.map((industry) => {
+            {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
                 <li
@@ -123,7 +125,10 @@ export default function IndustriesPage() {
                   id={industry.id}
                   className="flex scroll-mt-28 flex-col rounded-[28px] border border-its-line bg-its-offwhite p-7 lg:p-9"
                 >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#6E8196]">
+                  <span
+                    className="flex h-12 w-12 items-center justify-center rounded-2xl"
+                    style={{ backgroundColor: accents[accentAt(index)].bg, color: accents[accentAt(index)].fg }}
+                  >
                     <Icon className="h-6 w-6" strokeWidth={1.6} aria-hidden />
                   </span>
                   <h2 className="mt-6 text-[1.4rem] font-semibold leading-[1.2] tracking-[-0.025em] text-its-navy">
@@ -161,6 +166,13 @@ export default function IndustriesPage() {
               );
             })}
           </ul>
+        </div>
+
+        {/* From the deck. TODO(owner): edit. */}
+        <div className="layout-container mt-10">
+          <StatementBand highlight="we match people to the work, not just to the job title.">
+            Because we understand the technology and the floor,
+          </StatementBand>
         </div>
       </section>
 

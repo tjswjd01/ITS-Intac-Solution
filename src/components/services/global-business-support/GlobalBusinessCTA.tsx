@@ -4,16 +4,13 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { MoveRight } from "lucide-react";
 
-import { GBS_ACCENT } from "@/components/services/global-business-support/globalBusinessTheme";
-
 export default function GlobalBusinessCTA() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
     <section
       id="global-business-cta"
-      className="border-t border-[#E3E5E8] py-16 md:py-20 lg:py-24"
-      style={{ backgroundColor: GBS_ACCENT }}
+      className="border-t border-[#E3E5E8] bg-its-navy py-16 md:py-20 lg:py-24"
     >
       <div className="mx-auto w-full min-w-0 max-w-[1280px] px-5 sm:px-6 lg:px-8">
         <motion.div

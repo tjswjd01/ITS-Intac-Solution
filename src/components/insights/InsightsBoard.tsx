@@ -58,7 +58,7 @@ export default function InsightsBoard() {
         <div className="layout-container">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
             <div>
-              <Eyebrow rule>{insightsPage.topics.label}</Eyebrow>
+              <Eyebrow rule index={1}>{insightsPage.topics.label}</Eyebrow>
               <h2
                 id="topics-heading"
                 className="mt-5 max-w-[420px] text-[clamp(1.8rem,3.2vw,2.6rem)] font-semibold leading-[1.1] tracking-[-0.035em] text-its-navy"
