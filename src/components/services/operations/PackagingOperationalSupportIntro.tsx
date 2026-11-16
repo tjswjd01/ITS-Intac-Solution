@@ -23,6 +23,7 @@ export default function PackagingOperationalSupportIntro() {
         "Fulfillment Support",
         "Workforce Support",
       ]}
+      background="white"
       keyAdvantages={[
         { title: "Packaging Operations", icon: Package },
         { title: "Inventory Coordination", icon: Warehouse },

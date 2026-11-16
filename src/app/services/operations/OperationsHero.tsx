@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import {
   CheckCircle2,
-  Mail,
   PackageCheck,
   Smartphone,
 } from "lucide-react";
@@ -19,12 +18,6 @@ const capabilities = [
     title: "Quality Assurance",
     description: "Inspection, verification, and quality control workflows.",
     icon: CheckCircle2,
-  },
-  {
-    title: "Mail-in Service",
-    description:
-      "End-to-end intake, repair coordination, tracking, and return delivery support.",
-    icon: Mail,
   },
   {
     title: "Packaging & Operational Support",
@@ -91,8 +84,8 @@ export default function OperationsHero() {
             className="mt-5 max-w-[640px] text-[14px] leading-[1.575] text-slate-400 md:text-[15px] md:leading-[1.75]"
           >
             ITS supports end-to-end device lifecycle operations through mobile
-            refurbishment, quality assurance, mail-in programs, packaging, and
-            operational support.
+            refurbishment, quality assurance, packaging, and operational
+            support.
           </motion.p>
         </div>
 
@@ -100,7 +93,7 @@ export default function OperationsHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.24 }}
-          className="mt-10 grid gap-3 sm:grid-cols-2 lg:mt-11 lg:grid-cols-4"
+          className="mt-10 grid gap-3 sm:grid-cols-2 lg:mt-11 lg:grid-cols-3"
         >
           {capabilities.map((capability) => {
             const Icon = capability.icon;

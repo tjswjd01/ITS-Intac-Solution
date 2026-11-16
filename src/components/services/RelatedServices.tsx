@@ -83,7 +83,7 @@ function RelatedServiceCard({
 
 export default function RelatedServices() {
   return (
-    <section className="section-shell border-t border-black/[0.08] bg-white">
+    <section className="section-shell border-t border-black/[0.08] bg-[#F5F6F8]">
       <div className="layout-container">
         <div className="mx-auto max-w-3xl text-center">
           <p className="flex items-center justify-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-its-coral-ink">

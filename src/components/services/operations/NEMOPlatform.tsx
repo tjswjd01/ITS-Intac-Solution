@@ -25,7 +25,7 @@ const features = [
 
 export default function NEMOPlatform() {
   return (
-    <section className="section-shell border-t border-black/[0.06] bg-white">
+    <section className="section-shell border-t border-black/[0.06] bg-[#F5F6F8]">
       <div className="layout-container">
         <div className="relative z-10 grid items-start gap-6 md:grid-cols-[0.95fr_1.05fr] md:gap-12">
           <div>
@@ -166,6 +166,10 @@ export default function NEMOPlatform() {
             <div className="absolute -bottom-[10%] left-[18%] h-[36%] w-[64%] rounded-[28px] border border-white/80 bg-white/70 shadow-[0_18px_50px_rgba(15,23,42,0.14)] backdrop-blur-md" />
           </div>
         </div>
+
+        <p className="mt-4 text-center text-[12.5px] text-its-slate">
+          Illustrative sample dashboard. Not live data.
+        </p>
 
         <div className="relative mx-auto mt-10 grid w-full min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:mt-12 lg:grid-cols-4">
           {features.map((item) => {

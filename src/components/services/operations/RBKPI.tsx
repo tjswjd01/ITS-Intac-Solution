@@ -202,7 +202,7 @@ function MetricCard({ card }: { card: (typeof metricCards)[number] }) {
 
 export default function RBKPI() {
   return (
-    <section className="section-shell border-t border-black/[0.06] bg-[#F5F6F8]">
+    <section className="section-shell border-t border-black/[0.06] bg-white">
       <div className="layout-container">
         <OperationsSectionHeader
           eyebrow="RB KPI"
